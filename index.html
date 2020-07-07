@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Wong</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <!-- Favicon -->
     <link type="image/png" href="./images/favicon-16x16.png" rel="icon">
     <link rel="stylesheet" href="./style/style.css">
@@ -13,8 +15,8 @@
     <div class="wrapper pageFix">
         <div class="allWrapping">
             <header>
-                <nav>
-                    <ul>
+                <nav class="headerIn">
+                    <ul class="wrapper">
                         <li><a href="#home">home</a></li>
                         <li><a href="#about">about</a></li>
                         <li><a href="#portfolio">portfolio</a></li>
@@ -22,14 +24,93 @@
                     </ul>
                 </nav>
             </header>
-            <main>
-                <h1>Welcome and warm greetings! This site is under construction, please comeback and visit my webiste</h1>
-                <h2>My name is Victor Wong! And I'm work as a Front End Developer. I'm studing at Juno College!</h2>
+            <main id="home" class="topping">
+                <section class="firstView">
+                    <h1>Welcome and warm greetings! This site is under construction, please comeback and visit my webiste</h1>
+                    <div>
+                        <img src="images/monkey.png" alt="monkey">
+                        <h2>I'm Victor.<span>I'm a Web Developer.</span></h2>
+                        <a href="#about" class="circleDecoration"><i class="fas fa-angle-down"></i></a>
+                    </div>
+                </section>
+                <section id="about" class="topping flexing">
+                    <div class="widthHalf">
+                        <h2>About</h2>
+                        <p><img src="images/banana.png" alt="banana"> Font-End Developer</p>
+                        <p><img src="images/banana.png" alt="banana"> Live and work in Toronto City</p>
+                        <p><img src="images/banana.png" alt="banana"> Game Boy - Pokemon Fan</p>
+                    </div>
+                    <div class="widthHalf">
+                        <h2 class="textUpper skillP">skills<img src="images/palmTree.png" alt="palm Tree"></h2>
+                            <div class="skillBox">
+                                <p>HTML</p>
+                                <p>CSS</p>
+                                <p>JavaScript</p>
+                                <p>jQuery</p>
+                            </div>
+                            <div class="skillBox">
+                            </div>
+                    </div>
+                </section>
+                <section id="portfolio" class="topping">
+                    <div class="test">
+                        <h2 class="textUpper">experience</h2>
+                    </div>
+                        <h2 class="textUpper">project</h2>
+                        <div>
+                            <img src="images/questionImpossible.png" alt="Question Impossible Image">
+                            <h3>Question Impossible</h3>
+                            <p>A game similar to Are You Smarter than a 5th Grader? Unique catagories and questions make you concentrate on the challenge.</p>
+                            <a href="https://victortejprojectfour.github.io/theDreamTeamProjectFour/" target="_blank">Play</a>
+                        </div>
+                        <div>
+                            <img src="images/pokemonBattle.png" alt="Pokemon Battle Image">
+                            <h3>Pokémon Battle</h3>
+                            <p>Choose your favourite Pokémon. Challenge the Gym Leaders to collect all eight badge.</p>
+                            <a href="https://victorkwong.github.io/victor-wong-project-five/" target="_blank">Play</a>
+                        </div>
+                        <div>
+                            <img src="images/podcastCommuter.png" alt="Podcast Commuter Image">
+                            <h3>Podcast Commuter</h3>
+                            <p>An app that suggests a podcast to listen to based on the length of your journey.</p>
+                            <a href="https://teamjuicywatermelon.github.io/PodcastCommuter/" target="_blank">Listen</a>
+                        </div>
+                </section>
+                <section>
+                    <h2 class="textUpper">contact</h2>
+                    <label for="replyTo">Your Email</label>
+                    <input type="email" name="replyTo" id="replyTo" aria-label="Your email" required="">
+                    <label for="emailSubject">Subject</label>
+                    <input type="text" id="emailSubject" name="emailSubject">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" aria-label="Your message" class="messageBox" required=""></textarea>
+                </section>
             </main>
         </div>
-        <footer class="footerPosition">
-            <p>Victor Wong <i class="far fa-copyright"></i> 2020</p>
+        <footer class="footerPosition" id="contact">
+            <div class="footerDisplay">
+                <div class="boxContainer textPosition">
+                    <p>Victor Wong © 2020</p>
+                </div>
+                <div class="boxContainerMiddle">
+                    <a href="#home"><i class="fas fa-angle-up"></i></a>
+                </div>
+                <div class="boxContainer">
+                    <nav>
+                        <ul>
+                            <li><a href="https://twitter.com/VictorkaiWong1" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://github.com/VictorKwong?tab=repositories" target="_blank"><i class="fab fa-github"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/victorkaihong/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="mailto::victorkaihong@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </footer>
     </div>    
 </body>
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
 </html>
