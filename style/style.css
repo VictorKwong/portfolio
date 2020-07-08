@@ -57,17 +57,23 @@ header a:hover,
 header a:focus,
 footer a:hover,
 footer a:focus,
-main a:hover,
-main a:focus{
+main .firstView a:hover,
+main .firstView a:focus{
     color:orange;
    
 }
 
 footer a:hover,
 footer a:focus,
-main a:hover,
-main a:focus{
+main .firstView a:hover,
+main .firstView a:focus{
     border: solid orange;
+}
+
+.headerMonkey{
+    cursor: pointer;
+    animation: fadeInDownBig;
+    animation-duration: 0.7s;
 }
 
 .headerIn{
@@ -84,6 +90,14 @@ main a:focus{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.monkeyHead{
+    border: solid #483c0c;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #176844;
+
 }
 
 .firstSection{
@@ -105,6 +119,7 @@ main a:focus{
 .skillBox{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .flexing{
@@ -211,4 +226,12 @@ footer a,
     resize: none;
     border: 2px solid #483c0c;
     color: #483c0c;
+}
+
+.formBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }

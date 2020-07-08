@@ -28,7 +28,8 @@
                 <section class="firstView">
                     <h1>Welcome and warm greetings! This site is under construction, please comeback and visit my webiste</h1>
                     <div>
-                        <img src="images/monkey.png" alt="monkey">
+                        <img src="images/monkey.png" alt="monkey" class="headerMonkey">
+                        <p class="monkeyWords"></p>
                         <h2>I'm Victor.<span>I'm a Web Developer.</span></h2>
                         <a href="#about" class="circleDecoration"><i class="fas fa-angle-down"></i></a>
                     </div>
@@ -36,6 +37,7 @@
                 <section id="about" class="topping flexing">
                     <div class="widthHalf">
                         <h2>About</h2>
+                        <img src="images/monkeyProfile.png" alt="Monkey head image" class="monkeyHead">
                         <p><img src="images/banana.png" alt="banana"> Font-End Developer</p>
                         <p><img src="images/banana.png" alt="banana"> Live and work in Toronto City</p>
                         <p><img src="images/banana.png" alt="banana"> Game Boy - Pokemon Fan</p>
@@ -77,13 +79,22 @@
                         </div>
                 </section>
                 <section>
-                    <h2 class="textUpper">contact</h2>
-                    <label for="replyTo">Your Email</label>
-                    <input type="email" name="replyTo" id="replyTo" aria-label="Your email" required="">
-                    <label for="emailSubject">Subject</label>
-                    <input type="text" id="emailSubject" name="emailSubject">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" aria-label="Your message" class="messageBox" required=""></textarea>
+                    <form method="POST" action="" class="formBox">
+                        <h2 class="textUpper">contact</h2>
+                        <div>
+                            <label for="replyTo">Your Email</label>
+                            <input type="email" name="replyTo" id="replyTo" aria-label="Your email" required>
+                        </div>
+                        <div>
+                            <label for="emailSubject">Subject</label>
+                            <input type="text" id="emailSubject" name="emailSubject" required>
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" aria-label="Your message" class="messageBox" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
                 </section>
             </main>
         </div>
