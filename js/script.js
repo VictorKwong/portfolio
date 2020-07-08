@@ -8,6 +8,12 @@ $(function () {
 
 $('.headerMonkey').on('click',function(){
     $('.monkeyWords').html("Feed me some bananas, I'm hungry.")
+    $(this).addClass("monkeyMove");
+    eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventOne)}, 750);
+    eventTwo = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTwo)}, 1500);
+    eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventThr)}, 2400);
+    eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventFour)}, 3000);
+    event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove"); clearTimeout(event)}, 3000);
 });
 
 
@@ -92,7 +98,7 @@ portfolioApp.init = () => {
   
     new Animation('.animationBar', 'percentage');
     
-
+    /* about section */
     $(window).scroll(function () {
         $('.aboutSectionHide').each(function () {
             let imageHeight = $(this).height(); /* image height */
