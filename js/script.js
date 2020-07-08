@@ -91,7 +91,17 @@ portfolioApp.init = () => {
     }
   
     new Animation('.animationBar', 'percentage');
-  
+    
+
+    $(window).scroll(function () {
+        $('.aboutSectionHide').each(function () {
+            let imageHeight = $(this).height(); /* image height */
+            let topOfWindow = $(window).scrollTop();
+            if (topOfWindow > imageHeight + 100) {
+                $(this).addClass("showAbout");
+            }
+        });
+    });
   };
 
   $(document).ready(portfolioApp.init());
