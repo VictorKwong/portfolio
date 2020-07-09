@@ -27,7 +27,12 @@ main .firstView a:focus{
     color:orange;
    
 }
-
+main .firstView a:hover,
+main .firstView a:focus,
+footer a:hover,
+footer a:focus{
+    border: solid orange;
+}
 
 .headerMonkey{
     cursor: pointer;
@@ -58,7 +63,6 @@ main .firstView a:focus{
 }
 
 /* main */
-
 .firstView{
     height:100vh;
     text-align: center;
@@ -115,6 +119,13 @@ header nav{
     align-items: center;
 }
 
+main h3{
+    margin-bottom: 2rem;
+}
+main p{
+    margin-bottom: 1.3rem;
+}
+
 body{
     background-color: #fff5d7;
     color:#483c0c;
@@ -142,21 +153,28 @@ body{
 }
 
 .imgDescription{
-    width: 25%;
+    max-height:250px;
 }
 
 .imgfill{
-    width: 100%;
+    vertical-align: middle;
 }
 
 .appDescription{
-    width: 75%;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 15px 30px;
+    background-color: #EEEEEE;
+}
+
+.roundUp{
+    margin: 0 auto 30px;
+    overflow: hidden;
+    max-width: 900px;
+    border-radius: 10px;
 }
 
 .topping{
