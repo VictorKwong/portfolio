@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <!-- Favicon -->
     <link type="image/png" href="./images/favicon-16x16.png" rel="icon">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <div class="wrapper pageFix">
@@ -29,6 +29,7 @@
                     <div>
                         <img src="images/monkey.png" alt="monkey" class="headerMonkey">
                         <p class="monkeyWords"></p>
+                        <button class="addBanana">Feed me</button>
                         <h2>I'm Victor.<span>I'm a Web Developer.</span></h2>
                         <a href="#about" class="circleDecoration"><i class="fas fa-angle-down"></i></a>
                     </div>
@@ -97,23 +98,35 @@
                         <h2 class="textUpper">experience <img src="images/palmTreeSec.png" alt="Another palm tree"></h2>
                     </div>
                         <h2 class="textUpper">project</h2>
-                        <div>
-                            <img src="images/questionImpossible.png" alt="Question Impossible Image">
-                            <h3>Question Impossible</h3>
-                            <p>A game similar to Are You Smarter than a 5th Grader? Unique catagories and questions make you concentrate on the challenge.</p>
-                            <a href="https://victortejprojectfour.github.io/theDreamTeamProjectFour/" target="_blank" class="textUpper">learn more</a>
+                        <div class="flexing">
+                            <div class="imgDescription">
+                                <img src="images/questionImpossible.png" alt="Question Impossible Image" class="imgfill">
+                            </div>
+                            <div class="appDescription">
+                                <h3>Question Impossible</h3>
+                                <p>A game similar to Are You Smarter than a 5th Grader? Unique catagories and questions make you concentrate on the challenge.</p>
+                                <a href="https://victortejprojectfour.github.io/theDreamTeamProjectFour/" target="_blank" class="button buttonAntiman textUpper">learn more</a>
+                            </div>
                         </div>
-                        <div>
-                            <img src="images/pokemonBattle.png" alt="Pokemon Battle Image">
-                            <h3>Pokémon Battle</h3>
-                            <p>Choose your favourite Pokémon. Challenge the Gym Leaders to collect all eight badge.</p>
-                            <a href="https://victorkwong.github.io/victor-wong-project-five/" target="_blank" class="textUpper">learn more</a>
+                        <div class="flexing">
+                            <div class="imgDescription orderPlace">
+                                <img src="images/pokemonBattle.png" alt="Pokemon Battle Image" class="imgfill">
+                            </div>
+                            <div class="appDescription">
+                                <h3>Pokémon Battle</h3>
+                                <p>Choose your favourite Pokémon. Challenge the Gym Leaders to collect all eight badge.</p>
+                                <a href="https://victorkwong.github.io/victor-wong-project-five/" target="_blank" class="button buttonAntiman textUpper">learn more</a>
+                            </div>
                         </div>
-                        <div>
-                            <img src="images/podcastCommuter.png" alt="Podcast Commuter Image">
-                            <h3>Podcast Commuter</h3>
-                            <p>An app that suggests a podcast to listen to based on the length of your journey.</p>
-                            <a href="https://teamjuicywatermelon.github.io/PodcastCommuter/" target="_blank" class="textUpper">learn more</a>
+                        <div class="flexing">
+                            <div class="imgDescription">
+                                <img src="images/podcastCommuter.png" alt="Podcast Commuter Image" class="imgfill">
+                            </div>
+                            <div class="appDescription">
+                                <h3>Podcast Commuter</h3>
+                                <p>An app that suggests a podcast to listen to based on the length of your journey.</p>
+                                <a href="https://teamjuicywatermelon.github.io/PodcastCommuter/" target="_blank" class="button buttonAntiman textUpper">learn more</a>
+                           </div>
                         </div>
                 </section>
                 <section>
@@ -159,6 +172,8 @@
     </div>    
 </body>
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
