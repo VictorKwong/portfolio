@@ -10,8 +10,11 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 ul,
 footer p,
+h2,
 h3,
-p{
+h4,
+p,
+figure{
     margin: 0;
     padding: 0;
 }
@@ -21,7 +24,6 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: 'Play', sans-serif;
 }
 
 html, body {
@@ -37,4 +39,10 @@ margin: 0 auto;
 
 a{
     text-decoration: none;
+}
+
+main,
+footer,
+header li a{
+    font-family: 'Play', sans-serif;
 }

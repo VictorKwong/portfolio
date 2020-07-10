@@ -5,171 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Wong</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Play&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <!-- Favicon -->
     <link type="image/png" href="./images/favicon-16x16.png" rel="icon">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="wrapper pageFix">
+    <div class="pageFix">
         <div class="allWrapping">
-            <header>
-                <nav class="headerIn">
-                    <ul class="wrapper">
-                        <li><a href="#home">home</a></li>
-                        <li><a href="#about">about</a></li>
-                        <li><a href="#portfolio">portfolio</a></li>
-                        <li><a href="#contact">contact</a></li>
-                    </ul>
-                </nav>
+            <div class="boxContainerTop">
+                <a href="#home" class="circleDecoration"><i class="fas fa-angle-double-up"></i></a>
+            </div>
+            <header class="headerIn">
+                <div class="wrapper headerContainer">
+                <h4><a href="#">V i c t o r</a></h4>
+                <div class="blockRight">
+                    <nav>
+                        <ul>
+                            <li><a href="#home">home</a></li>
+                            <li><a href="#about">about</a></li>
+                            <li><a href="#portfolio">portfolio</a></li>
+                            <li><a href="#contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                </div>
             </header>
             <main id="home" class="topping">
-                <section class="firstView">
-                    <div>
-                        <img src="images/monkey.png" alt="monkey" class="headerMonkey">
-                        <p class="monkeyWords"></p>
-                        <button class="addBanana">Feed me</button>
-                        <h2>I'm Victor.<span>I'm a Web Developer.</span></h2>
-                        <a href="#about" class="circleDecoration"><i class="fas fa-angle-down"></i></a>
-                    </div>
-                </section>
-                <section id="about" class="topping flexing">
-                    <div class="aboutSectionHide">
-                        <h2>About</h2>
-                        <img src="images/monkeyProfile.png" alt="Monkey head image" class="monkeyHead">
-                        <p><img src="images/banana.png" alt="banana"> Font-End Developer</p>
-                        <p><img src="images/banana.png" alt="banana"> Live and work in Toronto City</p>
-                        <p><img src="images/banana.png" alt="banana"> Game Boy - Pokemon Fan</p>
-                    </div>
-                    <div class="widthHalf">
-                        <h2 class="textUpper skillP"><img src="images/palmTree.png" alt="palm Tree">skills<img src="images/palmTree.png" alt="palm Tree"></h2>
-                            <div class="skillBox">
-                                    <div class="percentage" data-percentage="80">
-                                        <h3 class="labelTitle">HTML</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                          <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="80">
-                                        <h3 class="labelTitle">JavaScript</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                          <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="70">
-                                        <h3 class="labelTitle">CSS</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                          <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="80">
-                                        <h3 class="labelTitle">jQuery</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                          <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="70">
-                                        <h3 class="labelTitle">React</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                          <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="60">
-                                        <h3 class="labelTitle">Node.js</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                          <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-
-                            </div>
-                            <div class="skillBox">
-                            </div>
-                    </div>
-                </section>
-                <section id="portfolio" class="topping">
-                    <div class="test">
-                        <h2 class="textUpper">experience <img src="images/palmTreeSec.png" alt="Another palm tree"></h2>
-                    </div>
-                        <h2 class="textUpper">project</h2>
-                        <div class="flexing roundUp">
-                            <div class="imgDescription">
-                                <img src="images/questionImpossible.png" alt="Question Impossible Image" class="imgfill">
-                            </div>
-                            <div class="appDescription">
-                                <h3>Question Impossible</h3>
-                                <p>A game similar to Are You Smarter than a 5th Grader? Unique catagories and questions make you concentrate on the challenge.</p>
-                                <p>SCSS | JavaScript</p>
-                                <a href="https://victortejprojectfour.github.io/theDreamTeamProjectFour/" target="_blank" class="button buttonAntiman textUpper">learn more</a>
-                            </div>
-                        </div>
-                        <div class="flexing roundUp">
-                            <div class="imgDescription orderPlace">
-                                <img src="images/pokemonBattle.png" alt="Pokemon Battle Image" class="imgfill">
-                            </div>
-                            <div class="appDescription">
-                                <h3>Pokémon Battle</h3>
-                                <p>Choose your favourite Pokémon. Challenge the Gym Leaders to collect all eight badge. Inspired by Pokémon yellow version.</p>
-                                <p>JavaScript | API</p>
-                                <a href="https://victorkwong.github.io/victor-wong-project-five/" target="_blank" class="button buttonAntiman textUpper">learn more</a>
-                            </div>
-                        </div>
-                        <div class="flexing roundUp">
-                            <div class="imgDescription">
-                                <img src="images/podcastCommuter.png" alt="Podcast Commuter Image" class="imgfill">
-                            </div>
-                            <div class="appDescription">
-                                <h3>Podcast Commuter</h3>
-                                <p>An app that suggests a podcast to listen to based on the length of your journey and helps you decide if you should walk or bike</p>
-                                <p>React | API | CSS</p>
-                                <a href="https://teamjuicywatermelon.github.io/PodcastCommuter/" target="_blank" class="button buttonAntiman textUpper">learn more</a>
-                           </div>
-                        </div>
-                </section>
                 <section>
-                    <form method="POST" action="" class="formBox">
-                        <h2 class="textUpper">contact</h2>
-                        <div>
-                            <label for="replyTo">Your Email</label>
-                            <input type="email" name="replyTo" id="replyTo" aria-label="Your email" required>
+                    <div class="wrapper firstView">
+                        <div class="wordContainerMorn">
+                            <div class="upperG letter">G</div>
+                            <div class="o letter">o</div>
+                            <div class="o letter">o</div>
+                            <div class="d letter space">d</div>
+                            <div class="upperM letter">M</div>
+                            <div class="o letter">o</div>
+                            <div class="r letter">r</div>
+                            <div class="n letter">n</div>
+                            <div class="i letter">i</div>
+                            <div class="n letter">n</div>
+                            <div class="g letter">g</div>
+                        </div>
+                        <div class="wordContainerAfte">
+                            <div class="upperG letter">G</div>
+                            <div class="o letter">o</div>
+                            <div class="o letter">o</div>
+                            <div class="d letter space">d</div>
+                            <div class="upperA letter">A</div>
+                            <div class="f letter">f</div>
+                            <div class="t letter">t</div>
+                            <div class="e letter">e</div>
+                            <div class="r letter">r</div>
+                            <div class="n letter">n</div>
+                            <div class="o letter">o</div>
+                            <div class="o letter">o</div>
+                            <div class="n letter">n</div>
+                        </div>
+                        <div class="wordContainerEven">
+                            <div class="upperG letter">G</div>
+                            <div class="o letter">o</div>
+                            <div class="o letter">o</div>
+                            <div class="d letter space">d</div>
+                            <div class="upperE letter">E</div>
+                            <div class="v letter">v</div>
+                            <div class="e letter">e</div>
+                            <div class="n letter">n</div>
+                            <div class="i letter">i</div>
+                            <div class="n letter">n</div>
+                            <div class="g letter">g</div>
                         </div>
                         <div>
-                            <label for="emailSubject">Subject</label>
-                            <input type="text" id="emailSubject" name="emailSubject" required>
+                            <img src="images/monkey.png" alt="monkey" class="headerMonkey">
+                            <p class="monkeyWords">Where is my banana?</p>
+                            <button class="addBanana buttonDeco">Feed me</button>
+                            <h1>I'm Victor.</h1>
+                            <h2>a web developer</h2>
+                            <a href="#about" class="circleDecoration"><i class="fas fa-angle-down"></i></a>
                         </div>
-                        <div>
-                            <label for="message">Message</label>
-                            <textarea name="message" id="message" aria-label="Your message" class="messageBox" required></textarea>
+                    </div>
+                </section>
+                <section id="about" class="topping greenPaint">
+                    <div class="wrapper introFlexing">
+                        <div class="aboutSectionHide">
+                            <h2>Intro</h2>
+                            <img src="images/monkeyProfile.png" alt="Monkey head image" class="monkeyHead">
+                            <p><img src="images/banana.png" alt="banana drawing"> Font-End Developer</p>
+                            <p><img src="images/banana.png" alt="banana drawing"> Live and work in Toronto City</p>
+                            <p><img src="images/banana.png" alt="banana drawing"> Game Boy - Pokemon Fan</p>
+                            <p><img src="images/banana.png" alt="banana drawing"> Seeking job opportunity!</p>
                         </div>
-                        <button type="submit">Send Message</button>
-                    </form>
+                        <div class="widthHalf">
+                            <h2 class="textUpper skillP">skills</h2>
+                                <div class="skillBox">
+                                        <div class="percentage" data-percentage="80">
+                                            <h3 class="labelTitle">HTML</h3>
+                                            <div class="label"></div>
+                                            <div class="animation">
+                                            <div class="animationBar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage" data-percentage="80">
+                                            <h3 class="labelTitle">JavaScript</h3>
+                                            <div class="label"></div>
+                                            <div class="animation">
+                                            <div class="animationBar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage" data-percentage="70">
+                                            <h3 class="labelTitle">CSS</h3>
+                                            <div class="label"></div>
+                                            <div class="animation">
+                                            <div class="animationBar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage" data-percentage="80">
+                                            <h3 class="labelTitle">jQuery</h3>
+                                            <div class="label"></div>
+                                            <div class="animation">
+                                            <div class="animationBar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage" data-percentage="70">
+                                            <h3 class="labelTitle">React</h3>
+                                            <div class="label"></div>
+                                            <div class="animation">
+                                            <div class="animationBar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage" data-percentage="60">
+                                            <h3 class="labelTitle">Node.js</h3>
+                                            <div class="label"></div>
+                                            <div class="animation">
+                                            <div class="animationBar"></div>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="greenPaint">
+                    <div class="wrapper proFlexing colorPad">
+                    <video src="./images/victor.mp4" alt="profile image" muted="" autoplay="" loop="" class="profilefill"></video>
+                        <div class="profileContainer">
+                            <h2>Profile<img src="./images/bananaShine.png" alt="Another banana drawing"></h2>    
+                            <p>Hello😄! I have graduated at Juno College and have a background of Electrical Engineer⚡.</p>
+                            <p>Fun fact about me, I am a big fan of Mr.Bean and I love watching his show!</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="portfolio" class="topping colorPad">
+                    <div class="wrapper">
+                        <div class="expTitle">
+                            <h2 class="textUpper"><img src="images/palmTreeSec.png" alt="Another palm tree"> project <img src="images/palmTreeSec.png" alt="Another palm tree"></h2>
+                        </div>
+                            <div class="expFlexing roundUp">
+                                <div>
+                                    <figure>
+                                        <img src="images/questionImpossible.png" alt="Question Impossible Image" class="imgfill">
+                                        <figcaption>Paired</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="appDescription">
+                                    <h3>Question Impossible</h3>
+                                    <p>A game similar to Are You Smarter than a 5th Grader? Unique catagories and questions make you concentrate on the challenge.</p>
+                                    <p>SCSS | JavaScript</p>
+                                    <a href="https://victortejprojectfour.github.io/theDreamTeamProjectFour/" target="_blank" class="button buttonAntiman textUpper">visit</a>
+                                </div>
+                            </div>
+                            <div class="expFlexing roundUp">
+                                <div class="orderPlace">
+                                    <figure>
+                                        <img src="images/pokemonBattle.png" alt="Pokemon Battle Image" class="imgfill">
+                                        <figcaption>Solo</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="appDescription">
+                                    <h3>Pokémon Battle</h3>
+                                    <p>Choose your favourite Pokémon. Challenge the Gym Leaders to collect all eight badge. Inspired by Pokémon yellow version.</p>
+                                    <p>JavaScript | API</p>
+                                    <a href="https://victorkwong.github.io/victor-wong-project-five/" target="_blank" class="button buttonAntiman textUpper">visit</a>
+                                </div>
+                            </div>
+                            <div class="expFlexing roundUp">
+                                <div>
+                                    <figure>
+                                        <img src="images/podcastCommuter.png" alt="Podcast Commuter Image" class="imgfill">
+                                        <figcaption>Groups of Four</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="appDescription">
+                                    <h3>Podcast Commuter</h3>
+                                    <p>An app that suggests a podcast to listen to based on the length of your journey and helps you decide if you should walk or bike</p>
+                                    <p>React | API | CSS</p>
+                                    <a href="https://teamjuicywatermelon.github.io/PodcastCommuter/" target="_blank" class="button buttonAntiman textUpper">visit</a>
+                            </div>
+                            </div>
+                    </div>
+                </section>
+                <section id="contact" class="emailContainer greenPaint">
+                    <div class="wrapper">
+                        <form action="https://formspree.io/mvowwjkg" method="POST" class="formBox">
+                            <h2 class="textUpper"><img src="images/palmTree.png" alt="palm Tree">contact<img src="images/palmTree.png" alt="palm Tree"></h2>
+                            <div class="breathingRoom">
+                                <label for="_replyto" class="emailTitle">Your Email</label><input type="email" name="_replyto" id="_replyto" aria-label="Your email" class="emailBox" placeholder="Enter email" required>
+                            </div>
+                            <div class="breathingRoom">
+                                <label for="_subject" class="emailTitle">Subject</label><input type="text" id="_subject" name="_subject" class="emailBox" placeholder="Subject" required>
+                            </div>
+                            <div class="messFlexing breathingRoom">
+                                <label for="message" class="emailTitle">Message</label>
+                                <textarea name="message" id="message" aria-label="Your message" class="messageBox" placeholder="Message" required></textarea>
+                            </div>
+                            <button type="submit" class="buttonDeco">Submit</button>
+                        </form>
+                    </div>
                 </section>
             </main>
         </div>
-        <footer class="footerPosition" id="contact">
+        <footer class="footerPosition greenPaint">
+            <div class="wrapper">
             <div class="footerDisplay">
-                <div class="boxContainer textPosition">
-                    <p>Victor Wong © 2020</p>
-                </div>
-                <div class="boxContainerMiddle">
-                    <a href="#home"><i class="fas fa-angle-up"></i></a>
-                </div>
                 <div class="boxContainer">
                     <nav>
                         <ul>
                             <li><a href="https://twitter.com/VictorkaiWong1" target="_blank"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="https://github.com/VictorKwong?tab=repositories" target="_blank"><i class="fab fa-github"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/victorkaihong/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="mailto::victorkaihong@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                            <li><a href="https://medium.com/@VictorkaiWong1" target="_blank"><i class="fab fa-medium"></i></a></li>
                         </ul>
                     </nav>
                 </div>
+                <div class="textPosition">
+                    <p>Victor Wong © 2020</p>
+                </div>
+            </div>
             </div>
         </footer>
     </div>    
