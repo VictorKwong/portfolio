@@ -4,9 +4,11 @@ header h4{
     font-family: 'Chewy', cursive;
     width:50%;
 }
-
 h1{
     font-size: 8rem;
+    @include responsiveMedia(phone){
+        font-size: 6rem,
+    }
 }
 p{
     font-size: 1.8rem;
@@ -149,10 +151,10 @@ footer a:focus,
     25%   {left:-130px; top:0}
     48%   {left:-20px; top:0}
     51%   {left:10px; top:-40px;}
-    55%   {left:30px; top:0px;}
+    56%   {left:30px; top:0px;}
     80%   {left:170px; top:0px;}
     82%   {left:190px; top:-60px;}
-    86%   {left:200px; top:0px;}
+    88%   {left:200px; top:0px;}
     95%   {left:220px; top:0px;}
     100%  {left:0; top:0;}
 }
@@ -644,6 +646,26 @@ body{
 }
 
 
+.gitDeco{
+    font-size:1em;
+    border-radius: 50%;
+    border: solid white;
+    color:white;
+    line-height: 1.8em;
+    width: 1.8em;
+    height: 1.8em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition:0.3s;
+}
+
+.gitDeco:hover,
+.gitDeco:focus{
+    border: solid orange;
+    color: orange;
+}
+
 figure{
     position: relative;
     
@@ -657,7 +679,7 @@ figcaption {
     left:0;
     bottom:0;
     right:0;
-    padding-top: 33%;
+    padding: 20% 5% 0;
     background: linear-gradient(rgba(0,0,0,0.8));
     opacity:0;
     transition:all 0.3s ease-in-out;

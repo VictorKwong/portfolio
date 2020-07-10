@@ -276,6 +276,11 @@ header li a {
   font-family: 'Play', sans-serif;
 }
 
+:root {
+  --animate-delay: 0s;
+  --animate-repeat: 0;
+}
+
 header h4 {
   font-family: 'Chewy', cursive;
   width: 50%;
@@ -283,6 +288,12 @@ header h4 {
 
 h1 {
   font-size: 8rem;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 6rem;
+  }
 }
 
 p {
@@ -553,7 +564,7 @@ footer a:focus,
     left: 10px;
     top: -40px;
   }
-  55% {
+  56% {
     left: 30px;
     top: 0px;
   }
@@ -565,7 +576,7 @@ footer a:focus,
     left: 190px;
     top: -60px;
   }
-  86% {
+  88% {
     left: 200px;
     top: 0px;
   }
@@ -604,7 +615,7 @@ footer a:focus,
     left: 10px;
     top: -40px;
   }
-  55% {
+  56% {
     left: 30px;
     top: 0px;
   }
@@ -616,7 +627,7 @@ footer a:focus,
     left: 190px;
     top: -60px;
   }
-  86% {
+  88% {
     left: 200px;
     top: 0px;
   }
@@ -1517,6 +1528,27 @@ body {
   padding-bottom: 50px;
 }
 
+.gitDeco {
+  font-size: 1em;
+  border-radius: 50%;
+  border: solid white;
+  color: white;
+  line-height: 1.8em;
+  width: 1.8em;
+  height: 1.8em;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.gitDeco:hover,
+.gitDeco:focus {
+  border: solid orange;
+  color: orange;
+}
+
 figure {
   position: relative;
 }
@@ -1530,7 +1562,7 @@ figcaption {
   left: 0;
   bottom: 0;
   right: 0;
-  padding-top: 33%;
+  padding: 20% 5% 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)));
   background: linear-gradient(rgba(0, 0, 0, 0.8));
   opacity: 0;
