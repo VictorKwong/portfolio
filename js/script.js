@@ -7,10 +7,10 @@ randomfunction = () => {
 
 portfolioApp.easterEgg = function (){
   $('.textPosition').on('click', function(){
-      if($('.textPosition > p').text() === 'You have found my Easter Egg again!🙉'){
+      if($('.textPosition > p').text() === '🙈 You found me again! 🙉'){
         $('.textPosition > p').html('Victor Wong © 2020');
       }else{
-        $('.textPosition > p').html('You have found my Easter Egg again!🙉');
+        $('.textPosition > p').html('🙈 You found me again! 🙉');
       }
   });
 }
@@ -70,30 +70,26 @@ firebase.initializeApp(firebaseConfig);
 const dbRef = firebase.database().ref();  
 const userId = `-MBlboEQaOw7kXBs1I8y`;
 
-dbRef.once('value', (data) => {
+
   $('.addBanana').on('click',function(){
-  const upvote = data.val().Count[userId] + 1;
-  $('.addBanana').attr("hidden",true);
-  const upvoteMod = portfolioApp.comma(upvote);
-  $('.monkeyWords').html(`Thanks for feeding me. I have ${upvoteMod} Bananas!<img src="images/banana.png" alt="banana">`)
-  return firebase.database().ref(`Count/${userId}`).set(upvote);
+    $('.addBanana').attr("hidden",true);
+    dbRef.once('value', (data) => {
+      const upvote = data.val().Count[userId] + 1;
+      const upvoteMod = portfolioApp.comma(upvote); 
+      $('.monkeyWords').html(`Thanks for feeding me. I have ${upvoteMod} Bananas!<img src="images/banana.png" alt="banana">`)
+      return firebase.database().ref(`Count/${userId}`).set(upvote);
   })
 })
 
 }
 
-
-
-
-
-
 portfolioApp.comma = function (num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-portfolioApp.timeZone = function (timeZ){
-  today = new Date();
+portfolioApp.timeZone = function (){
   $('.wordContainerMorn,.wordContainerAfte,.wordContainerEven').hide();
+  today = new Date();
   if(today.getHours() >= 5 && today.getHours() <= 11){
     return $('.wordContainerMorn').show();
   }else if(today.getHours() >= 12 && today.getHours() <= 16){

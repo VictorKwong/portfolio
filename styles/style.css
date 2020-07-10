@@ -237,6 +237,7 @@ html {
 
 ul,
 footer p,
+h1,
 h2,
 h3,
 h4,
@@ -281,7 +282,7 @@ header h4 {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 8rem;
 }
 
 p {
@@ -296,13 +297,17 @@ p {
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 
 @media (max-width: 480px) {
   h2 {
     font-size: 2.4rem;
   }
+}
+
+.firstView h3 {
+  font-size: 3rem;
 }
 
 h3 {
@@ -1263,10 +1268,9 @@ footer a:focus,
 }
 
 .monkeyHead {
-  border: solid #483c0c;
   border-radius: 50%;
   display: inline-block;
-  background-color: #1e8046;
+  background-color: #F6C62B;
 }
 
 .profileContainer {
@@ -1333,6 +1337,10 @@ footer a:focus,
           flex-direction: column;
 }
 
+.introFlexing {
+  padding-bottom: 5rem;
+}
+
 .flexing,
 .introFlexing,
 .expFlexing,
@@ -1371,10 +1379,19 @@ footer a:focus,
   }
 }
 
+main h2 {
+  -webkit-text-decoration: underline 1px solid black;
+          text-decoration: underline 1px solid black;
+}
+
+.profileContainer h3 {
+  font-size: 3rem;
+}
+
 main h2,
 main h3,
 footer h3 {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 main p {
@@ -1513,7 +1530,7 @@ figcaption {
   left: 0;
   bottom: 0;
   right: 0;
-  padding-top: 20%;
+  padding-top: 33%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)));
   background: linear-gradient(rgba(0, 0, 0, 0.8));
   opacity: 0;
@@ -1613,7 +1630,7 @@ figure:focus figcaption {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 15px;
+  padding-top: 35px;
 }
 
 footer a,
@@ -1714,6 +1731,7 @@ footer a {
   position: relative;
   -webkit-transition: all 0.9s ease-out;
   transition: all 0.9s ease-out;
+  left: 120px;
 }
 
 .label {
@@ -1750,15 +1768,15 @@ footer a {
 }
 
 .p80 {
-  width: 80%;
+  width: calc((100% - 120px) * 0.8);
 }
 
 .p70 {
-  width: 70%;
+  width: calc((100% - 120px) * 0.7);
 }
 
 .p60 {
-  width: 60%;
+  width: calc((100% - 120px) * 0.6);
 }
 
 /* Reference: https://codepen.io/rafaaro/pen/oNvJQyb */
