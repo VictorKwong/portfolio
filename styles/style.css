@@ -401,6 +401,12 @@ header a {
   }
 }
 
+main figcaption a {
+  color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 header a:hover,
 header a:focus,
 footer a:hover,
@@ -408,7 +414,9 @@ footer a:focus,
 main .firstView a:hover,
 main .firstView a:focus,
 .circleDecoration:hover,
-.circleDecoration:focus {
+.circleDecoration:focus,
+main figcaption a:hover,
+main figcaption a:focus {
   color: orange;
 }
 
@@ -1533,9 +1541,9 @@ body {
   border-radius: 50%;
   border: solid white;
   color: white;
-  line-height: 1.8em;
-  width: 1.8em;
-  height: 1.8em;
+  line-height: 2em;
+  width: 2em;
+  height: 2em;
   text-align: center;
   display: inline-block;
   cursor: pointer;
@@ -1570,6 +1578,12 @@ figcaption {
   transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 480px) {
+  figcaption {
+    padding: 10% 5% 0;
+  }
+}
+
 figure:hover figcaption,
 figure:focus figcaption {
   display: block;
@@ -1593,11 +1607,23 @@ figure:focus figcaption {
 }
 
 .emailBox {
-  width: 300px;
+  width: 950px;
   background-color: #EEEEEE;
   border: none;
   height: 30px;
   padding-left: 5px;
+}
+
+@media (max-width: 1200px) {
+  .emailBox {
+    width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .emailBox {
+    width: 250px;
+  }
 }
 
 .breathingRoom {
@@ -1605,7 +1631,7 @@ figure:focus figcaption {
 }
 
 .messageBox {
-  width: 300px;
+  width: 950px;
   height: 170px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1614,6 +1640,18 @@ figure:focus figcaption {
   background-color: #EEEEEE;
   border: none;
   padding: 5px;
+}
+
+@media (max-width: 1200px) {
+  .messageBox {
+    width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .messageBox {
+    width: 250px;
+  }
 }
 
 .emailContainer {

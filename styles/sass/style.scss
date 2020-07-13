@@ -85,6 +85,11 @@ header h4{
     }
 }
 
+main figcaption a{
+    color:white;
+    transition:all 0.3s ease-in-out;;
+}
+
 
 header a:hover,
 header a:focus,
@@ -93,7 +98,9 @@ footer a:focus,
 main .firstView a:hover,
 main .firstView a:focus,
 .circleDecoration:hover,
-.circleDecoration:focus{
+.circleDecoration:focus,
+main figcaption a:hover,
+main figcaption a:focus{
     color:orange;
    
 }
@@ -651,9 +658,9 @@ body{
     border-radius: 50%;
     border: solid white;
     color:white;
-    line-height: 1.8em;
-    width: 1.8em;
-    height: 1.8em;
+    line-height: 2em;
+    width: 2em;
+    height: 2em;
     text-align: center;
     display: inline-block;
     cursor: pointer;
@@ -683,6 +690,10 @@ figcaption {
     background: linear-gradient(rgba(0,0,0,0.8));
     opacity:0;
     transition:all 0.3s ease-in-out;
+    @include responsiveMedia(phone){
+        padding: 10% 5% 0;
+    }
+    
 }
 
 figure:hover figcaption,
@@ -703,11 +714,17 @@ figure:focus figcaption{
 }
 
 .emailBox{
-    width:300px;
+    width: 950px;
     background-color: #EEEEEE;
     border:none;
     height: 30px;
     padding-left: 5px;
+    @include responsiveMedia(tablet){
+        width: 500px;
+    }
+    @include responsiveMedia(smallTablet){
+        width: 250px;
+    }   
 }
 
 .breathingRoom{
@@ -715,7 +732,7 @@ figure:focus figcaption{
 }
 
 .messageBox {
-    width:300px;
+    width: 950px;
     height:170px;
     box-sizing: border-box;
     resize: none;
@@ -723,6 +740,12 @@ figure:focus figcaption{
     background-color: #EEEEEE;
     border:none;
     padding: 5px;
+    @include responsiveMedia(tablet){
+        width: 500px;
+    }
+    @include responsiveMedia(smallTablet){
+        width: 250px;
+    }   
 }
 
 .emailContainer{

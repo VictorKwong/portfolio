@@ -17,7 +17,7 @@ portfolioApp.easterEgg = function (){
 portfolioApp.regularEvent = function (){
   $('.headerMonkey').on('click', function(){
     if($('.addBanana').attr("hidden") === undefined){
-      $('.monkeyWords').html("Feed me a banana, I'm hungry.");
+      $('.monkeyWords').html("Where is my banana? I'm hungry.");
     }
     let randomMove = randomfunction();
     if(!$(this).hasClass("monkeyFly") && !$(this).hasClass("monkeyMove") && !$(this).hasClass("monkeyDunk")){
