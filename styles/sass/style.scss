@@ -755,6 +755,7 @@ figcaption {
     transition:all 0.3s ease-in-out;
     @include responsiveMedia(phone){
         padding: 10% 5% 0;
+        border-radius: 10px 10px 0 0;
     }
     
 }
@@ -924,13 +925,15 @@ footer a{
 .button {
 	min-width: 150px;
 	max-width: 250px;
-	margin: 1em;
-	padding: 1em 2em;
+	padding: 1rem 2rem;
 	border: none;
 	color: inherit;
 	position: relative;
-	z-index: 1;
+    z-index: 1;
+    letter-spacing:0.2rem;
+    cursor: pointer;
 }
+
 .button:focus,
 .button:hover {
 	outline: none;
