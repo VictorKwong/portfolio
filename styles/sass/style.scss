@@ -60,10 +60,6 @@ footer nav ul{
     padding-bottom: 20px;
 }
 
-header ul li,
-footer ul li{
-    list-style-type: none;
-}
 
 header a{
     cursor: pointer;
@@ -99,6 +95,8 @@ main .firstView a:hover,
 main .firstView a:focus,
 .circleDecoration:hover,
 .circleDecoration:focus,
+.circleSmallDecoration:hover,
+.circleSmallDecoration:focus,
 main figcaption a:hover,
 main figcaption a:focus{
     color:orange;
@@ -109,7 +107,9 @@ main .firstView a:focus,
 footer a:hover,
 footer a:focus,
 .circleDecoration:hover,
-.circleDecoration:focus{
+.circleDecoration:focus,
+.circleSmallDecoration:hover,
+.circleSmallDecoration:focus{
     border: solid orange;
 }
 
@@ -145,32 +145,13 @@ footer a:focus,
     100%  {left:0; top:0;}
 }
 
-.monkeyDunk{
-    position: relative;
-    animation-name: Dunk;
-    animation-duration: 4s;
-    animation-timing-function: ease-in-out;
-}
-@keyframes Dunk{
-    0%    {left:0; top:0;}
-    20%   {left:-180px; top:0;}
-    23%   {left:-150px; top:-20px;}
-    25%   {left:-130px; top:0}
-    48%   {left:-20px; top:0}
-    51%   {left:10px; top:-40px;}
-    56%   {left:30px; top:0px;}
-    80%   {left:170px; top:0px;}
-    82%   {left:190px; top:-60px;}
-    88%   {left:200px; top:0px;}
-    95%   {left:220px; top:0px;}
-    100%  {left:0; top:0;}
-}
 .monkeyFly{
     position: relative;
     animation-name: Fly;
     animation-duration: 7s;
     animation-timing-function: ease-in-out;
 }
+
 @keyframes Fly{
     0%    {left:0; top:0;}
     5%   {left:0; top:0;}
@@ -185,6 +166,30 @@ footer a:focus,
     90%   {left:0px; top:-40px;}
     93%   {left:0px; top:-5px;}
     100%  {left:0; top:0;}
+}
+
+.monkeyKing{
+    position: relative;
+    animation-name: King;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes King{
+    0%    {left:0; top:0;}
+    42%   {left:0; top:0}
+    48%   {left:70px; top:0}
+    53%   {left:-1500px; top:-10px;}
+    54%   {left:-1500px; top:-1000px;}
+    55%   {left:4000px; top:-1000px;}
+    56%   {left:4000px; top:-40px;}
+    57%   {left:1200px; top:-40px;}
+    70%   {left:200px; top:-50px;}
+    79%   {left:0px; top:-30px;}
+    82%   {left:0px; top:-35px;}
+    86%   {left:0px; top:-30px;}
+    90%   {left:0px; top:-35px;}
+    94%   {left:0px; top:-30px;}
+    100%   {left:0; top:0;} 
 }
 
 
@@ -473,6 +478,7 @@ footer a:focus,
     border-radius: 50%;
     display: inline-block;
     background-color: #F6C62B;
+    margin-bottom: 20px;
 }
 
 
@@ -504,6 +510,10 @@ footer a:focus,
         width: 90%;
         margin: 0 auto;
     }
+    @include responsiveMedia(smallTablet){
+        width: initial;
+    }
+
 }
 
 .textUpper{
@@ -514,11 +524,72 @@ footer a:focus,
     text-align: center;
 }
 
-.skillBox{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.backgroundControl{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 }
+
+.skillBox{
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto; 
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.skillCard{
+    width:90px;
+    height:90px;
+    margin: 0 auto;
+}
+
+.skillCardInside{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 50%;
+    background-color: #F6C62B;
+}
+
+.skillCard:hover .skillCardInside{
+    transform: rotateY(180deg);
+}
+
+.skillCardFront, 
+.skillCardBack{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    background-color: #F6C62B;
+}
+
+.skillCardBack{
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.devicon-html5-plain,
+.devicon-css3-plain,
+.devicon-sass-original,
+.devicon-javascript-plain,
+.devicon-jquery-plain,
+.devicon-react-original,
+.devicon-github-plain,
+.devicon-nodejs-plain{
+    font-size: 5rem;
+}
+
 
 .introFlexing{
     padding-bottom: 5rem;
@@ -575,7 +646,6 @@ body{
 
 /* main */
 .aboutSectionHide{
-    opacity:0;
     width: 50%;
     @include responsiveMedia(smallTablet){
         width: initial;
@@ -585,15 +655,6 @@ body{
     }
 }
 
-/* show animation */
-.showAbout{
-    opacity:1;
-    animation:fadeInLeft;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in-out;
-/*     -webkit-transition: all 0.9s ease-out;
-    transition: all 0.9s ease-out; */
-}
 
 .orderPlace{
     order: 2;
@@ -635,7 +696,7 @@ body{
 }
 
 .topping{
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .expTitle{
@@ -656,17 +717,17 @@ body{
 
 
 .gitDeco{
-    font-size:1em;
+    font-size:3rem;
     border-radius: 50%;
     border: solid white;
     color:white;
-    line-height: 2em;
-    width: 2em;
-    height: 2em;
+    width: 6rem;
+    height: 6rem;
     text-align: center;
     display: inline-block;
     cursor: pointer;
     transition:0.3s;
+    position: relative;
 }
 
 .gitDeco:hover,
@@ -706,12 +767,14 @@ figure:focus figcaption{
 
 .emailTitle{
     display: inline-block;
-    width: 100px;
-    text-align: right;
-    padding-right: 20px;
-    @include responsiveMedia(phone){
-        display: flex;
-        padding-bottom: 5px;
+    width: 950px;
+    text-align: left;
+    margin-top: 10px;
+    @include responsiveMedia(tablet){
+        width: 500px;
+    }
+    @include responsiveMedia(smallTablet){
+        width: 250px;
     }
 }
 
@@ -720,7 +783,7 @@ figure:focus figcaption{
     background-color: #EEEEEE;
     border:none;
     height: 30px;
-    padding-left: 5px;
+    padding-left: 10px;
     @include responsiveMedia(tablet){
         width: 500px;
     }
@@ -730,7 +793,7 @@ figure:focus figcaption{
 }
 
 .breathingRoom{
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .messageBox {
@@ -741,7 +804,7 @@ figure:focus figcaption{
     color: #483c0c;
     background-color: #EEEEEE;
     border:none;
-    padding: 5px;
+    padding: 5px 0 0 10px;
     @include responsiveMedia(tablet){
         width: 500px;
     }
@@ -785,18 +848,33 @@ figure:focus figcaption{
 
 footer a,
 .circleDecoration{
-    font-size:1.8em;
+    font-size:3rem;
     border-radius: 50%;
     border: solid #483c0c;
     color:#483c0c;
-    line-height: 1.8em;
-    width: 1.8em;
-    height: 1.8em;
+    width: 6rem;
+    height: 6rem;
     text-align: center;
     display: inline-block;
     cursor: pointer;
     transition:0.3s;
+    position: relative;
 }
+
+.circleSmallDecoration{
+    font-size:2rem;
+    border-radius: 50%;
+    border: solid #483c0c;
+    color:#483c0c;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition:0.3s;
+    position: relative;
+}
+
 
 footer a{
     margin:0 20px;
@@ -809,7 +887,6 @@ footer a{
     display: flex;
     flex-direction: column;
     text-align: center;
-    
 }
 
 .boxContainerTop{
@@ -842,66 +919,6 @@ footer a{
     text-align: center;
 }
 
-/* progress bar */
-.percentage{
-    padding:10px 0;
-    opacity:0;
-    position: relative;
-}
-  
-.animation{
-    height:30px;
-    background:#EEEEEE;
-}
-
-.animationBar{
-    height:30px;
-    width:0;
-    background:#f6c62b;
-    position:relative;
-    -webkit-transition: all 0.9s ease-out;
-    transition: all 0.9s ease-out;
-    left:120px;
-}
-
-.label{
-    position: absolute;
-    right: 10px;
-    height: 30px;
-    line-height: 30px;
-    z-index: 1;
-}
-
-.labelTitle{
-    position: absolute;
-    height: 30px;
-    line-height: 30px;
-    z-index: 1;
-    display:inline-block;
-    width:120px;
-    text-align: center;
-    background-color: #fcec37;
-}
-
-.show{
-    opacity:1;
-    animation: comeIn 0.8s ease fadeInLeft;
-    -webkit-transition: all 0.9s ease-out;
-    transition: all 0.9s ease-out;
-}
-.comeIn:nth-child(odd) {
-    animation-duration: 0.6s; /* So they look staggered */
-}
-
-.p80{
-    width: calc((100% - 120px) * 0.8);
-}
-.p70{
-    width: calc((100% - 120px) * 0.7);
-}
-.p60{
-    width: calc((100% - 120px) * 0.6);
-}
 /* Reference: https://codepen.io/rafaaro/pen/oNvJQyb */
 /* button */
 .button {
@@ -964,28 +981,29 @@ footer a{
 .buttonDeco{
     width:200px;
     height:50px;
-    padding: 1.5em auto;
     background-color: #FCEC37;
     border-radius: 3px;
     text-align: center;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.2rem;
     transition: all 0.3s ease-in-out;
     border: 1px solid black;
+    margin-bottom: 20px;
 }
 .buttonDeco:hover{
-    letter-spacing: 0.5em;
+    letter-spacing: 0.5rem;
     background-color: #F6C62B;
-    font-size: 1.9rem;
+    font-size: 2rem;
     cursor: pointer;
+    font-weight: bolder;
 }
 
 .submitWidth{
-    width:1050px;
+    width:950px;
     @include responsiveMedia(tablet){
-        width: 600px;
+        width: 500px;
     }
     @include responsiveMedia(smallTablet){
-        width: 350px;
+        width: 250px;
     }   
     @include responsiveMedia(phone){
         width: 250px;

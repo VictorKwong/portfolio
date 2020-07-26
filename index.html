@@ -5,9 +5,11 @@
     <meta name="description" content="Victor Wong, portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Wong</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Play&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Favicon -->
     <link type="image/png" href="./images/favicon-16x16.png" rel="icon">
     <link rel="stylesheet" href="./styles/style.css">
@@ -16,7 +18,7 @@
     <div class="pageFix">
         <div class="allWrapping">
             <div class="boxContainerTop">
-                <a href="#home" class="circleDecoration"><i class="fas fa-angle-double-up"></i></a>
+                <a href="#home" class="circleSmallDecoration"><i class="fas fa-angle-double-up backgroundControl"></i></a>
             </div>
             <header class="headerIn">
                 <div class="wrapper headerContainer">
@@ -79,12 +81,12 @@
                         </div>
                         <div>
                             <img src="images/monkey.png" alt="monkey" class="headerMonkey">
-                            <h1>I'm Victor.</h1>
+                            <h1>I'm Victor</h1>
                             <h3>a web developer</h3>
-                            <p class="monkeyWords">Click and feed my monkey!</p>
-                            <button class="addBanana buttonDeco breathingRoom">Feed me</button>
+                            <p class="monkeyWords">Click my monkey!</p>
+                            <button class="addBanana buttonDeco">Feed me</button>
                             <div>
-                                <a href="#about" class="circleDecoration"><i class="fas fa-angle-down"></i></a>
+                                <a href="#about" class="circleDecoration"><i class="fas fa-angle-down backgroundControl"></i></a>
                             </div>
                         </div>
                     </div>
@@ -93,69 +95,149 @@
                     <div class="wrapper">
                         <h2 class="textUpper skillP">About</h2>
                         <div class="introFlexing">
-                            <div class="aboutSectionHide">
+                            <div class="aboutSectionHide" data-aos="fade-right">
                                 <img src="images/monkeyProfile.png" alt="Monkey head image" class="monkeyHead">
                                 <p><img src="images/banana.png" alt="banana drawing"> Front End Developer</p>
                                 <p><img src="images/banana.png" alt="banana drawing"> Live and work in Toronto City</p>
                                 <p><img src="images/banana.png" alt="banana drawing"> Game Boy - Pokemon Fan</p>
-                                <p><img src="images/banana.png" alt="banana drawing"> Seeking job opportunity</p>
+                                <p><img src="images/banana.png" alt="banana drawing"> Currently seeking job opportunities</p>
                             </div>
                             <div class="widthHalf">
-                                <div class="skillBox">
-                                    <div class="percentage" data-percentage="80">
-                                        <h3 class="labelTitle">HTML</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                        <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="80">
-                                        <h3 class="labelTitle">JavaScript</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                        <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="70">
-                                        <h3 class="labelTitle">CSS</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                        <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="80">
-                                        <h3 class="labelTitle">jQuery</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                        <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="70">
-                                        <h3 class="labelTitle">React</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                        <div class="animationBar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="percentage" data-percentage="60">
-                                        <h3 class="labelTitle">Node.js</h3>
-                                        <div class="label"></div>
-                                        <div class="animation">
-                                        <div class="animationBar"></div>
-                                        </div>
-                                    </div>
+                                <div >
+                                    <nav>
+                                        <ul class="skillBox" data-aos="fade-left">
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-html5-plain backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/html5Pixel.png" alt="HTML5 pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">HTML5</p>                                            
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-css3-plain backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/css3Pixel.png" alt="CSS3 pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">CSS3</p>                                            
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-sass-original backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/sassPixel.png" alt="SASS pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">SASS</p>                                            
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-javascript-plain backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/javascriptPixel.png" alt="JavaScript pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">JavaScript</p>                                            
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-jquery-plain backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/jqueryPixel.png" alt="jQuery pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">jQuery</p>         
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-react-original backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/reactPixel.png" alt="React pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">React</p>         
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <img src="./images/firebase.png" alt="Firebase icon" class="backgroundControl">
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/firebasePixel.png" alt="Firebase pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">Firebase</p>         
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-github-plain backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/githubPixel.png" alt="Github pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">Github</p>         
+                                            </li>
+                                            <li>
+                                                <div class="skillCard">
+                                                    <div class="skillCardInside">
+                                                        <div class="skillCardFront">
+                                                            <i class="devicon-nodejs-plain backgroundControl"></i>
+                                                        </div>
+                                                        <div class="skillCardBack">
+                                                            <img src="./images/nodejsPixel.png" alt="Node.js pixel icon" class="backgroundControl">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="skillP">Node.js</p>         
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="greenPaint">
-                    <div class="wrapper proFlexing colorPad">
+                    <div class="wrapper proFlexing colorPad" data-aos="fade-right">
                     <video src="./images/victor.mp4" alt="profile image" muted="" autoplay="" loop="" class="profilefill"></video>
                         <div class="profileContainer">
                             <h3>Profile<img src="./images/bananaShine.png" alt="Another banana drawing"></h3>    
-                            <p>Hello😄! I have graduated at Juno College and also have a background of Electrical Engineer.I used HTML, SCSS, jQuery and JavaScript to build up this website! Please don't forget to feed my monkey!</p>
-                            <p>Fun fact: I am a big fan of Mr.Bean and I love watching his show. Banana is my favourite fruit!</p>
+                            <p>Hello😄! I’m a developer that recently graduated from Juno College’s Immersive Web Development program. I also have a background in Electrical Engineering.</p>
+                            <p>I used HTML, SCSS, jQuery and JavaScript to build up this website!</p>
+                            <p>Fun fact: I am a big fan of Game Boy Pokémon, Mr. Bean, and bananas (Please don’t forget to feed my monkey!).</p>
                         </div>
                     </div>
                 </section>
@@ -164,40 +246,40 @@
                         <div class="expTitle">
                             <h2 class="textUpper"><img src="images/palmTreeSec.png" alt="Another palm tree">project<img src="images/palmTreeSec.png" alt="Another palm tree"></h2>
                         </div>
-                            <div class="expFlexing roundUp">
+                            <div class="expFlexing roundUp" data-aos="fade-right">
                                     <figure>
                                         <img src="images/questionImpossible.png" alt="Question Impossible Image" class="imgfill">
                                         <figcaption>
                                             <h3>Dream Team</h3>
                                             <p><a href="https://www.tejlehal.com/" target="_blank">Tej Lehal</a></p>
-                                            <a href="https://github.com/victorTejProjectFour/theDreamTeamProjectFour" target="_blank" class="gitDeco"><i class="fab fa-github"></i></a>
+                                            <a href="https://github.com/victorTejProjectFour/theDreamTeamProjectFour" target="_blank" class="gitDeco"><i class="fab fa-github backgroundControl"></i></a>
                                         </figcaption>
                                     </figure>
                                 <div class="appDescription">
                                     <h3>Question Impossible</h3>
-                                    <p>A game similar to Are You Smarter than a 5th Grader? Unique catagories and questions make you concentrate on the challenge.</p>
+                                    <p>A game idea from Are You Smarter than a 5th Grader? Featuring unique categories and questions.</p>
                                     <p>SCSS | JavaScript</p>
                                     <a href="https://victortejprojectfour.github.io/theDreamTeamProjectFour/" target="_blank" class="button buttonAntiman textUpper">visit</a>
                                 </div>
                             </div>
-                            <div class="expFlexing roundUp">
+                            <div class="expFlexing roundUp" data-aos="fade-left">
                                 <div class="orderPlace">
                                     <figure>
                                         <img src="images/pokemonBattle.png" alt="Pokemon Battle Image" class="imgfill">
                                         <figcaption>
-                                            <h3>Project Five</h3>
-                                            <a href="https://github.com/VictorKwong/victor-wong-project-five" target="_blank" class="gitDeco"><i class="fab fa-github"></i></a>
+                                            <h3>Pikachu!</h3>
+                                            <a href="https://github.com/VictorKwong/victor-wong-project-five" target="_blank" class="gitDeco"><i class="fab fa-github backgroundControl"></i></a>
                                         </figcaption>
                                     </figure>
                                 </div>
                                 <div class="appDescription">
                                     <h3>Pokémon Battle</h3>
-                                    <p>Choose your favourite Pokémon. Challenge the Gym Leaders to collect all eight badge. Inspired by Pokémon yellow version.</p>
+                                    <p>Choose your favourite Pokémon and challenge gym leaders to collect all eight badges. Inspired by Pokémon yellow.</p>
                                     <p>JavaScript | API</p>
                                     <a href="https://victorkwong.github.io/victor-wong-project-five/" target="_blank" class="button buttonAntiman textUpper">visit</a>
                                 </div>
                             </div>
-                            <div class="expFlexing roundUp">
+                            <div class="expFlexing roundUp" data-aos="fade-right">
                                     <figure>
                                         <img src="images/podcastCommuter.png" alt="Podcast Commuter Image" class="imgfill">
                                         <figcaption>
@@ -205,15 +287,15 @@
                                             <p><a href="https://www.rothecoder.com/" target="_blank">Rojhan Paydar</a></p>
                                             <p><a href="https://anhthuydang.com/" target="_blank">Anh Thuy Dang</a></p>
                                             <p><a href="https://cliffstonge.com/" target="_blank">Cliff St-Onge</a></p>
-                                            <a href="https://github.com/TeamJuicyWatermelon/PodcastCommuter" target="_blank" class="gitDeco"><i class="fab fa-github"></i></a>
+                                            <a href="https://github.com/TeamJuicyWatermelon/PodcastCommuter" target="_blank" class="gitDeco"><i class="fab fa-github backgroundControl"></i></a>
                                         </figcaption>
                                     </figure>
                                 <div class="appDescription">
                                     <h3>Podcast Commuter</h3>
-                                    <p>An app that suggests a podcast to listen to based on the length of your journey and helps you decide if you should walk or bike</p>
+                                    <p>An app that suggests a podcast to listen to based on the length of your journey and helps you decide if you should walk or bike.</p>
                                     <p>React | API | CSS</p>
                                     <a href="https://teamjuicywatermelon.github.io/PodcastCommuter/" target="_blank" class="button buttonAntiman textUpper">visit</a>
-                            </div>
+                                </div>
                             </div>
                     </div>
                 </section>
@@ -221,16 +303,12 @@
                     <div class="wrapper">
                         <form action="https://formspree.io/mvowwjkg" method="POST" class="formBox">
                             <h2 class="textUpper"><img src="images/palmTree.png" alt="palm Tree">contact<img src="images/palmTree.png" alt="palm Tree"></h2>
-                            <div class="breathingRoom">
-                                <label for="_replyto" class="emailTitle">Your Email</label><input type="email" name="_replyto" id="_replyto" aria-label="Your email" class="emailBox" placeholder="Enter email" required>
-                            </div>
-                            <div class="breathingRoom">
-                                <label for="_subject" class="emailTitle">Subject</label><input type="text" id="_subject" name="_subject" class="emailBox" placeholder="Subject" required>
-                            </div>
-                            <div class="messFlexing breathingRoom">
-                                <label for="message" class="emailTitle">Message</label>
-                                <textarea name="message" id="message" aria-label="Your message" class="messageBox" placeholder="Message" required></textarea>
-                            </div>
+                            <label for="_replyto" class="emailTitle breathingRoom">Your Email</label>
+                            <input type="email" name="_replyto" id="_replyto" aria-label="Your email" class="emailBox breathingRoom" placeholder="Enter email" required>
+                            <label for="_subject" class="emailTitle breathingRoom">Subject</label>
+                            <input type="text" id="_subject" name="_subject" class="emailBox" placeholder="Subject" required>
+                            <label for="message" class="emailTitle breathingRoom">Message</label>
+                            <textarea name="message" id="message" aria-label="Your message" class="messageBox breathingRoom" placeholder="Message" required></textarea>
                             <button type="submit" class="buttonDeco submitWidth">Submit</button>
                         </form>
                     </div>
@@ -243,10 +321,10 @@
                 <div class="boxContainer">
                     <nav>
                         <ul>
-                            <li><a href="https://twitter.com/VictorkaiWong1" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="https://github.com/VictorKwong?tab=repositories" target="_blank"><i class="fab fa-github"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/victorkaihong/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="https://medium.com/@VictorkaiWong1" target="_blank"><i class="fab fa-medium"></i></a></li>
+                            <li><a href="https://twitter.com/VictorkaiWong1" target="_blank"><i class="fab fa-twitter backgroundControl"></i></a></li>
+                            <li><a href="https://github.com/VictorKwong?tab=repositories" target="_blank"><i class="fab fa-github backgroundControl"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/victorkaihong/" target="_blank"><i class="fab fa-linkedin backgroundControl"></i></a></li>
+                            <li><a href="https://medium.com/@VictorkaiWong1" target="_blank"><i class="fab fa-medium backgroundControl"></i></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -264,4 +342,9 @@
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ 
+        mirror: true,
+        duration: 500,
+        offset: 200 });</script>
 </html>

@@ -48,6 +48,11 @@ header li a{
     font-family: 'Play', sans-serif;
 }
 
+
+ul li{
+    list-style-type: none;
+}
+
 :root {
     --animate-delay: 0s;
     --animate-repeat: 0;

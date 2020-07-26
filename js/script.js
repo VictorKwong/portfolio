@@ -20,7 +20,7 @@ portfolioApp.regularEvent = function (){
       $('.monkeyWords').html("Where is my banana? I'm hungry.");
     }
     let randomMove = randomfunction();
-    if(!$(this).hasClass("monkeyFly") && !$(this).hasClass("monkeyMove") && !$(this).hasClass("monkeyDunk")){
+    if(!$(this).hasClass("monkeyFly") && !$(this).hasClass("monkeyMove") && !$(this).hasClass("monkeyKing")){
       if(randomMove <= 0.33){
         $(this).addClass("monkeyFly");
         eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFly.png"); clearTimeout(eventOne)}, 350);
@@ -38,10 +38,19 @@ portfolioApp.regularEvent = function (){
         eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventFour)}, 3000);
         event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove"); clearTimeout(event)}, 3000);
       }else if(randomMove > 0.66){
-        $(this).addClass("monkeyDunk");
-        eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventOne)}, 800);
-        eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventThr)}, 3800);
-        event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyDunk"); clearTimeout(event)}, 4000);
+        $(this).addClass("monkeyKing");
+        eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT1.png"); clearTimeout(eventOne)}, 500);
+        eventTwo = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT2.png"); clearTimeout(eventTwo)}, 1000);
+        eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT3Reverse.png"); clearTimeout(eventThr)}, 1500);
+        eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4Reverse.png"); clearTimeout(eventFour)}, 2300);
+        eventFive = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4.png"); clearTimeout(eventFive)}, 3000);
+        eventSix = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4Reverse.png"); clearTimeout(eventSix)}, 3300);
+        eventSev = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4.png"); clearTimeout(eventSev)}, 3600);
+        eventEig = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT5.png"); clearTimeout(eventEig)}, 4000);
+        eventNine = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT6.png"); clearTimeout(eventNine)}, 5300);
+        eventTen = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTen)}, 10000);
+        event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing"); clearTimeout(event)}, 10000);
+
       }
     }
   });
@@ -99,100 +108,24 @@ portfolioApp.timeZone = function (){
   }
 }
 
+window.onscroll = function (){portfolioApp.scrolling()};
+
+portfolioApp.scrolling = function (){
+  if (window.scrollY >  20) {
+    $('.boxContainerTop').show(300).fadeIn(300);
+  } else {
+    $('.boxContainerTop').hide(300).fadeOut(300);
+  }
+}
 
 
-//Reference https://codepen.io/kcire815/pen/PNwZXQ
 portfolioApp.init = () => {
   portfolioApp.timeZone();
   portfolioApp.regularEvent();
   portfolioApp.easterEgg();
-
-    let Animation = function(animationBar, percentage) {
-  
-      this.animationBar = animationBar;
-      this.percentage = percentage;
-      this.animationArray = null;
-      this.animationOffset = null;
-      this.labelArray = null;
-      this.percentageArray = null;
-      this.index = 0;
-  
-      this.initialize();
-  
-    };  
-  
-    Animation.prototype.initialize = function() {
-  
-      this.animationArray = document.getElementsByClassName(this.percentage);
-  
-      if (this.animationOffset === null){
-        this.animationOffset = [];
-      }
-      if (this.labelArray === null){
-        this.labelArray = [];
-      }
-      if (this.percentageArray === null){
-        this.percentageArray = [];
-      }
-
-      this.setUpElements();
-    };
-  
-    Animation.prototype.setUpElements = function() {
-  
-      for (var i = 0; i < this.animationArray.length; i++) {
-        let elem = this.animationArray[i],
-          offset = elem.offsetTop + document.getElementsByClassName(this.percentage)[0].clientHeight,
-          percentage = $(this.animationArray[i]).data(this.percentage);
-        this.animationOffset.push(offset);
-        this.percentageArray.push(percentage);
-  
-        $(this.animationArray[i]).find('.label').html(percentage + '%');
-      }
-  
-      this.attachListeners();
-    }
-  
-    Animation.prototype.attachListeners = function() {
-  
-      $(window).on('scroll', this.onWindowScroll.bind(this));
-    };
-  
-    Animation.prototype.onWindowScroll = function() {
-      /* about section */
-      let imageHeight = $('.aboutSectionHide').height();
-      if (window.pageYOffset >  imageHeight + 100) {
-          $('.aboutSectionHide').addClass("showAbout");
-      }
+  portfolioApp.scrolling();
       /*scroll to top*/
-      if (window.pageYOffset >  20) {
-          $('.boxContainerTop').show();
-      } else {
-          $('.boxContainerTop').hide();
-      }
-      for (var i = 0; i < this.animationArray.length; i++) {
-        if (window.pageYOffset >= this.animationOffset[this.index] - window.innerHeight) {
-          this.showElement();
-          this.index++;
-        }
-      }
-    };
-  
-    Animation.prototype.showElement = function() {
-      var element = document.getElementsByClassName(this.percentage)[this.index];
-      element.className += ' show';
-      this.animateBar(element, this.percentageArray[this.index]);
-    }
-  
-    Animation.prototype.animateBar = function(element, width) {
-  
-      var $element = $(element),
-        className = ' p' + width;
-  
-      $element.find(this.animationBar).addClass(className);
-    }
-  
-    new Animation('.animationBar', 'percentage');
-  };
+
+}
 
   $(document).ready(portfolioApp.init());
