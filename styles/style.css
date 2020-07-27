@@ -1898,7 +1898,7 @@ footer a {
   max-width: 250px;
   padding: 1rem 2rem;
   border: none;
-  color: inherit;
+  color: black;
   position: relative;
   z-index: 1;
   letter-spacing: 0.2rem;
