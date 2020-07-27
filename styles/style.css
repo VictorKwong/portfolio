@@ -281,13 +281,6 @@ ul li {
   list-style-type: none;
 }
 
-@media screen and (max-width: 480px) {
-  [data-aos-delay] {
-    -webkit-transition-delay: 0 !important;
-            transition-delay: 0 !important;
-  }
-}
-
 header h4 {
   font-family: 'Chewy', cursive;
   width: 50%;
