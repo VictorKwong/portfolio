@@ -1,10 +1,11 @@
 const portfolioApp = {};
 
+//Generate random numbers from 0 to 1. Ex. "0.23"
 randomfunction = () => {
   return (Math.random() * 1)
 }
 
-
+//Easter Egg at copy rights
 portfolioApp.easterEgg = function (){
   $('.textPosition').on('click', function(){
       if($('.textPosition > p').text() === '🙈 You found me again! 🙉'){
@@ -14,6 +15,8 @@ portfolioApp.easterEgg = function (){
       }
   });
 }
+
+//Monkey moves when user click
 portfolioApp.regularEvent = function (){
   $('.headerMonkey').on('click', function(){
     if($('.addBanana').attr("hidden") === undefined){
@@ -50,34 +53,37 @@ portfolioApp.regularEvent = function (){
         eventNine = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT6.png"); clearTimeout(eventNine)}, 5300);
         eventTen = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTen)}, 10000);
         event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing"); clearTimeout(event)}, 10000);
-
       }
     }
   });
+
+  //smooth scroll when user click the arrow button
   $(function () {
     $('a').smoothScroll({
         speed: 300
     });
   });
+
+  //Refresh page when click the "VICTOR" on the upper left coner
   $('h4').on('click',function(){
     location.reload(true);
   });
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDsTxFhFGuzRv_NbPcw2a5zIVxDNqVpOfs",
-  authDomain: "portfolio-b73ae.firebaseapp.com",
-  databaseURL: "https://portfolio-b73ae.firebaseio.com",
-  projectId: "portfolio-b73ae",
-  storageBucket: "portfolio-b73ae.appspot.com",
-  messagingSenderId: "93568968163",
-  appId: "1:93568968163:web:cdaa18a0cf442de2d96cd6"
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyDsTxFhFGuzRv_NbPcw2a5zIVxDNqVpOfs",
+    authDomain: "portfolio-b73ae.firebaseapp.com",
+    databaseURL: "https://portfolio-b73ae.firebaseio.com",
+    projectId: "portfolio-b73ae",
+    storageBucket: "portfolio-b73ae.appspot.com",
+    messagingSenderId: "93568968163",
+    appId: "1:93568968163:web:cdaa18a0cf442de2d96cd6"
+  };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 
-const dbRef = firebase.database().ref();  
-const userId = `-MBlboEQaOw7kXBs1I8y`;
+  const dbRef = firebase.database().ref();  
+  const userId = `-MBlboEQaOw7kXBs1I8y`;
 
 
   $('.addBanana').on('click',function(){
@@ -87,15 +93,17 @@ const userId = `-MBlboEQaOw7kXBs1I8y`;
       const upvoteMod = portfolioApp.comma(upvote); 
       $('.monkeyWords').html(`Thanks for feeding me. I have ${upvoteMod} Bananas!<img src="images/banana.png" alt="banana">`)
       return firebase.database().ref(`Count/${userId}`).set(upvote);
+    })
   })
-})
 
 }
+
 
 portfolioApp.comma = function (num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+// Time zone to generate morning, afternoon or evening
 portfolioApp.timeZone = function (){
   $('.wordContainerMorn,.wordContainerAfte,.wordContainerEven').hide();
   today = new Date();
@@ -125,7 +133,6 @@ portfolioApp.init = () => {
   portfolioApp.easterEgg();
   portfolioApp.scrolling();
       /*scroll to top*/
-
 }
 
   $(document).ready(portfolioApp.init());

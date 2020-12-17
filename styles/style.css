@@ -1314,6 +1314,13 @@ footer a:focus,
   display: inline-block;
   background-color: #F6C62B;
   margin-bottom: 20px;
+  -webkit-transition: aLL 0.3s ease-in-out;
+  transition: aLL 0.3s ease-in-out;
+}
+
+.monkeyHead:hover,
+.monkeyHead:focus {
+  background-color: #fff5d7;
 }
 
 .profileContainer {
@@ -1415,9 +1422,11 @@ footer a:focus,
           box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   background-color: #F6C62B;
+  overflow: visible !important;
 }
 
-.skillCard:hover .skillCardInside {
+.skillCard:hover .skillCardInside,
+.skillCard:focus .skillCardInside {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
@@ -1954,14 +1963,16 @@ footer a {
   background: #FCEC37;
 }
 
-.buttonAntiman:hover::before {
+.buttonAntiman:hover::before,
+.buttonAntiman:focus::before {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
   background: #F6C62B;
 }
 
-.buttonAntiman:hover::after {
+.buttonAntiman:hover::after,
+.buttonAntiman:focus::after {
   opacity: 0;
   -webkit-transform: scale3d(0.8, 0.8, 1);
           transform: scale3d(0.8, 0.8, 1);
