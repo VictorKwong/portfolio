@@ -9,7 +9,7 @@ randomfunction = () => {
 portfolioApp.easterEgg = function (){
   $('.textPosition').on('click', function(){
       if($('.textPosition > p').text() === '🙈 You found me again! 🙉'){
-        $('.textPosition > p').html('Victor Wong © 2020');
+        $('.textPosition > p').html('Victor Wong © 2022');
       }else{
         $('.textPosition > p').html('🙈 You found me again! 🙉');
       }
