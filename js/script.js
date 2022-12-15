@@ -65,7 +65,7 @@ portfolioApp.regularEvent = function (){
   });
 
   //Refresh page when click the "VICTOR" on the upper left coner
-  $('h4').on('click',function(){
+  $('.javaRefresh').on('click',function(){
     location.reload(true);
   });
 
