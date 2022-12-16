@@ -27,6 +27,13 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
     top:-1000%;
 }
 
+/* Header Icon */
+.headerIcon{
+  width: 21px;
+  height: 21px;
+  vertical-align: middle;
+}
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
