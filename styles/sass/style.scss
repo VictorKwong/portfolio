@@ -26,6 +26,7 @@
   vertical-align: middle;
 }
 
+
 header h4{
     font-family: 'Chewy', cursive;
     width:50%;
@@ -104,7 +105,7 @@ header h4{
 
 main figcaption a{
     color:white;
-    transition:all 0.3s ease-in-out;;
+    transition:all 0.3s ease-in-out;
 }
 
 
@@ -120,8 +121,7 @@ main .firstView a:focus,
 .circleSmallDecoration:focus,
 main figcaption a:hover,
 main figcaption a:focus{
-    color:orange;
-   
+    color:orange;  
 }
 main .firstView a:hover,
 main .firstView a:focus,
@@ -137,6 +137,34 @@ footer a:focus,
 .headerMonkey{
     cursor: pointer;
 }
+
+// Line CSS
+header li a{
+    position: relative;
+}
+
+header li a:hover::before{
+    z-index: -1;
+    right: 0;
+    transition: right 0.2s ease-out;
+}
+
+header li a::after{
+    left:0;
+    bottom: 0;
+    right: 100%;
+    background-color: orange;
+    height:1px;
+    position: absolute;
+    content: '';
+    transition: right 0.2s ease-out;
+}
+
+header li a:hover:after{
+    right: 0;
+    transition: right 0.2s ease-out;
+}
+// End Line CSS
 
 
 .blockRight{

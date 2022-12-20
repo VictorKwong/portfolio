@@ -449,6 +449,35 @@ footer a:focus,
   cursor: pointer;
 }
 
+header li a {
+  position: relative;
+}
+
+header li a:hover::before {
+  z-index: -1;
+  right: 0;
+  -webkit-transition: right 0.2s ease-out;
+  transition: right 0.2s ease-out;
+}
+
+header li a::after {
+  left: 0;
+  bottom: 0;
+  right: 100%;
+  background-color: orange;
+  height: 1px;
+  position: absolute;
+  content: '';
+  -webkit-transition: right 0.2s ease-out;
+  transition: right 0.2s ease-out;
+}
+
+header li a:hover:after {
+  right: 0;
+  -webkit-transition: right 0.2s ease-out;
+  transition: right 0.2s ease-out;
+}
+
 .blockRight {
   width: 50%;
   display: -webkit-box;
