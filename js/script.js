@@ -116,6 +116,7 @@ portfolioApp.timeZone = function (){
   }
 }
 
+//Back to Top
 window.onscroll = function (){portfolioApp.scrolling()};
 
 portfolioApp.scrolling = function (){
