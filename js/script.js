@@ -64,7 +64,7 @@ portfolioApp.regularEvent = function (){
     });
   });
 
-  //Refresh page when click the "VICTOR" on the upper left coner
+  //Refresh page when click the "VICTOR" on the upper left corner
   $('.javaRefresh').on('click',function(){
     location.reload(true);
   });
@@ -126,6 +126,15 @@ portfolioApp.scrolling = function (){
     $('.boxContainerTop').hide(300).fadeOut(300);
   }
 }
+
+$('#light_dark_mode').on('click',function(){
+  console.log('Test');  
+  $('.header-box-dark-mode').toggleClass("header-box-light-mode");
+  $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
+  $('.header-text-dark-mode').toggleClass("header-text-light-mode");
+  $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
+  
+})
 
 
 portfolioApp.init = () => {
