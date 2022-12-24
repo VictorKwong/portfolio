@@ -133,6 +133,8 @@ $('#light_dark_mode').on('click',function(){
   $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
   $('.header-text-dark-mode').toggleClass("header-text-light-mode");
   $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
+  $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
+  
   
 })
 

@@ -57,7 +57,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #F7DF8E;
     transition: 0.4s;
 }
 .slider:before {
@@ -67,21 +67,23 @@
     height: 12px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: #E9AB0E;
     transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #0c283f;
 }
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px rgb(46, 46, 141);
 }
   
 input:checked + .slider:before {
     transform: translateX(20px);
+    background-color: #108EEE;
     @include responsiveMedia(phone){
         transform: translateX(30px);
+        background-color: #108EEE;
     }
 }
 
@@ -146,7 +148,19 @@ footer nav ul{
     justify-content: center;
     padding-bottom: 20px;
 }
-
+.circleSmallDecoration{
+    font-size:2rem;
+    border-radius: 50%;
+    border: solid #483c0c;
+    color:#483c0c;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition:0.3s;
+    position: relative;
+}
 // Light Dark Theme
 // Dark
 .header-box-dark-mode,
@@ -160,10 +174,20 @@ footer nav ul{
     color:whitesmoke;
     transition: 0.3s color ease-out;
 }
+.header-circle-dark-mode{
+    border: solid #483c0c;
+    color:#483c0c;
+    transition:0.3s;
+}
+.header-circle-dark-mode:hover{
+    border: solid orange;
+    color:orange;
+}
+
 // Light
 .header-box-light-mode,
 .slide-menu-light-mode{
-    background-color: whitesmoke;
+    background-color: #DEE4E7;
     transition: 0.3s background-color ease-out;
 }
 
@@ -171,6 +195,10 @@ footer nav ul{
 .header-hamburger-light-mode{
     color:#121f1f;
     transition: 0.3s color ease-out;
+}
+.header-circle-light-mode{
+    border: solid #DEE4E7;
+    color:#DEE4E7;
 }
 // End Light Dark Theme
 header a,
@@ -1009,21 +1037,6 @@ footer a,
     transition:0.3s;
     position: relative;
 }
-
-.circleSmallDecoration{
-    font-size:2rem;
-    border-radius: 50%;
-    border: solid #483c0c;
-    color:#483c0c;
-    width: 4rem;
-    height: 4rem;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    transition:0.3s;
-    position: relative;
-}
-
 
 footer a{
     margin:0 20px;
