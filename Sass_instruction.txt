@@ -3,3 +3,6 @@
 2. On the bottom right corner, click Watch Sass
 
 3. Anything change should be underneath style.scss
+
+//Filter Color
+https://codepen.io/sosuke/pen/Pjoqqp

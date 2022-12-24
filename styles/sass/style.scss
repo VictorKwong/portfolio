@@ -67,8 +67,10 @@
     height: 12px;
     left: 4px;
     bottom: 4px;
-    background-color: #E9AB0E;
+    filter: invert(70%) sepia(73%) saturate(1433%) hue-rotate(358deg) brightness(96%) contrast(91%);
     transition: .4s;
+    background-image: url('../images/svg/Light.svg');
+    background-size: cover;
 }
 
 input:checked + .slider {
@@ -80,10 +82,11 @@ input:focus + .slider {
   
 input:checked + .slider:before {
     transform: translateX(20px);
-    background-color: #108EEE;
+    filter: invert(40%) sepia(62%) saturate(948%) hue-rotate(171deg) brightness(104%) contrast(107%);
+    background-image: url('../images/svg/Dark.svg');
+    background-size: cover;
     @include responsiveMedia(phone){
         transform: translateX(30px);
-        background-color: #108EEE;
     }
 }
 
