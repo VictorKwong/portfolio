@@ -4,5 +4,11 @@
 
 3. Anything change should be underneath style.scss
 
-//Filter Color
+Filter color
 https://codepen.io/sosuke/pen/Pjoqqp
+
+Dark color converter
+https://mdigi.tools/darken-color/#fff5d7
+
+Prefer color scheme
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme#browser_compatibility

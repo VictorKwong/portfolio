@@ -281,6 +281,11 @@ ul li {
   list-style-type: none;
 }
 
+body {
+  background-color: #fff5d7;
+  color: #483c0c;
+}
+
 /* Menu */
 .hide {
   display: none;
@@ -493,79 +498,35 @@ footer nav ul {
   position: relative;
 }
 
-.header-box-dark-mode,
-.slide-menu-dark-mode {
-  background-color: #121f1f;
-  -webkit-transition: 0.3s background-color ease-out;
-  transition: 0.3s background-color ease-out;
-}
-
-.header-text-dark-mode,
-.header-hamburger-dark-mode {
-  color: whitesmoke;
-  -webkit-transition: 0.3s color ease-out;
-  transition: 0.3s color ease-out;
-}
-
-.header-circle-dark-mode {
-  border: solid #483c0c;
-  color: #483c0c;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.header-circle-dark-mode:hover {
-  border: solid orange;
-  color: orange;
-}
-
-.header-box-light-mode,
-.slide-menu-light-mode {
-  background-color: #DEE4E7;
-  -webkit-transition: 0.3s background-color ease-out;
-  transition: 0.3s background-color ease-out;
-}
-
-.header-text-light-mode,
-.header-hamburger-light-mode {
-  color: #121f1f;
-  -webkit-transition: 0.3s color ease-out;
-  transition: 0.3s color ease-out;
-}
-
-.header-circle-light-mode {
-  border: solid #DEE4E7;
-  color: #DEE4E7;
-}
-
-header a,
+header li a,
 header li label {
   cursor: pointer;
-  margin: 0 15px 0;
+  margin-right: 30px;
   text-transform: uppercase;
-  color: whitesmoke;
+  color: white;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
-  header a,
+  header li a,
   header li label {
     margin: 0 12px 0;
   }
 }
 
 @media (max-width: 500px) {
-  header a,
+  header li a,
   header li label {
     margin: 0 5px 0;
   }
 }
 
-@media (max-width: 500px) {
-  header h4 {
-    display: none;
-  }
+header h4 {
+  cursor: pointer;
+  margin-left: 15px;
+  text-transform: uppercase;
+  color: white;
 }
 
 main figcaption a {
@@ -1310,8 +1271,6 @@ header li a:focus::after {
   position: absolute;
   left: 0;
   top: 0px;
-  -webkit-transition: all 1s;
-  transition: all 1s;
   color: black;
   opacity: 1;
   z-index: 100;
@@ -1742,11 +1701,6 @@ footer h3 {
 
 main p {
   margin-bottom: 1.3rem;
-}
-
-body {
-  background-color: #fff5d7;
-  color: #483c0c;
 }
 
 /* main */
@@ -2225,6 +2179,64 @@ footer a {
 
 .greenPaint {
   background-color: #CFE6AD;
+}
+
+.header-box-dark-mode,
+.slide-menu-dark-mode {
+  background-color: #333;
+}
+
+.header-text-dark-mode,
+.header-hamburger-dark-mode {
+  color: white;
+}
+
+.header-circle-dark-mode {
+  border: solid #333;
+  color: #333;
+}
+
+.header-circle-dark-mode:hover {
+  border: solid orange;
+  color: orange;
+}
+
+.header-box-light-mode,
+.slide-menu-light-mode {
+  background-color: #eee;
+  -webkit-transition: 0.3s background-color ease-out;
+  transition: 0.3s background-color ease-out;
+}
+
+.header-text-light-mode,
+.header-hamburger-light-mode {
+  color: #121f1f;
+  -webkit-transition: 0.3s color ease-out;
+  transition: 0.3s color ease-out;
+}
+
+.header-circle-light-mode {
+  border: solid #eee;
+  color: #eee;
+}
+
+.body-light-mode {
+  background-color: #333;
+  color: #eee;
+}
+
+.wordContainerAfte-light-mode,
+.wordContainerEven-light-mode,
+.wordContainerMorn-light-mode {
+  color: orange;
+}
+
+.g-light-mode:after, .upperG-light-mode:after, .o-light-mode:after, .d-light-mode:after, .upperM-light-mode:after, .r-light-mode:after, .n-light-mode:after, .i-light-mode:after, .upperA-light-mode:after, .f-light-mode:after, .t-light-mode:after, .e-light-mode:after, .upperE-light-mode:after, .v-light-mode:after {
+  color: #eee;
+}
+
+.appDescription-light-mode {
+  background-color: black;
 }
 
 @media (max-width: 500px) {

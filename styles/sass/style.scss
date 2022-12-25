@@ -1,5 +1,10 @@
 @import './setup';
 @import './mixins';
+// Global
+body{
+    background-color: #fff5d7;
+    color:#483c0c;
+}
 /* Menu */
 .hide{
     display:none;
@@ -164,52 +169,12 @@ footer nav ul{
     transition:0.3s;
     position: relative;
 }
-// Light Dark Theme
-// Dark
-.header-box-dark-mode,
-.slide-menu-dark-mode{
-    background-color: #121f1f;
-    transition: 0.3s background-color ease-out;
-}
-
-.header-text-dark-mode,
-.header-hamburger-dark-mode{
-    color:whitesmoke;
-    transition: 0.3s color ease-out;
-}
-.header-circle-dark-mode{
-    border: solid #483c0c;
-    color:#483c0c;
-    transition:0.3s;
-}
-.header-circle-dark-mode:hover{
-    border: solid orange;
-    color:orange;
-}
-
-// Light
-.header-box-light-mode,
-.slide-menu-light-mode{
-    background-color: #DEE4E7;
-    transition: 0.3s background-color ease-out;
-}
-
-.header-text-light-mode,
-.header-hamburger-light-mode{
-    color:#121f1f;
-    transition: 0.3s color ease-out;
-}
-.header-circle-light-mode{
-    border: solid #DEE4E7;
-    color:#DEE4E7;
-}
-// End Light Dark Theme
-header a,
+header li a,
 header li label{
     cursor: pointer;
-    margin:0 15px 0;
+    margin-right:30px;
     text-transform: uppercase;
-    color:whitesmoke;
+    color:white;
     transition:all 0.3s ease-in-out;
     @include responsiveMedia(smallTablet){
         margin:0 12px 0;
@@ -220,9 +185,10 @@ header li label{
 }
 
 header h4{
-    @include responsiveMedia(phone){
-        display: none;
-    }
+    cursor: pointer;
+    margin-left:15px;
+    text-transform: uppercase;
+    color:white;
 }
 
 main figcaption a{
@@ -595,7 +561,6 @@ header li a:focus::after{
         position: absolute;
         left: 0;
         top: 0px;
-        transition: all 1s;
         color: black;
         opacity: 1;
         z-index: 100;
@@ -817,10 +782,7 @@ main p{
     margin-bottom: 1.3rem;
 }
 
-body{
-    background-color: #fff5d7;
-    color:#483c0c;
-}
+
 
 
 /* main */
@@ -1183,6 +1145,66 @@ footer a{
 .greenPaint{
     background-color: #CFE6AD;
 }
+
+// Light Dark Theme
+// Dark
+.header-box-dark-mode,
+.slide-menu-dark-mode{
+    background-color: #333;
+}
+
+.header-text-dark-mode,
+.header-hamburger-dark-mode{
+    color:white;
+}
+.header-circle-dark-mode{
+    border: solid #333;
+    color:#333;
+}
+.header-circle-dark-mode:hover{
+    border: solid orange;
+    color:orange;
+}
+
+// Light
+.header-box-light-mode,
+.slide-menu-light-mode{
+    background-color: #eee;
+    transition: 0.3s background-color ease-out;
+}
+
+.header-text-light-mode,
+.header-hamburger-light-mode{
+    color:#121f1f;
+    transition: 0.3s color ease-out;
+}
+.header-circle-light-mode{
+    border: solid #eee;
+    color:#eee;
+}
+// First Section
+.body-light-mode{
+    background-color: #333;
+    color:#eee;
+}
+.wordContainerAfte-light-mode,
+.wordContainerEven-light-mode,
+.wordContainerMorn-light-mode{
+    color:orange;
+}
+.g-light-mode, .upperG-light-mode, .o-light-mode, .d-light-mode, .upperM-light-mode, .r-light-mode, .n-light-mode, .i-light-mode, .upperA-light-mode, .f-light-mode, .t-light-mode, .e-light-mode, .upperE-light-mode, .v-light-mode{
+    &:after{
+        color: #eee;
+    }
+}
+
+// Third Section
+.appDescription-light-mode{
+    background-color: rgb(0, 0, 0);
+}
+
+
+// End Light Dark Theme
 
 @include responsiveMedia(phone){
     /* Menu */
