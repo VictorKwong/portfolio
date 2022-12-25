@@ -127,15 +127,57 @@ portfolioApp.scrolling = function (){
   }
 }
 
+portfolioApp.lightDarkMode = function (){
+  if(document.querySelector('#light_dark_mode').checked === false){
+    //Global
+    $('.greenPaint-dark-mode').toggleClass("greenPaint-light-mode");
+
+    $('.header-box-dark-mode').toggleClass("header-box-light-mode");
+    $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
+    $('.header-text-dark-mode').toggleClass("header-text-light-mode");
+    $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
+    $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
+    $('.circleDecoration').toggleClass("circleDecoration-light-mode");
+    // First Section
+    
+    $('.body-dark-mode').toggleClass('body-light-mode');
+    $('.wordContainerAfte').toggleClass("wordContainerAfte-light-mode");
+    $('.wordContainerEven').toggleClass("wordContainerEven-light-mode");
+    $('.wordContainerMorn').toggleClass("wordContainerMorn-light-mode");
+  
+    $('.g').toggleClass("g-light-mode");
+    $('.upperG').toggleClass("upperG-light-mode");
+    $('.o').toggleClass("o-light-mode");
+    $('.d').toggleClass("d-light-mode");
+    $('.upperM').toggleClass("upperM-light-mode");
+    $('.r').toggleClass("r-light-mode");
+    $('.n').toggleClass("n-light-mode");
+    $('.i').toggleClass("i-light-mode");
+    $('.upperA').toggleClass("upperA-light-mode");
+    $('.f').toggleClass("f-light-mode");
+    $('.t').toggleClass("t-light-mode");
+    $('.e').toggleClass("e-light-mode");
+    $('.upperE').toggleClass("upperE-light-mode");
+    $('.v').toggleClass("v-light-mode");
+  
+    // Third Section
+    $('.appDescription').toggleClass("appDescription-light-mode");
+  }
+}
+
 $('#light_dark_mode').on('click',function(){
-  console.log('Test');  
+  //Global
+  $('.greenPaint-dark-mode').toggleClass("greenPaint-light-mode");
+
   $('.header-box-dark-mode').toggleClass("header-box-light-mode");
   $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
   $('.header-text-dark-mode').toggleClass("header-text-light-mode");
   $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
   $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
+  $('.circleDecoration').toggleClass("circleDecoration-light-mode");
   // First Section
-  document.body.classList.toggle('body-light-mode');
+  
+  $('.body-dark-mode').toggleClass('body-light-mode');
   $('.wordContainerAfte').toggleClass("wordContainerAfte-light-mode");
   $('.wordContainerEven').toggleClass("wordContainerEven-light-mode");
   $('.wordContainerMorn').toggleClass("wordContainerMorn-light-mode");
@@ -166,6 +208,7 @@ portfolioApp.init = () => {
   portfolioApp.easterEgg();
   portfolioApp.scrolling();
       /*scroll to top*/
+  portfolioApp.lightDarkMode();
 }
 
   $(document).ready(portfolioApp.init());
