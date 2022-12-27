@@ -87,7 +87,9 @@ portfolioApp.regularEvent = function (){
 
 
   $('.addBanana').on('click',function(){
-    $('.addBanana').attr("hidden",true);
+    // $('.addBanana').attr("hidden",true);
+    $('.addBanana').prop('disabled', true);
+    $('.addBanana').html(`Gifted 1`);
     dbRef.once('value', (data) => {
       const upvote = data.val().Count[userId] + 1;
       const upvoteMod = portfolioApp.comma(upvote); 
@@ -138,6 +140,7 @@ portfolioApp.lightDarkMode = function (){
     $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
     $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
     $('.circleDecoration').toggleClass("circleDecoration-light-mode");
+    $('.button-text-dark-mode').toggleClass(" button-text-light-mode");
     // First Section
     
     $('.body-dark-mode').toggleClass('body-light-mode');
@@ -175,6 +178,7 @@ $('#light_dark_mode').on('click',function(){
   $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
   $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
   $('.circleDecoration').toggleClass("circleDecoration-light-mode");
+  $('.button-text-dark-mode').toggleClass(" button-text-light-mode");
   // First Section
   
   $('.body-dark-mode').toggleClass('body-light-mode');

@@ -403,7 +403,7 @@ input:checked + .slider:before {
 }
 
 header h4 {
-  font-family: 'Chewy', cursive;
+  font-family: 'Kanit', sans-serif;
   width: 50%;
 }
 
@@ -2129,10 +2129,10 @@ footer a {
 .buttonDeco {
   width: 200px;
   height: 50px;
-  background-color: #FCEC37;
   border-radius: 3px;
   text-align: center;
   letter-spacing: 0.2rem;
+  font-size: 18px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border: 1px solid black;
@@ -2140,9 +2140,8 @@ footer a {
 }
 
 .buttonDeco:hover {
-  letter-spacing: 0.5rem;
-  background-color: #F6C62B;
-  font-size: 2rem;
+  letter-spacing: 0.25rem;
+  font-size: 20px;
   cursor: pointer;
   font-weight: bolder;
 }
@@ -2198,6 +2197,15 @@ footer a {
   color: #ddd;
 }
 
+.button-text-dark-mode {
+  color: #ddd;
+  background-color: #433d01;
+}
+
+.button-text-dark-mode:hover {
+  background-color: #2c2800;
+}
+
 .greenPaint-light-mode {
   background-color: #CFE6AD;
 }
@@ -2222,6 +2230,15 @@ footer a {
 .circleDecoration-light-mode {
   border: solid black;
   color: black;
+}
+
+.button-text-light-mode {
+  background-color: #FCEC37;
+  color: black;
+}
+
+.button-text-light-mode:hover {
+  background-color: #F6C62B;
 }
 
 .body-light-mode {
