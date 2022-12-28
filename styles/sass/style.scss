@@ -231,10 +231,11 @@ header .slide-menu-dark-mode label{
     }
 }
 
-.headerMonkey{
+// Monkey .headerMonkey
+.headerMonkeyHover:hover{
     cursor: pointer;
+    content: url('../images/monkeyHover.png');
 }
-
 // Line CSS
 header li a{
     position: relative;

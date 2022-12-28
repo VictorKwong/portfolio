@@ -22,6 +22,9 @@ portfolioApp.regularEvent = function (){
     if($('.addBanana').attr("hidden") === undefined){
       $('.monkeyWords').html("Where is my banana? I'm hungry.");
     }
+    //Remove Hover effect
+    $('.headerMonkey').removeClass("headerMonkeyHover");
+
     let randomMove = randomfunction();
     if(!$(this).hasClass("monkeyFly") && !$(this).hasClass("monkeyMove") && !$(this).hasClass("monkeyKing")){
       if(randomMove <= 0.33){
@@ -33,6 +36,7 @@ portfolioApp.regularEvent = function (){
         eventFive = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFly.png"); clearTimeout(eventFive)}, 4900);
         eventSix = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventSix)}, 7000);
         event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyFly"); clearTimeout(event)}, 7000);
+        eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 7000);
       }else if(randomMove > 0.33  && randomMove <= 0.66){
         $(this).addClass("monkeyMove");
         eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventOne)}, 750);
@@ -40,6 +44,7 @@ portfolioApp.regularEvent = function (){
         eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventThr)}, 2400);
         eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventFour)}, 3000);
         event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove"); clearTimeout(event)}, 3000);
+        eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 3000);
       }else if(randomMove > 0.66){
         $(this).addClass("monkeyKing");
         eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT1.png"); clearTimeout(eventOne)}, 500);
@@ -53,6 +58,7 @@ portfolioApp.regularEvent = function (){
         eventNine = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT6.png"); clearTimeout(eventNine)}, 5300);
         eventTen = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTen)}, 10000);
         event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing"); clearTimeout(event)}, 10000);
+        eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 10000);
       }
     }
   });

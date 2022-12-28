@@ -581,8 +581,9 @@ header .slide-menu-dark-mode label {
   }
 }
 
-.headerMonkey {
+.headerMonkeyHover:hover {
   cursor: pointer;
+  content: url("../images/monkeyHover.png");
 }
 
 header li a {
