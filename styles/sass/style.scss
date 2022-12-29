@@ -1,7 +1,9 @@
 @import './setup';
 @import './mixins';
 // Global
-
+body{
+    cursor: default;
+}
 /* Menu */
 .hide{
     display:none;
@@ -608,11 +610,12 @@ header li a:focus::after{
 
 
 .monkeyHead{
-    border-radius: 50%;
+    border-radius: 25px;
     display: inline-block;
     background-color: #F6C62B;
     margin-bottom: 20px;
     transition: aLL 0.3s ease-in-out;
+    width: 150px;
 }
 .monkeyHead:hover,
 .monkeyHead:focus{
