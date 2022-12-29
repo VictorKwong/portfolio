@@ -2212,6 +2212,11 @@ footer a {
   background-color: #2c2800;
 }
 
+.img-dark-mode {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
 .greenPaint-light-mode {
   background-color: #CFE6AD;
 }
@@ -2260,6 +2265,11 @@ footer a {
 
 .g-light-mode:after, .upperG-light-mode:after, .o-light-mode:after, .d-light-mode:after, .upperM-light-mode:after, .r-light-mode:after, .n-light-mode:after, .i-light-mode:after, .upperA-light-mode:after, .f-light-mode:after, .t-light-mode:after, .e-light-mode:after, .upperE-light-mode:after, .v-light-mode:after {
   color: #333;
+}
+
+.img-light-mode {
+  -webkit-filter: brightness(0%);
+          filter: brightness(0%);
 }
 
 .appDescription-light-mode {

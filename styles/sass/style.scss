@@ -1174,6 +1174,10 @@ footer a{
 .button-text-dark-mode:hover{
     background-color: #2c2800;
 }
+.img-dark-mode{
+    filter: brightness(0) invert(1);
+}
+
 // Light
 // Global
 .greenPaint-light-mode{
@@ -1220,7 +1224,10 @@ footer a{
         color: #333;
     }
 }
-
+// Second Section
+.img-light-mode{
+    filter: brightness(0%);
+}
 // Third Section
 .appDescription-light-mode{
     background-color: #eee;
