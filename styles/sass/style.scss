@@ -1141,7 +1141,8 @@ footer a{
 
 // Light Dark Theme
 //Setup
-.about-dark-mode{
+.about-dark-mode,
+.profile-dark-mode{
     position: relative;
     z-index: 2;
 }
@@ -1197,6 +1198,18 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
+.profile-dark-mode::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    box-shadow: 0 0 16px black;
+    height: 18px;
+    width: 120px;
+    top: 50%;
+    left: 0px;
+    z-index: -1;
+    filter: blur(5px);
+}
 
 // Light
 // Global
@@ -1245,7 +1258,8 @@ footer a{
     }
 }
 // Second Section
-.about-light-mode::after{
+.about-light-mode::after,
+.profile-light-mode::after{
     background-color: #eee;
     box-shadow: 0 0 16px #eee;
 }

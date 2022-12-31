@@ -2174,7 +2174,8 @@ footer a {
   }
 }
 
-.about-dark-mode {
+.about-dark-mode,
+.profile-dark-mode {
   position: relative;
   z-index: 2;
 }
@@ -2239,6 +2240,21 @@ footer a {
           filter: blur(5px);
 }
 
+.profile-dark-mode::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  -webkit-box-shadow: 0 0 16px black;
+          box-shadow: 0 0 16px black;
+  height: 18px;
+  width: 120px;
+  top: 50%;
+  left: 0px;
+  z-index: -1;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
 .greenPaint-light-mode {
   background-color: #CFE6AD;
 }
@@ -2289,7 +2305,8 @@ footer a {
   color: #333;
 }
 
-.about-light-mode::after {
+.about-light-mode::after,
+.profile-light-mode::after {
   background-color: #eee;
   -webkit-box-shadow: 0 0 16px #eee;
           box-shadow: 0 0 16px #eee;
