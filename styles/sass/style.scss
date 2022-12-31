@@ -1140,6 +1140,11 @@ footer a{
 }
 
 // Light Dark Theme
+//Setup
+.about-dark-mode{
+    position: relative;
+    z-index: 2;
+}
 // Dark
 // Global
 .greenPaint-dark-mode{
@@ -1176,6 +1181,21 @@ footer a{
 }
 .img-dark-mode{
     filter: brightness(0) invert(1);
+}
+
+//Section Section
+.about-dark-mode::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    box-shadow: 0 0 16px black;
+    height: 18px;
+    width: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    filter: blur(5px);
 }
 
 // Light
@@ -1225,6 +1245,10 @@ footer a{
     }
 }
 // Second Section
+.about-light-mode::after{
+    background-color: #eee;
+    box-shadow: 0 0 16px #eee;
+}
 .img-light-mode{
     filter: brightness(0%);
 }
@@ -1313,4 +1337,8 @@ footer a{
             transform:(translate3d(1px, -3px,0));
          }
       }
+      //Second Section
+      .about-dark-mode::after{
+        width: 90px;
+    }
   }
