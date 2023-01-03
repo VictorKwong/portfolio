@@ -1793,6 +1793,8 @@ main p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .treeHeight {
@@ -2175,7 +2177,8 @@ footer a {
 }
 
 .about-dark-mode,
-.profile-dark-mode {
+.profile-dark-mode,
+.project-dark-mode {
   position: relative;
   z-index: 2;
 }
@@ -2255,12 +2258,28 @@ footer a {
           filter: blur(5px);
 }
 
+.project-dark-mode::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  -webkit-box-shadow: 0 0 16px black;
+          box-shadow: 0 0 16px black;
+  height: 50px;
+  width: 300px;
+  top: 50%;
+  left: 0px;
+  z-index: -1;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
 .greenPaint-light-mode {
   background-color: #CFE6AD;
 }
 
 .header-box-light-mode,
-.slide-menu-light-mode {
+.slide-menu-light-mode,
+.project-light-mode {
   background-color: #eee;
 }
 
@@ -2434,5 +2453,8 @@ footer a {
   }
   .about-dark-mode::after {
     width: 90px;
+  }
+  .project-dark-mode::after {
+    width: 225px;
   }
 }

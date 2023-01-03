@@ -173,6 +173,8 @@ portfolioApp.lightDarkMode = function (){
     $('.img-dark-mode').toggleClass('img-light-mode');
     $('.about-dark-mode').toggleClass('about-light-mode');
     $('.profile-dark-mode').toggleClass('profile-light-mode');
+    $('.project-dark-mode').toggleClass('project-light-mode');
+    
     // Third Section
     $('.appDescription').toggleClass("appDescription-light-mode");
   }
@@ -215,7 +217,7 @@ $('#light_dark_mode').on('click',function(){
     $('.img-dark-mode').toggleClass('img-light-mode');
     $('.about-dark-mode').toggleClass('about-light-mode');
     $('.profile-dark-mode').toggleClass('profile-light-mode');
-    
+    $('.project-dark-mode').toggleClass('project-light-mode');
     
   // Third Section
   $('.appDescription').toggleClass("appDescription-light-mode");
