@@ -533,8 +533,6 @@ main figcaption a {
 
 header a:hover,
 header a:focus,
-footer a:hover,
-footer a:focus,
 main .firstView a:hover,
 main .firstView a:focus,
 .circleDecoration:hover,
@@ -548,8 +546,6 @@ main figcaption a:focus {
 
 main .firstView a:hover,
 main .firstView a:focus,
-footer a:hover,
-footer a:focus,
 .circleDecoration:hover,
 .circleDecoration:focus,
 .circleSmallDecoration:hover,
@@ -1682,11 +1678,6 @@ header li a:focus::after {
   }
 }
 
-main h2 {
-  -webkit-text-decoration: underline 1px solid black;
-          text-decoration: underline 1px solid black;
-}
-
 .profileContainer h3 {
   font-size: 3rem;
 }
@@ -1976,7 +1967,6 @@ figure:focus figcaption {
   padding-top: 35px;
 }
 
-footer a,
 .circleDecoration {
   font-size: 3rem;
   border-radius: 50%;
@@ -2264,13 +2254,23 @@ footer a {
   background-color: black;
   -webkit-box-shadow: 0 0 16px black;
           box-shadow: 0 0 16px black;
-  height: 50px;
+  height: 30px;
   width: 300px;
-  top: 50%;
+  bottom: 0px;
   left: 0px;
   z-index: -1;
   -webkit-filter: blur(5px);
           filter: blur(5px);
+}
+
+.footer-circle-dark-mode {
+  border: 3px solid #ddd;
+  color: #ddd;
+}
+
+.footer-circle-dark-mode:hover {
+  border: solid orange;
+  color: orange;
 }
 
 .greenPaint-light-mode {
@@ -2278,8 +2278,7 @@ footer a {
 }
 
 .header-box-light-mode,
-.slide-menu-light-mode,
-.project-light-mode {
+.slide-menu-light-mode {
   background-color: #eee;
 }
 
@@ -2325,7 +2324,8 @@ footer a {
 }
 
 .about-light-mode::after,
-.profile-light-mode::after {
+.profile-light-mode::after,
+.project-light-mode::after {
   background-color: #eee;
   -webkit-box-shadow: 0 0 16px #eee;
           box-shadow: 0 0 16px #eee;
