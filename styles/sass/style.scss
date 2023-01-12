@@ -914,7 +914,6 @@ figure:focus figcaption{
 
 .emailBox{
     width: 950px;
-    background-color: #EEEEEE;
     border:none;
     height: 30px;
     padding-left: 10px;
@@ -936,7 +935,6 @@ figure:focus figcaption{
     box-sizing: border-box;
     resize: none;
     color: #483c0c;
-    background-color: #EEEEEE;
     border:none;
     padding: 5px 0 0 10px;
     @include responsiveMedia(tablet){
@@ -1135,7 +1133,8 @@ footer a{
 //Setup
 .about-dark-mode,
 .profile-dark-mode,
-.project-dark-mode{
+.project-dark-mode,
+.contact-dark-mode{
     position: relative;
     z-index: 2;
 }
@@ -1215,6 +1214,23 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
+// Third Section
+.contact-dark-mode::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    box-shadow: 0 0 16px black;
+    height: 20px;
+    width: 270px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+    filter: blur(5px);
+}
+.contactbox-dark-mode{
+    background-color: black;
+    color: #EEE;
+}
 
 // Footer
 .footer-circle-dark-mode{
@@ -1274,7 +1290,8 @@ footer a{
 // Second Section
 .about-light-mode::after,
 .profile-light-mode::after,
-.project-light-mode::after{
+.project-light-mode::after,
+.contact-light-mode::after{
     background-color: #eee;
     box-shadow: 0 0 16px #eee;
 }
@@ -1285,7 +1302,10 @@ footer a{
 .appDescription-light-mode{
     background-color: #eee;
 }
-
+.contactbox-light-mode{
+    background-color: #EEEEEE;
+    color: black;
+}
 
 // End Light Dark Theme
 
@@ -1372,5 +1392,8 @@ footer a{
     }
     .project-dark-mode::after{
         width: 225px;
+    }
+    .contact-dark-mode::after{
+        width: 180px;
     }
   }
