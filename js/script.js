@@ -174,6 +174,7 @@ portfolioApp.lightDarkMode = function (){
     $('.about-dark-mode').toggleClass('about-light-mode');
     $('.profile-dark-mode').toggleClass('profile-light-mode');
     $('.project-dark-mode').toggleClass('project-light-mode');
+    $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
     
     // Third Section
     $('.contact-dark-mode').toggleClass('contact-light-mode');
@@ -220,6 +221,8 @@ $('#light_dark_mode').on('click',function(){
     $('.about-dark-mode').toggleClass('about-light-mode');
     $('.profile-dark-mode').toggleClass('profile-light-mode');
     $('.project-dark-mode').toggleClass('project-light-mode');
+    $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
+    
     
   // Third Section
   $('.contact-dark-mode').toggleClass('contact-light-mode');
