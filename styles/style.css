@@ -1625,6 +1625,27 @@ header li a:focus::after {
           align-items: center;
 }
 
+.skillCardExpand {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background-color: #F6C62B;
+}
+
+.skillCard:hover .skillCardExpand,
+.skillCard:focus .skillCardExpand {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
 .devicon-html5-plain,
 .devicon-css3-plain,
 .devicon-sass-original,
