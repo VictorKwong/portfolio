@@ -175,6 +175,8 @@ portfolioApp.lightDarkMode = function (){
     $('.profile-dark-mode').toggleClass('profile-light-mode');
     $('.project-dark-mode').toggleClass('project-light-mode');
     $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
+    $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
+    
     
     // Third Section
     $('.contact-dark-mode').toggleClass('contact-light-mode');
@@ -216,13 +218,13 @@ $('#light_dark_mode').on('click',function(){
   $('.upperE').toggleClass("upperE-light-mode");
   $('.v').toggleClass("v-light-mode");
   
-    // Second Section
-    $('.img-dark-mode').toggleClass('img-light-mode');
-    $('.about-dark-mode').toggleClass('about-light-mode');
-    $('.profile-dark-mode').toggleClass('profile-light-mode');
-    $('.project-dark-mode').toggleClass('project-light-mode');
-    $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
-    
+  // Second Section
+  $('.img-dark-mode').toggleClass('img-light-mode');
+  $('.about-dark-mode').toggleClass('about-light-mode');
+  $('.profile-dark-mode').toggleClass('profile-light-mode');
+  $('.project-dark-mode').toggleClass('project-light-mode');
+  $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
+  $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
     
   // Third Section
   $('.contact-dark-mode').toggleClass('contact-light-mode');
