@@ -604,21 +604,6 @@ header li a:focus::after{
      }
   }
 
-
-.monkeyHead{
-    border-radius: 25px;
-    display: inline-block;
-    background-color: #F6C62B;
-    margin-bottom: 20px;
-    transition: aLL 0.3s ease-in-out;
-    width: 150px;
-}
-.monkeyHead:hover,
-.monkeyHead:focus{
-    background-color:  #fff5d7;
-}
-
-
 .profileContainer{
     padding: 0 30px;
     display: flex;
@@ -627,11 +612,6 @@ header li a:focus::after{
     @include responsiveMedia(smallTablet){
         padding: 15px 0;
     }
-}
-
-.profilefill{
-    width: 300px;
-    height: 400px;
 }
 
 .firstSection{
@@ -1114,7 +1094,8 @@ footer a{
 .about-dark-mode,
 .profile-dark-mode,
 .project-dark-mode,
-.contact-dark-mode{
+.contact-dark-mode,
+.introText-dark-mode{
     position: relative;
     z-index: 2;
 }
@@ -1194,6 +1175,19 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
+.introText-dark-mode:hover::after,
+.introText-dark-mode:focus::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    box-shadow: 0 0 5px black;
+    height: 30px;
+    width: 300px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+    filter: blur(5px);
+}
 .buttonAntiman-dark-mode::before {
 	border: 2px solid #EEEEEE;
 	opacity: 0;
@@ -1201,6 +1195,19 @@ footer a{
 }
 .skillCardExpand-dark-mode{
     background-color: #433d01;
+}
+.profileHead-dark-mode{
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 150px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+}
+.profilefill-dark-mode{
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
 }
 // Third Section
 .contact-dark-mode::after{
@@ -1283,6 +1290,11 @@ footer a{
     background-color: #eee;
     box-shadow: 0 0 16px #eee;
 }
+.introText-light-mode:hover::after,
+.introText-light-mode:focus::after{
+    background-color: #eee;
+    box-shadow: 0 0 5px #eee;
+}
 .img-light-mode{
     filter: brightness(0%);
 }
@@ -1291,6 +1303,12 @@ footer a{
 }
 .skillCardExpand-light-mode{
     background-color: #F6C62B;
+}
+.profileHead-light-mode{
+    box-shadow: 5px 5px 15px 5px #eee;
+}
+.profilefill-light-mode{
+    box-shadow: 5px 5px 15px 5px #eee;
 }
 
 // Third Section

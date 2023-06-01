@@ -1477,21 +1477,6 @@ header li a:focus::after {
   }
 }
 
-.monkeyHead {
-  border-radius: 25px;
-  display: inline-block;
-  background-color: #F6C62B;
-  margin-bottom: 20px;
-  -webkit-transition: aLL 0.3s ease-in-out;
-  transition: aLL 0.3s ease-in-out;
-  width: 150px;
-}
-
-.monkeyHead:hover,
-.monkeyHead:focus {
-  background-color: #fff5d7;
-}
-
 .profileContainer {
   padding: 0 30px;
   display: -webkit-box;
@@ -1508,11 +1493,6 @@ header li a:focus::after {
   .profileContainer {
     padding: 15px 0;
   }
-}
-
-.profilefill {
-  width: 300px;
-  height: 400px;
 }
 
 .firstSection {
@@ -2131,7 +2111,8 @@ footer a {
 .about-dark-mode,
 .profile-dark-mode,
 .project-dark-mode,
-.contact-dark-mode {
+.contact-dark-mode,
+.introText-dark-mode {
   position: relative;
   z-index: 2;
 }
@@ -2226,6 +2207,22 @@ footer a {
           filter: blur(5px);
 }
 
+.introText-dark-mode:hover::after,
+.introText-dark-mode:focus::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+  height: 30px;
+  width: 300px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
 .buttonAntiman-dark-mode::before {
   border: 2px solid #EEEEEE;
   opacity: 0;
@@ -2235,6 +2232,23 @@ footer a {
 
 .skillCardExpand-dark-mode {
   background-color: #433d01;
+}
+
+.profileHead-dark-mode {
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 150px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+.profilefill-dark-mode {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contact-dark-mode::after {
@@ -2326,6 +2340,13 @@ footer a {
           box-shadow: 0 0 16px #eee;
 }
 
+.introText-light-mode:hover::after,
+.introText-light-mode:focus::after {
+  background-color: #eee;
+  -webkit-box-shadow: 0 0 5px #eee;
+          box-shadow: 0 0 5px #eee;
+}
+
 .img-light-mode {
   -webkit-filter: brightness(0%);
           filter: brightness(0%);
@@ -2337,6 +2358,16 @@ footer a {
 
 .skillCardExpand-light-mode {
   background-color: #F6C62B;
+}
+
+.profileHead-light-mode {
+  -webkit-box-shadow: 5px 5px 15px 5px #eee;
+          box-shadow: 5px 5px 15px 5px #eee;
+}
+
+.profilefill-light-mode {
+  -webkit-box-shadow: 5px 5px 15px 5px #eee;
+          box-shadow: 5px 5px 15px 5px #eee;
 }
 
 .appDescription-light-mode {

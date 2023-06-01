@@ -176,8 +176,10 @@ portfolioApp.lightDarkMode = function (){
     $('.project-dark-mode').toggleClass('project-light-mode');
     $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
     $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
-    
-    
+    $('.introText-dark-mode').toggleClass('introText-light-mode');
+    $('.profileHead-dark-mode').toggleClass('profileHead-light-mode');
+    $('.profilefill-dark-mode').toggleClass('profilefill-light-mode');
+
     // Third Section
     $('.contact-dark-mode').toggleClass('contact-light-mode');
     $('.contactbox-dark-mode').toggleClass('contactbox-light-mode');
@@ -225,6 +227,10 @@ $('#light_dark_mode').on('click',function(){
   $('.project-dark-mode').toggleClass('project-light-mode');
   $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
   $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
+  $('.introText-dark-mode').toggleClass('introText-light-mode');
+  $('.profileHead-dark-mode').toggleClass('profileHead-light-mode');
+  $('.profilefill-dark-mode').toggleClass('profilefill-light-mode');
+  
     
   // Third Section
   $('.contact-dark-mode').toggleClass('contact-light-mode');
