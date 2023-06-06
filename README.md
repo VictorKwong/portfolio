@@ -4,7 +4,8 @@
 - [x] 8 bit animal.png animation & JavaScript
 - [x] Toggle Dark Mode
 - [x] Welcoming words (loading screen)
-- [ ] Fontawesome not work with phone
+- [x] Update Fontawesome link in 2023
+
 
 - #Sass Instruction 
 
