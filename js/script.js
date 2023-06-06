@@ -119,13 +119,13 @@ portfolioApp.timeZone = function (){
   today = new Date();
   if(today.getHours() >= 5 && today.getHours() <= 11){
     // return $('.wordContainerMorn').show();
-    $('.wordContainerMorn').style.display = 'block';
+    $('.wordContainerMorn').attr("style", "display: block !important;");
   }else if(today.getHours() >= 12 && today.getHours() <= 16){
     // return $('.wordContainerAfte').show();
-    $('.wordContainerAfte').style.display = 'block';
+    $('.wordContainerAfte').attr("style", "display: block !important;");
   }else{
     // return $('.wordContainerEven').show();
-    $('.wordContainerEven').style.display = 'block';
+    $('.wordContainerEven').attr("style", "display: block !important;");
   }
 }
 
