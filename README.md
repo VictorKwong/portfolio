@@ -3,7 +3,8 @@
 - [x] Created in 2021
 - [x] 8 bit animal.png animation & JavaScript
 - [x] Toggle Dark Mode
-- [ ] Welcoming words (loading screen)
+- [x] Welcoming words (loading screen)
+- [ ] Fontawesome not work with phone
 
 - #Sass Instruction 
 
