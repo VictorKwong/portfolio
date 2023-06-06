@@ -1,8 +1,9 @@
 > This is portfolio website
 
-- [ ] Created in 2021
+- [x] Created in 2021
 - [x] 8 bit animal.png animation & JavaScript
 - [x] Toggle Dark Mode
+- [ ] Welcoming words (loading screen)
 
 - #Sass Instruction 
 

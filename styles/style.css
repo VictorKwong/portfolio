@@ -995,6 +995,7 @@ header li a:focus::after {
   position: relative;
   padding-bottom: 2rem;
   color: #F6C62B;
+  display: none;
 }
 
 .space {
