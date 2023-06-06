@@ -113,19 +113,19 @@ portfolioApp.comma = function (num) {
 
 // Time zone to generate morning, afternoon or evening
 portfolioApp.timeZone = function (){
-  $('.wordContainerMorn').style.display = 'none';
-  $('.wordContainerAfte').style.display = 'none';
-  $('.wordContainerEven').style.display = 'none';
+  // $('.wordContainerMorn').style.display = 'none';
+  // $('.wordContainerAfte').style.display = 'none';
+  // $('.wordContainerEven').style.display = 'none';
   today = new Date();
   if(today.getHours() >= 5 && today.getHours() <= 11){
     // return $('.wordContainerMorn').show();
-    $('.wordContainerMorn').attr("style", "display: block !important;");
+    $('.wordContainerMorn').css("display", "block")
   }else if(today.getHours() >= 12 && today.getHours() <= 16){
     // return $('.wordContainerAfte').show();
-    $('.wordContainerAfte').attr("style", "display: block !important;");
+    $('.wordContainerAfte').css("display", "block")
   }else{
     // return $('.wordContainerEven').show();
-    $('.wordContainerEven').attr("style", "display: block !important;");
+    $('.wordContainerEven').css("display", "block")
   }
 }
 
