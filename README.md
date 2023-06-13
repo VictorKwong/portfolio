@@ -5,7 +5,8 @@
 - [x] Toggle Dark Mode
 - [x] Welcoming words (loading screen)
 - [x] Update Fontawesome link in 2023
-- [ ] Check headerMonkey headerMonkeyHover blinking issue
+- [ ] Check headerMonkey headerMonkeyHover blinking issue - preloading too long
+- [x] Button animation light and dark mode update (.buttonAntiman)
 
 - #Sass Instruction 
 

@@ -1023,6 +1023,7 @@ footer a{
 }
 /* Antiman */
 .buttonAntiman-dark-mode {
+    color: #ddd;
 	background: none;
 	border: none;
 	transition: all 0.3s;
@@ -1044,20 +1045,24 @@ footer a{
 }
 
 .buttonAntiman-dark-mode::after {
-    background: #FCEC37;
+    background: #433d01;
 }
 .buttonAntiman-dark-mode:hover::before,
 .buttonAntiman-dark-mode:focus::before {
 	opacity: 1;
     transform: scale3d(1, 1, 1);
-    background:#F6C62B;
+    background:#2c2800;
 }
 .buttonAntiman-dark-mode:hover::after,
 .buttonAntiman-dark-mode:focus::after{
 	opacity: 0;
     transform: scale3d(0.8, 0.8, 1);
 }
-
+.buttonAntiman-dark-mode::before {
+	border: 2px solid #EEEEEE;
+	opacity: 0;
+	transform: scale3d(1.2, 1.2, 1);
+}
 /* other */
 .buttonDeco{
     width:200px;
@@ -1189,11 +1194,7 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
-.buttonAntiman-dark-mode::before {
-	border: 2px solid #EEEEEE;
-	opacity: 0;
-	transform: scale3d(1.2, 1.2, 1);
-}
+
 .skillCardExpand-dark-mode{
     background-color: #433d01;
 }
@@ -1299,9 +1300,25 @@ footer a{
 .img-light-mode{
     filter: brightness(0%);
 }
-.buttonAntiman-light-mode::before {
-	border: 2px solid #37474f;
+.buttonAntiman-light-mode{
+    color:black;
 }
+.buttonAntiman-light-mode::after {
+    background: #FCEC37;
+}
+.buttonAntiman-light-mode:hover::before,
+.buttonAntiman-light-mode:focus::before {
+    background:#F6C62B;
+}
+.buttonAntiman-light-mode::before {
+	border: 2px solid black;
+	opacity: 0;
+	transform: scale3d(1.2, 1.2, 1);
+}
+
+// .buttonAntiman-light-mode::before {
+// 	border: 2px solid #37474f;
+// }
 .skillCardExpand-light-mode{
     background-color: #F6C62B;
 }
