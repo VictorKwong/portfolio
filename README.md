@@ -5,7 +5,7 @@
 - [x] Toggle Dark Mode
 - [x] Welcoming words (loading screen)
 - [x] Update Fontawesome link in 2023
-
+- [ ] Check headerMonkey headerMonkeyHover blinking issue
 
 - #Sass Instruction 
 
