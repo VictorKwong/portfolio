@@ -18,6 +18,39 @@ portfolioApp.easterEgg = function (){
 }
 
 //Digital clock
+portfolioApp.initializeDigitalClock = function(){
+  let today = new Date();
+  let hour = today.getHours();
+  let min = today.getMinutes();
+  let sec = today.getSeconds();
+  let ampm;
+  if(hour > 12){
+    hour = hour - 12;
+    ampm = "PM";
+  }else{
+    ampm = "AM";
+  }
+    $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
+    portfolioApp.timeZone(hour);
+    sec = sec + 1;
+    if(sec >= 60){
+      sec = 0;
+      min = min + 1;
+    }
+    if(min >= 60){
+      min = 0;
+      hour = hour + 1;
+    }
+    if(hour > 12){
+      hour = 0;
+      if(ampm === "AM"){
+        ampm = "PM";
+      }else{
+        ampm = "AM";
+      }
+    }
+}
+
 portfolioApp.digitalClock = function() {
   setInterval(function() {
   let today = new Date();
@@ -30,10 +63,9 @@ portfolioApp.digitalClock = function() {
     ampm = "PM";
   }else{
     ampm = "AM";
-    
   }
     $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
-    portfolioApp.timeZone();
+    portfolioApp.timeZone(hour);
     sec = sec + 1;
     if(sec >= 60){
       sec = 0;
@@ -157,13 +189,12 @@ portfolioApp.comma = function (num) {
 }
 
 // Time zone to generate morning, afternoon or evening
-portfolioApp.timeZone = function (){
-  let today = new Date();
-  if(today.getHours() >= 5 && today.getHours() <= 11){
+portfolioApp.timeZone = function (hour){
+  if(hour >= 5 && hour <= 11){
     $('.wordContainerMorn').css("display", "block");
     $('.wordContainerAfte').css("display", "none");
     $('.wordContainerEven').css("display", "none");
-  }else if(today.getHours() >= 12 && today.getHours() <= 16){
+  }else if(hour >= 12 && hour <= 16){
     $('.wordContainerMorn').css("display", "none");
     $('.wordContainerAfte').css("display", "block");
     $('.wordContainerEven').css("display", "none");
@@ -290,12 +321,14 @@ $('#light_dark_mode').on('click',function(){
 
 
 portfolioApp.init = () => {
+  portfolioApp.initializeDigitalClock();
+  portfolioApp.digitalClock();
   portfolioApp.regularEvent();
   portfolioApp.easterEgg();
   portfolioApp.scrolling();
       /*scroll to top*/
   portfolioApp.lightDarkMode();
-  portfolioApp.digitalClock();
+
 }
 
   $(document).ready(portfolioApp.init());

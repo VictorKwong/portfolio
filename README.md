@@ -7,7 +7,8 @@
 - [x] Update Fontawesome link in 2023
 - [ ] Check headerMonkey headerMonkeyHover blinking issue - preloading too long (remove preloading and test run)
 - [x] Button animation light and dark mode update (.buttonAntiman)
-- [x] Add custom digital clock on the title
+- [x] Add custom digital clock on the title, initialize it
+- [ ] Fix css 100vh when the window screen shrink to a customize size (testing)
 
 
 - #Sass Instruction 

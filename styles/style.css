@@ -971,7 +971,7 @@ header li a:focus::after {
 
 /* main */
 .firstView {
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -986,6 +986,7 @@ header li a:focus::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 25px 0 25px;
 }
 
 .wordContainerMorn,
@@ -2430,7 +2431,7 @@ footer a {
     right: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     font-size: 15px;
     z-index: 100;
     -webkit-transition: all 0.3s 0s ease-out;
