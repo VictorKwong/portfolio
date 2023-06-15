@@ -31,7 +31,7 @@ portfolioApp.initializeDigitalClock = function(){
     ampm = "AM";
   }
     $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
-    portfolioApp.timeZone(hour);
+    portfolioApp.timeZone();
     sec = sec + 1;
     if(sec >= 60){
       sec = 0;
@@ -65,7 +65,7 @@ portfolioApp.digitalClock = function() {
     ampm = "AM";
   }
     $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
-    portfolioApp.timeZone(hour);
+    portfolioApp.timeZone();
     sec = sec + 1;
     if(sec >= 60){
       sec = 0;
@@ -189,12 +189,13 @@ portfolioApp.comma = function (num) {
 }
 
 // Time zone to generate morning, afternoon or evening
-portfolioApp.timeZone = function (hour){
-  if(hour >= 5 && hour <= 11){
+portfolioApp.timeZone = function (){
+  let today = new Date();
+  if(today.getHours() >= 5 && today.getHours() <= 11){
     $('.wordContainerMorn').css("display", "block");
     $('.wordContainerAfte').css("display", "none");
     $('.wordContainerEven').css("display", "none");
-  }else if(hour >= 12 && hour <= 16){
+  }else if(today.getHours() >= 12 && today.getHours() <= 16){
     $('.wordContainerMorn').css("display", "none");
     $('.wordContainerAfte').css("display", "block");
     $('.wordContainerEven').css("display", "none");
