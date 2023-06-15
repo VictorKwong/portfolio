@@ -1,5 +1,6 @@
 const portfolioApp = {};
 
+
 //Generate random numbers from 0 to 1. Ex. "0.23"
 randomfunction = () => {
   return (Math.random() * 1)
@@ -14,6 +15,50 @@ portfolioApp.easterEgg = function (){
         $('.textPosition > p').html('🙈 You found me again! 🙉');
       }
   });
+}
+
+//Digital clock
+portfolioApp.digitalClock = function() {
+  let today = new Date();
+  let hour = today.getHours();
+  let min = today.getMinutes();
+  let sec = today.getSeconds();
+  let ampm;
+  if(hour > 12){
+    hour = hour - 12;
+    ampm = "PM";
+  }else{
+    ampm = "AM";
+    
+  }
+  setInterval(function() {
+    $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
+    portfolioApp.timeZone();
+    sec = sec + 1;
+    if(sec >= 60){
+      sec = 0;
+      min = min + 1;
+    }
+    if(min >= 60){
+      min = 0;
+      hour = hour + 1;
+    }
+    if(hour > 12){
+      hour = 0;
+      if(ampm === "AM"){
+        ampm = "PM";
+      }else{
+        ampm = "AM";
+      }
+    }
+  }, 1000);
+};
+
+portfolioApp.addZero = function(num){
+  if(num < 10){
+    num = "0" + num;
+  }
+  return num;
 }
 
 //Monkey moves when user click
@@ -35,7 +80,7 @@ portfolioApp.regularEvent = function (){
         eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFlyReverse.png"); clearTimeout(eventFour)}, 4200);
         eventFive = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFly.png"); clearTimeout(eventFive)}, 4900);
         eventSix = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventSix)}, 7000);
-        event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyFly"); clearTimeout(event)}, 7000);
+        setTimeout(function() {$('.headerMonkey').removeClass("monkeyFly");}, 7000);
         eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 7000);
       }else if(randomMove > 0.33  && randomMove <= 0.66){
         $(this).addClass("monkeyMove");
@@ -43,7 +88,7 @@ portfolioApp.regularEvent = function (){
         eventTwo = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTwo)}, 1500);
         eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventThr)}, 2400);
         eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventFour)}, 3000);
-        event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove"); clearTimeout(event)}, 3000);
+        setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove");}, 3000);
         eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 3000);
       }else if(randomMove > 0.66){
         $(this).addClass("monkeyKing");
@@ -57,7 +102,7 @@ portfolioApp.regularEvent = function (){
         eventEig = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT5.png"); clearTimeout(eventEig)}, 4000);
         eventNine = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT6.png"); clearTimeout(eventNine)}, 5300);
         eventTen = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTen)}, 10000);
-        event = setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing"); clearTimeout(event)}, 10000);
+        setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing");}, 10000);
         eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 10000);
       }
     }
@@ -95,11 +140,11 @@ portfolioApp.regularEvent = function (){
   $('.addBanana').on('click',function(){
     // $('.addBanana').attr("hidden",true);
     $('.addBanana').prop('disabled', true);
-    $('.addBanana').html(`Gifted 1`);
+    $('.addBanana').html(`Gifted 🎁`);
     dbRef.once('value', (data) => {
       const upvote = data.val().Count[userId] + 1;
       const upvoteMod = portfolioApp.comma(upvote); 
-      $('.monkeyWords').html(`Thanks for feeding me. I have ${upvoteMod} Bananas!<img src="images/banana.png" alt="banana">`)
+      $('.monkeyWords').html(`Thanks for feeding me. I have ${upvoteMod} Bananas!<img src="images/banana.png" alt="banana">`);
       return firebase.database().ref(`Count/${userId}`).set(upvote);
     })
   })
@@ -113,19 +158,19 @@ portfolioApp.comma = function (num) {
 
 // Time zone to generate morning, afternoon or evening
 portfolioApp.timeZone = function (){
-  // $('.wordContainerMorn').style.display = 'none';
-  // $('.wordContainerAfte').style.display = 'none';
-  // $('.wordContainerEven').style.display = 'none';
-  today = new Date();
+  let today = new Date();
   if(today.getHours() >= 5 && today.getHours() <= 11){
-    // return $('.wordContainerMorn').show();
-    $('.wordContainerMorn').css("display", "block")
+    $('.wordContainerMorn').css("display", "block");
+    $('.wordContainerAfte').css("display", "none");
+    $('.wordContainerEven').css("display", "none");
   }else if(today.getHours() >= 12 && today.getHours() <= 16){
-    // return $('.wordContainerAfte').show();
-    $('.wordContainerAfte').css("display", "block")
+    $('.wordContainerMorn').css("display", "none");
+    $('.wordContainerAfte').css("display", "block");
+    $('.wordContainerEven').css("display", "none");
   }else{
-    // return $('.wordContainerEven').show();
-    $('.wordContainerEven').css("display", "block")
+    $('.wordContainerMorn').css("display", "none");
+    $('.wordContainerAfte').css("display", "none");
+    $('.wordContainerEven').css("display", "block");
   }
 }
 
@@ -245,12 +290,12 @@ $('#light_dark_mode').on('click',function(){
 
 
 portfolioApp.init = () => {
-  portfolioApp.timeZone();
   portfolioApp.regularEvent();
   portfolioApp.easterEgg();
   portfolioApp.scrolling();
       /*scroll to top*/
   portfolioApp.lightDarkMode();
+  portfolioApp.digitalClock();
 }
 
   $(document).ready(portfolioApp.init());
