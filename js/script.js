@@ -19,6 +19,7 @@ portfolioApp.easterEgg = function (){
 
 //Digital clock
 portfolioApp.digitalClock = function() {
+  setInterval(function() {
   let today = new Date();
   let hour = today.getHours();
   let min = today.getMinutes();
@@ -31,7 +32,6 @@ portfolioApp.digitalClock = function() {
     ampm = "AM";
     
   }
-  setInterval(function() {
     $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
     portfolioApp.timeZone();
     sec = sec + 1;
