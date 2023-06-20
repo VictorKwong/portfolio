@@ -9,7 +9,7 @@
 - [x] Button animation light and dark mode update (.buttonAntiman)
 - [x] Add custom digital clock on the title, initialize it
 - [ ] Fix css 100vh when the window screen shrink to a customize size (testing)
-
+- [ ] future to list out more relevant skills - Devicon (HTML5, CSS3, SASS, JavaScript, jQuery, React, C++, GitHub, Node.js || Bootstrap, C#, CodePen, Django?, Firebase, Handlebars, Heroku)
 
 - #Sass Instruction 
 
