@@ -670,16 +670,13 @@ header li a:focus::after{
     transform: rotateY(180deg);
 }
 
-
 .skillCardExpand{
     position: relative;
     text-align: center;
     width: 100%;
     height: 100%;
     transition: transform 0.15s ease-in-out;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     border-radius: 50%;
-
 }
 
 .skillCard:hover .skillCardExpand,
@@ -1199,6 +1196,8 @@ footer a{
 
 .skillCardExpand-dark-mode{
     background-color: #433d01;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+
 }
 .profileHead-dark-mode{
     border-radius: 10px;
@@ -1323,6 +1322,8 @@ footer a{
 // }
 .skillCardExpand-light-mode{
     background-color: #F6C62B;
+    box-shadow: 0 5px 10px 0 #eee;
+
 }
 .profileHead-light-mode{
     box-shadow: 5px 5px 15px 5px #eee;

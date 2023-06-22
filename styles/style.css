@@ -1573,8 +1573,6 @@ header li a:focus::after {
   transition: -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
-  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
 
@@ -2236,6 +2234,8 @@ footer a {
 
 .skillCardExpand-dark-mode {
   background-color: #433d01;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .profileHead-dark-mode {
@@ -2378,6 +2378,8 @@ footer a {
 
 .skillCardExpand-light-mode {
   background-color: #F6C62B;
+  -webkit-box-shadow: 0 5px 10px 0 #eee;
+          box-shadow: 0 5px 10px 0 #eee;
 }
 
 .profileHead-light-mode {
