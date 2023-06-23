@@ -5,7 +5,7 @@
 - [x] Toggle Dark Mode
 - [x] Welcoming words (loading screen)
 - [x] Update Fontawesome link in 2023
-- [ ] Check headerMonkey headerMonkeyHover blinking issue - preloading too long (remove preloading and test run)
+- [x] Check headerMonkey headerMonkeyHover blinking issue - preloading too long (remove preloading and test run - Change content to Hover technique monkeyHeaderHover (add and remove class))
 - [x] Button animation light and dark mode update (.buttonAntiman)
 - [x] Add custom digital clock on the title, initialize it
 - [ ] Fix css 100vh when the window screen shrink to a customize size (testing)

@@ -32,23 +32,6 @@ portfolioApp.initializeDigitalClock = function(){
   }
     $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
     portfolioApp.timeZone();
-    sec = sec + 1;
-    if(sec >= 60){
-      sec = 0;
-      min = min + 1;
-    }
-    if(min >= 60){
-      min = 0;
-      hour = hour + 1;
-    }
-    if(hour > 12){
-      hour = 0;
-      if(ampm === "AM"){
-        ampm = "PM";
-      }else{
-        ampm = "AM";
-      }
-    }
 }
 
 portfolioApp.digitalClock = function() {
@@ -66,23 +49,6 @@ portfolioApp.digitalClock = function() {
   }
     $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
     portfolioApp.timeZone();
-    sec = sec + 1;
-    if(sec >= 60){
-      sec = 0;
-      min = min + 1;
-    }
-    if(min >= 60){
-      min = 0;
-      hour = hour + 1;
-    }
-    if(hour > 12){
-      hour = 0;
-      if(ampm === "AM"){
-        ampm = "PM";
-      }else{
-        ampm = "AM";
-      }
-    }
   }, 1000);
 };
 
@@ -101,6 +67,8 @@ portfolioApp.regularEvent = function (){
     }
     //Remove Hover effect
     $('.headerMonkey').removeClass("headerMonkeyHover");
+    $('.monkeyContainer').removeClass("monkeyContainerHover");
+
 
     let randomMove = randomfunction();
     if(!$(this).hasClass("monkeyFly") && !$(this).hasClass("monkeyMove") && !$(this).hasClass("monkeyKing")){
@@ -114,6 +82,7 @@ portfolioApp.regularEvent = function (){
         eventSix = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventSix)}, 7000);
         setTimeout(function() {$('.headerMonkey').removeClass("monkeyFly");}, 7000);
         eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 7000);
+        eventHoverTwo = setTimeout(function() {$('.monkeyContainer').addClass("monkeyContainerHover"); clearTimeout(eventHoverTwo)}, 7000);
       }else if(randomMove > 0.33  && randomMove <= 0.66){
         $(this).addClass("monkeyMove");
         eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventOne)}, 750);
@@ -122,6 +91,7 @@ portfolioApp.regularEvent = function (){
         eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventFour)}, 3000);
         setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove");}, 3000);
         eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 3000);
+        eventHoverTwo = setTimeout(function() {$('.monkeyContainer').addClass("monkeyContainerHover"); clearTimeout(eventHoverTwo)}, 3000);
       }else if(randomMove > 0.66){
         $(this).addClass("monkeyKing");
         eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT1.png"); clearTimeout(eventOne)}, 500);
@@ -136,7 +106,10 @@ portfolioApp.regularEvent = function (){
         eventTen = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTen)}, 10000);
         setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing");}, 10000);
         eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 10000);
+        eventHoverTwo = setTimeout(function() {$('.monkeyContainer').addClass("monkeyContainerHover"); clearTimeout(eventHoverTwo)}, 10000);
+        
       }
+      
     }
   });
 

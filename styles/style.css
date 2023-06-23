@@ -581,10 +581,34 @@ header .slide-menu-dark-mode label {
   }
 }
 
-.headerMonkeyHover:hover {
-  cursor: pointer;
-  content: url("../images/monkeyHover.png");
+.monkeyContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
 }
+
+.headerMonkeyHover {
+  width: 100%;
+  height: 100%;
+}
+
+.monkeyContainer:hover .headerMonkeyHover {
+  cursor: pointer;
+  opacity: 0;
+}
+
+.monkeyContainerHover:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background-image: url("../images/monkeyHover.png");
+  background-size: cover;
+  opacity: 1;
+}
+
 
 header li a {
   position: relative;
@@ -989,7 +1013,6 @@ header li a:focus::after {
   padding: 25px 0 25px;
 }
 
-.wordContainerMorn,
 .wordContainerAfte,
 .wordContainerEven {
   width: 100%;
@@ -997,6 +1020,14 @@ header li a:focus::after {
   padding-bottom: 2rem;
   color: #F6C62B;
   display: none;
+}
+
+.wordContainerMorn {
+  width: 100%;
+  position: relative;
+  padding-bottom: 2rem;
+  color: #F6C62B;
+  display: block;
 }
 
 .space {
