@@ -9,7 +9,8 @@
 - [x] Button animation light and dark mode update (.buttonAntiman)
 - [x] Add custom digital clock on the title, initialize it
 - [ ] Fix css 100vh when the window screen shrink to a customize size (testing)
-- [ ] Future to list out more relevant skills - Devicon (HTML5, CSS3, SASS, JavaScript, jQuery, React, C++, GitHub, Node.js || Bootstrap^, C#^, CodePen, Django?, Firebase, Figma, Handlebars, Heroku, Linux^, Mongodb^, Oracle, PHP?, Putty, Python^, Redux, Slack?, vscode^, )
+- [ ] Future to list out more relevant skills - Devicon (HTML5, CSS3, SASS, JavaScript, jQuery, React, C++, GitHub, Node.js || Bootstrap^, C#^, CodePen, Django?, Firebase, Figma, Handlebars, Heroku, Linux^, Mongodb^, Oracle, PHP?, Putty, Python^, Redux, Slack?, vscode^)
+- [ ] AODA upgrade (Accessibility for Ontarians with Disabilities Act, interview - Q)
 
 - #Sass Instruction 
 
