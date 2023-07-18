@@ -293,6 +293,11 @@ $('#light_dark_mode').on('click',function(){
   $('.appDescription').toggleClass("appDescription-light-mode");
 })
 
+//side back to default after clicking anything
+$('.slide-menu-dark-mode').on('click',function(){
+  var checkbox = document.getElementById("click_id");
+  checkbox.checked = false;
+})
 
 portfolioApp.init = () => {
   portfolioApp.initializeDigitalClock();
