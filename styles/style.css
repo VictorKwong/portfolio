@@ -597,7 +597,7 @@ header .slide-menu-dark-mode label {
   opacity: 0;
 }
 
-.monkeyContainerHover:hover::before {
+.monkeyContainer:hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -608,7 +608,6 @@ header .slide-menu-dark-mode label {
   background-size: cover;
   opacity: 1;
 }
-
 
 header li a {
   position: relative;
@@ -2261,6 +2260,15 @@ footer a {
   z-index: -1;
   -webkit-filter: blur(5px);
           filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .introText-dark-mode:hover::after,
+  .introText-dark-mode:focus::after {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 
 .skillCardExpand-dark-mode {
