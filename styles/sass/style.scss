@@ -246,7 +246,7 @@ header .slide-menu-dark-mode label{
     opacity: 0;
 }
 
-.monkeyContainer:hover::before{
+.monkeyContainerHover:hover::before{
     content: "";
     position: absolute;
     top: 0;
