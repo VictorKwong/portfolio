@@ -1212,22 +1212,21 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
+
 .introText-dark-mode:hover::after,
-.introText-dark-mode:focus::after{
+.introText-dark-mode:focus::after {
     content: "";
     position: absolute;
     background-color: black;
     box-shadow: 0 0 5px black;
-    height: 30px;
-    width: 300px;
-    bottom: 0px;
-    left: 0px;
+    inset: 0; /* Covers the entire area */
     z-index: -1;
     filter: blur(5px);
-    @include responsiveMedia(smallTablet){
+    padding: 5px 0; /* Extra padding for multi-line */
+    @include responsiveMedia(smallTablet) {
         left: 50%;
         transform: translateX(-50%);
-    }   
+    }
 }
 
 .skillCardExpand-dark-mode{
