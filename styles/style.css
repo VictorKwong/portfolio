@@ -2467,3 +2467,51 @@ footer a {
     width: 180px;
   }
 }
+/* Smooth fade-up animation */
+@-webkit-keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+.skillBox li {
+  -webkit-animation: fadeUp 0.8s ease-out forwards;
+          animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.skillBox li:nth-child(even) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.skillBox li:nth-child(odd) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+/* Subtle hover effect to make it feel interactive */
+.skillBox li:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

@@ -5,14 +5,18 @@
     <meta name="description" content="Victor Wong, portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Wong</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Play&family=Kanit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css?v=7857324">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Play&family=Kanit&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Favicon -->
     <link type="image/png" href="./images/favicon-16x16.png" rel="icon">
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./styles/style.css">
     <!--Preload-->
     <!-- <link rel="preload" as="image" href="./images/monkeyHover.png">
@@ -118,30 +122,48 @@
                 <section id="about" class="topping greenPaint-dark-mode">
                     <div class="wrapper">
                         <h2 class="textUpper skillP about-dark-mode">About</h2>
-                        <div class="introFlexing">
-                            <div class="aboutSectionHide" data-aos="fade-right">
+                        <div class="introFlexing" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out">
+                            <div class="aboutSectionHide">
                                 <img src="images/ProfilePic.jpg" alt="Personal Profile Picture" class="profileHead-dark-mode">
-                                <p class="introText-dark-mode"><img src="images/banana.png" alt="banana drawing" title="Banana"> Software Developer</p>
-                                <p class="introText-dark-mode"><img src="images/banana.png" alt="banana drawing" title="Banana"> Seneca CPA (High Honors, 2024) • Juno Web Bootcamp (2020)</p>
-                                <p class="introText-dark-mode"><img src="images/banana.png" alt="banana drawing" title="Banana"> Open to Opportunities in Software & Web Development</p>
+                                <p class="introText-dark-mode"><img src="images/banana.png" alt="banana drawing" title="Banana"> Web application Developer</p>
+                                <p class="introText-dark-mode">🎓 Seneca Polytechnic (CPA - High Honors, 2024) • Juno Web Development Bootcamp (2020)</p>
+                                <p class="introText-dark-mode">💼 Open to Software & Web Development Opportunities</p>
                             </div>
-                            <div class="wrapper proFlexing colorPad" data-aos="fade-right">
+                            <div class="wrapper proFlexing colorPad">
                                     <div class="profileContainer">
-                                        <h3 class="profile-dark-mode">Profile<img src="./images/bananaShine.png" alt="Another banana drawing" title="Banana"></h3>    
-                                        <p>Welcome to my portfolio! 😄 My site was designed as a project during Juno College's Immersive Web Development program. I have a background in electrical engineering from Dalhousie University and recently graduated from the Computer Programming & Analysis (CPA) program at Seneca Polytechnic.</p>
-                                        <p>I'm easily motivated by anything delicious! 🍔🍕🍣🍜🥘🍱🍛🌮😁</p>
-                                        <p>C/C++ | HTML | CSS | Javascript | React | Bootstrap | SQL | MongoDB | Angular | SoapUI | Java | GraphQL | Spring Boot</p>
+                                        <h3 class="profile-dark-mode">About Me <img src="./images/bananaShine.png" alt="Another banana drawing" title="Banana"></h3>
+    
+                                        <p>Hi, I’m Victor — a passionate full-stack web developer! 👋</p>
                                         
+                                        <p>
+                                            I graduated with <strong>High Honors (2024)</strong> from the <strong>Computer Programming & Analysis (CPA)</strong> program at <strong>Seneca Polytechnic</strong> and completed the <strong>Immersive Web Development Bootcamp</strong> at <strong>Juno College</strong>. My background in <strong>Electrical Engineering</strong> from <strong>Dalhousie University</strong> gives me a unique problem-solving perspective.
+                                        </p>
+                                        
+                                        <p>
+                                            I specialize in building responsive, user-friendly applications using <strong>React, Node.js, MongoDB</strong>, and more. I’m always eager to learn and take on new challenges in web development. 🌐
+                                        </p>
+                                        
+                                        <p>
+                                            <strong>Tech Stack:</strong><br>
+                                            JavaScript, Java, Python, HTML, CSS, React, Node.js, MongoDB, SQL, TypeScript, Kotlin<br>
+                                            Git, Docker, Azure, Next.js, Jupyter, Jest, React Testing Library
+                                        </p>
+                                        
+                                        <p>
+                                            Currently, I’m seeking opportunities to work on impactful projects. Let’s connect! 💻
+                                        </p>
                                     </div>
-                                <!-- <img src="./images/victor.jpg" alt="profile image" class="profilefill-dark-mode"></img> -->
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="greenPaint-dark-mode">
-                        <div >
+                    
+                    <h2 class="skills-title skillP about-dark-mode">My Skills <img src="./images/bananaShine.png" alt="Banana drawing" title="Banana"></h2>
+                        <div class="wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+
                             <nav>
-                                <ul class="skillBox" data-aos="fade-left">
+                                <ul class="skillBox">
                                     <li>
                                         <div class="skillCard">
                                             <div class="skillCardExpand skillCardExpand-dark-mode">
@@ -270,9 +292,9 @@
                 <section id="portfolio" class="topping colorPad">
                     <div class="wrapper">
                         <div class="expTitle">
-                            <h2 class="textUpper project-dark-mode"><img src="images/palmTreeSec.png" alt="Another palm tree" title="Palm Tree">project<img src="images/palmTreeSec.png" alt="Another palm tree" title="Palm Tree"></h2>
+                            <h2 class="textUpper project-dark-mode"><img src="images/palmTreeSec.png" alt="Another palm tree" title="Palm Tree">projects<img src="images/palmTreeSec.png" alt="Another palm tree" title="Palm Tree"></h2>
                         </div>
-                            <div class="expFlexing roundUp" data-aos="fade-right">
+                            <div class="expFlexing roundUp" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out">
                                     <figure>
                                         <img src="images/ForgottenHymns.png" alt="Forgotten Hymns Image" class="imgfill">
                                         <figcaption>

@@ -2,54 +2,46 @@ const portfolioApp = {};
 
 
 //Generate random numbers from 0 to 1. Ex. "0.23"
-randomfunction = () => {
-  return (Math.random() * 1)
-}
+portfolioApp.getRandom = function () {
+  return Math.random();
+};
 
 //Easter Egg at copy rights
 portfolioApp.easterEgg = function (){
-  $('.textPosition').on('click', function(){
-      if($('.textPosition > p').text() === '🙈 You found me again! 🙉'){
-        $('.textPosition > p').html('Victor Wong © 2023');
-      }else{
-        $('.textPosition > p').html('🙈 You found me again! 🙉');
-      }
+  // Define $text to select the <p> element inside the .textPosition
+  const $text = $('.textPosition p');
+  
+  // Add event listener to toggle text when clicked
+  $('.textPosition').on('click', function () {
+    if ($text.text() === '🙈 You found me again! 🙉') {
+      $text.text('Victor Wong © 2025');
+    } else {
+      $text.text('🙈 You found me again! 🙉');
+    }
   });
 }
 
 //Digital clock
-portfolioApp.initializeDigitalClock = function(){
+portfolioApp.updateDigitalClock = function() {
   let today = new Date();
   let hour = today.getHours();
   let min = today.getMinutes();
   let sec = today.getSeconds();
-  let ampm;
-  if(hour > 12){
-    hour = hour - 12;
-    ampm = "PM";
-  }else{
-    ampm = "AM";
-  }
-    $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
-    portfolioApp.timeZone();
-}
+  let ampm = hour >= 12 ? "PM" : "AM";
+  
+  hour = hour % 12 || 12; // convert to 12-hour format, replacing 0 with 12
+  const timeString = `${portfolioApp.addZero(hour)}:${portfolioApp.addZero(min)}:${portfolioApp.addZero(sec)} ${ampm}`;
+  
+  $('.clockJS').html(timeString);
+  portfolioApp.timeZone();
+};
+
+portfolioApp.initializeDigitalClock = function() {
+  portfolioApp.updateDigitalClock(); // Initial display
+};
 
 portfolioApp.digitalClock = function() {
-  setInterval(function() {
-  let today = new Date();
-  let hour = today.getHours();
-  let min = today.getMinutes();
-  let sec = today.getSeconds();
-  let ampm;
-  if(hour > 12){
-    hour = hour - 12;
-    ampm = "PM";
-  }else{
-    ampm = "AM";
-  }
-    $('.clockJS').html(portfolioApp.addZero(hour) + ":" + portfolioApp.addZero(min) + ":" + portfolioApp.addZero(sec) + " " + ampm);
-    portfolioApp.timeZone();
-  }, 1000);
+  setInterval(portfolioApp.updateDigitalClock, 1000); // Update every second
 };
 
 portfolioApp.addZero = function(num){
@@ -61,55 +53,25 @@ portfolioApp.addZero = function(num){
 
 //Monkey moves when user click
 portfolioApp.regularEvent = function (){
-  $('.headerMonkey').on('click', function(){
-    if($('.addBanana').attr("hidden") === undefined){
-      $('.monkeyWords').html("Where is my banana? I'm hungry.");
+  $('.headerMonkey').on('click', function () {
+    if ($('.addBanana').attr("hidden") === undefined) {
+      $('.monkeyWords').html("Yes, that’s a monkey — and yes, he’s hungry 🍌");
     }
-    //Remove Hover effect
+
+    // Remove hover effects
     $('.headerMonkey').removeClass("headerMonkeyHover");
     $('.monkeyContainer').removeClass("monkeyContainerHover");
 
+    if ($(this).hasClass("monkeyFly") || $(this).hasClass("monkeyMove") || $(this).hasClass("monkeyKing")) return;
 
-    let randomMove = randomfunction();
-    if(!$(this).hasClass("monkeyFly") && !$(this).hasClass("monkeyMove") && !$(this).hasClass("monkeyKing")){
-      if(randomMove <= 0.33){
-        $(this).addClass("monkeyFly");
-        eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFly.png"); clearTimeout(eventOne)}, 350);
-        eventTwo = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFlyReverse.png"); clearTimeout(eventTwo)}, 1400);
-        eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFly.png"); clearTimeout(eventThr)}, 3150);
-        eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFlyReverse.png"); clearTimeout(eventFour)}, 4200);
-        eventFive = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyFly.png"); clearTimeout(eventFive)}, 4900);
-        eventSix = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventSix)}, 7000);
-        setTimeout(function() {$('.headerMonkey').removeClass("monkeyFly");}, 7000);
-        eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 7000);
-        eventHoverTwo = setTimeout(function() {$('.monkeyContainer').addClass("monkeyContainerHover"); clearTimeout(eventHoverTwo)}, 7000);
-      }else if(randomMove > 0.33  && randomMove <= 0.66){
-        $(this).addClass("monkeyMove");
-        eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventOne)}, 750);
-        eventTwo = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTwo)}, 1500);
-        eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyReverse.png"); clearTimeout(eventThr)}, 2400);
-        eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventFour)}, 3000);
-        setTimeout(function() {$('.headerMonkey').removeClass("monkeyMove");}, 3000);
-        eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 3000);
-        eventHoverTwo = setTimeout(function() {$('.monkeyContainer').addClass("monkeyContainerHover"); clearTimeout(eventHoverTwo)}, 3000);
-      }else if(randomMove > 0.66){
-        $(this).addClass("monkeyKing");
-        eventOne = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT1.png"); clearTimeout(eventOne)}, 500);
-        eventTwo = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT2.png"); clearTimeout(eventTwo)}, 1000);
-        eventThr = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT3Reverse.png"); clearTimeout(eventThr)}, 1500);
-        eventFour = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4Reverse.png"); clearTimeout(eventFour)}, 2300);
-        eventFive = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4.png"); clearTimeout(eventFive)}, 3000);
-        eventSix = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4Reverse.png"); clearTimeout(eventSix)}, 3300);
-        eventSev = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT4.png"); clearTimeout(eventSev)}, 3600);
-        eventEig = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT5.png"); clearTimeout(eventEig)}, 4000);
-        eventNine = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkeyT6.png"); clearTimeout(eventNine)}, 5300);
-        eventTen = setTimeout(function() {$('.headerMonkey').attr("src", "images/monkey.png"); clearTimeout(eventTen)}, 10000);
-        setTimeout(function() {$('.headerMonkey').removeClass("monkeyKing");}, 10000);
-        eventHover = setTimeout(function() {$('.headerMonkey').addClass("headerMonkeyHover"); clearTimeout(eventHover)}, 10000);
-        eventHoverTwo = setTimeout(function() {$('.monkeyContainer').addClass("monkeyContainerHover"); clearTimeout(eventHoverTwo)}, 10000);
-        
-      }
-      
+    let randomMove = portfolioApp.getRandom();
+
+    if (randomMove <= 0.33) {
+      portfolioApp.playMonkeyFly();
+    } else if (randomMove <= 0.66) {
+      portfolioApp.playMonkeyMove();
+    } else {
+      portfolioApp.playMonkeyKing();
     }
   });
 
@@ -155,6 +117,61 @@ portfolioApp.regularEvent = function (){
   })
 
 }
+
+// Helper to play a series of timed frames
+portfolioApp.scheduleFrames = function (frames, duration, className) {
+  $('.headerMonkey').addClass(className);
+
+  frames.forEach(([time, src]) => {
+    setTimeout(() => $('.headerMonkey').attr("src", src), time);
+  });
+
+  setTimeout(() => {
+    $('.headerMonkey').removeClass(className);
+    $('.headerMonkey').attr("src", "images/monkey.png");
+    $('.headerMonkey').addClass("headerMonkeyHover");
+    $('.monkeyContainer').addClass("monkeyContainerHover");
+  }, duration);
+};
+
+// Fly animation
+portfolioApp.playMonkeyFly = function () {
+  const frames = [
+    [350, "images/monkeyFly.png"],
+    [1400, "images/monkeyFlyReverse.png"],
+    [3150, "images/monkeyFly.png"],
+    [4200, "images/monkeyFlyReverse.png"],
+    [4900, "images/monkeyFly.png"]
+  ];
+  portfolioApp.scheduleFrames(frames, 7000, "monkeyFly");
+};
+
+// Move animation
+portfolioApp.playMonkeyMove = function () {
+  const frames = [
+    [750, "images/monkeyReverse.png"],
+    [1500, "images/monkey.png"],
+    [2400, "images/monkeyReverse.png"],
+    [3000, "images/monkey.png"]
+  ];
+  portfolioApp.scheduleFrames(frames, 3000, "monkeyMove");
+};
+
+// King animation
+portfolioApp.playMonkeyKing = function () {
+  const frames = [
+    [500, "images/monkeyT1.png"],
+    [1000, "images/monkeyT2.png"],
+    [1500, "images/monkeyT3Reverse.png"],
+    [2300, "images/monkeyT4Reverse.png"],
+    [3000, "images/monkeyT4.png"],
+    [3300, "images/monkeyT4Reverse.png"],
+    [3600, "images/monkeyT4.png"],
+    [4000, "images/monkeyT5.png"],
+    [5300, "images/monkeyT6.png"]
+  ];
+  portfolioApp.scheduleFrames(frames, 10000, "monkeyKing");
+};
 
 
 portfolioApp.comma = function (num) {

@@ -1,33 +1,50 @@
-> This is portfolio website
+# 🧾 Portfolio Website – README
 
-- [x] Created in 2021
-- [x] 8 bit animal.png animation & JavaScript
-- [x] Toggle Dark Mode
-- [x] Welcoming words (loading screen)
-- [x] Update Fontawesome link in 2023
-- [x] Check headerMonkey headerMonkeyHover blinking issue - preloading too long (remove preloading and test run - Change content to Hover technique monkeyHeaderHover (add and remove class))
-- [x] Button animation light and dark mode update (.buttonAntiman)
-- [x] Add custom digital clock on the title, initialize it
-- [ ] Fix css 100vh when the window screen shrink to a customize size (testing)
-- [ ] Future to list out more relevant skills - Devicon (HTML5, CSS3, SASS, JavaScript, jQuery, React, C++, GitHub, Node.js || Bootstrap^, C#^, CodePen, Django?, Firebase, Figma, Handlebars, Heroku, Linux^, Mongodb^, Oracle, PHP?, Putty, Python^, Redux, Slack?, vscode^)
-- [ ] AODA upgrade (Accessibility for Ontarians with Disabilities Act, interview - Q)
-- [ ] Update/clean up scss code 2023
+> A personal interactive portfolio showcasing development skills, animations, and accessibility improvements. Originally created in 2021 and continuously updated through 2025.
 
-- #Sass Instruction 
+---
 
-1. Install Sass
+## ✅ Project Highlights
 
-2. On the bottom right corner, click Watch Sass
+- **Created:** 2021  
+- **Dark Mode Toggle:** Seamlessly switch between light/dark themes  
+- **Custom Animations:**
+  - 8-bit `animal.png` animation with JavaScript
+  - Button animation updates for light/dark modes (`.buttonAntiman`)
+- **Welcoming Words:** Custom loading screen greeting  
+- **Digital Clock:** Live custom digital clock displayed in the page title  
+- **Accessibility:** AODA (Accessibility for Ontarians with Disabilities Act) upgrade (2024–2025)  
 
-3. Anything change should be underneath style.scss
+---
 
-- #Reference:
+## 🛠️ Technical Enhancements & Fixes
 
-- Filter color
-https://codepen.io/sosuke/pen/Pjoqqp
+- **FontAwesome:** Link updated in 2023  
+- **Preloading Optimization:**
+  - Fixed `headerMonkey` and `headerMonkeyHover` blinking issue
+  - Removed preloading and implemented hover-based class toggling
+- **Viewport Fix:** Adjusted `100vh` CSS handling for smaller window sizes  
+- **SCSS Refactor:** Updated and cleaned SCSS styles (2025)  
 
-- Dark color converter
-https://mdigi.tools/darken-color/#fff5d7
+---
 
-- Prefer color scheme
-https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme#browser_compatibility
+## 📚 Skills/Tech Stack – Devicon Badges
+
+> Currently displayed and future additions
+
+- ✅ **Present:** HTML5, CSS3, JavaScript, jQuery, React, GitHub, Node.js  
+- 🛠️ **Planned/Future:**  
+  - UI/Styling: SASS, Bootstrap  
+  - Backend: Firebase, MongoDB, Django?, PHP?  
+  - Programming: Python, C++, C#, Redux  
+  - Tools: VSCode, Linux, Heroku, Figma, Putty, Slack?, Oracle, Handlebars, CodePen  
+
+---
+
+## 📌 To-Do / Ideas for Future
+
+- [ ] Finalize Devicon icons display (add filters, tooltips)
+- [ ] Interactive skill section (hover/click to view projects using each skill)
+- [ ] Optimize AOS animations for mobile accessibility
+- [ ] Add language toggle (EN/FR or multilingual)
+- [ ] Lighthouse audit for performance/accessibility/SEO
