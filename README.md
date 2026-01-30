@@ -1,6 +1,6 @@
 # 🧾 Portfolio Website – README
 
-> A personal interactive portfolio showcasing development skills, animations, and accessibility improvements. Originally created in 2021 and continuously updated through 2025.
+> A personal interactive portfolio showcasing development skills, animations, and accessibility improvements. Originally created in 2021 and continuously updated through 2026.
 
 ---
 
