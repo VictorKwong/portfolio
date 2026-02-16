@@ -316,6 +316,47 @@ $('.slide-menu-dark-mode').on('click',function(){
   checkbox.checked = false;
 })
 
+portfolioApp.typewriterRotate = function() {
+  const titles = [
+    "Technology Enthusiast",
+    "Software Developer",
+    "Data Analyst",
+    "Web Developer"
+  ];
+
+  const typingSpeed = 100;  // ms per character
+  const erasingSpeed = 50;  // ms per character
+  const delayBetween = 1500; // ms before erasing
+
+  let textIndex = 0;
+  let charIndex = 0;
+  const typingElement = $('#typingText');
+
+  function type() {
+    if (charIndex < titles[textIndex].length) {
+      typingElement.text(typingElement.text() + titles[textIndex].charAt(charIndex));
+      charIndex++;
+      setTimeout(type, typingSpeed);
+    } else {
+      setTimeout(erase, delayBetween);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typingElement.text(titles[textIndex].substring(0, charIndex - 1));
+      charIndex--;
+      setTimeout(erase, erasingSpeed);
+    } else {
+      textIndex = (textIndex + 1) % titles.length;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  type();
+};
+
+
 portfolioApp.init = () => {
   portfolioApp.initializeDigitalClock();
   portfolioApp.digitalClock();
@@ -325,6 +366,8 @@ portfolioApp.init = () => {
       /*scroll to top*/
   portfolioApp.lightDarkMode();
 
+  portfolioApp.typewriterRotate();
+
 }
 
-  $(document).ready(portfolioApp.init());
+$(document).ready(portfolioApp.init);

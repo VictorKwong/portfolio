@@ -356,6 +356,29 @@ header li a:focus::after{
     100%   {left:0; top:0;} 
 }
 
+.typewriter {
+  font-size: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #000; /* cursor effect */
+  animation: blink 0.8s step-end infinite;
+  width: fit-content;
+  display: inline-block;      /* allow width adjustments */
+  text-align: center;         /* center text inside */
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%, 49% { border-color: black; }
+  50%, 100% { border-color: transparent; }
+}
+
+#typingText {
+  animation: blink 0.8s step-end infinite;
+}
+
+
+
 /* main */
 .firstView{
     min-height: 100vh;
