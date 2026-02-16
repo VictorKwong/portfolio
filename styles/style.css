@@ -229,8 +229,7 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -1618,6 +1617,10 @@ main p {
     margin-bottom: 3rem;
     padding: 50px 0 0 0;
   }
+}
+
+.parentContainer {
+  text-align: center;
 }
 
 .orderPlace {
