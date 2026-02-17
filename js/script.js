@@ -353,8 +353,9 @@ portfolioApp.typewriterRotate = function() {
     }
   }
 
-  type();
+  type(); // start the typing effect
 };
+
 
 
 portfolioApp.init = () => {
