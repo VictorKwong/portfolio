@@ -25,6 +25,7 @@ html {
 
 body {
     font-size: 1.6rem;
+    cursor: default;
 }
 
 html, body {
@@ -49,7 +50,494 @@ header li a,
     font-family: 'Play', sans-serif;
 }
 
-
 ul li{
     list-style-type: none;
+}
+
+/* ===============================
+   Color Variables
+=============================== */
+/* Dark Mode Colors */
+$bg-dark: #121212;
+$text-dark: #ffffff;
+$text-greeting: orange;
+$green-dark: #1f7a5a;
+$header-bg-dark: #000000;
+$slide-bg-dark: #000000;
+$header-circle-dark: #2a2a2a;
+$circle-decoration-dark: #333333;
+$button-dark-bg: #433d01;
+$button-dark-text: #ddd;
+$button-dark-hover: #2c2800;
+$section-bg-dark: #1f1f1f;
+$skill-card-dark: #433d01;
+$contact-box-dark: #262626;
+
+/* Light Mode Colors */
+$bg-light: #fff5d7;
+$text-light: #483c0c;
+$text-greeting-light: orange;
+$green-light: #CFE6AD;
+$header-bg-light: #f2f2f2;
+$slide-bg-light: #f2f2f2;
+$header-circle-light: #cccccc;
+$circle-decoration-light: #dddddd;
+$button-light-bg: #FCEC37;
+$button-light-text: #000000;
+$button-light-hover: #F6C62B;
+$section-bg-light: #f2f2f2;
+$skill-card-light: #eeeeee;
+$contact-box-light: #f2f2f2;
+
+$primary-color: orange;
+
+/* ===============================
+   Dark Mode Base
+=============================== */
+
+body {
+  background-color: #333;
+  color: $text-dark;
+
+  /* ===============================
+     Links & Text Hover/Focus
+  ================================ */
+  a, .header-text, .header-hamburger, main figcaption a, .about, .profile, .project, .introText,
+  .contact, .contactbox {
+    color: $text-dark;
+  }
+
+  .wordContainerMorn,
+  .wordContainerAfte, .wordContainerEven,
+  a:hover, a:focus-visible,
+  main .firstView a:hover, main .firstView a:focus-visible,
+  .circleDecoration:hover, .circleDecoration:focus-visible,
+  .circleSmallDecoration:hover, .circleSmallDecoration:focus-visible,
+  main figcaption a:hover, main figcaption a:focus-visible {
+    color: orange;
+  }
+
+  main .firstView a:hover,
+  main .firstView a:focus-visible,
+  .circleDecoration:hover,
+  .circleDecoration:focus-visible,
+  .circleSmallDecoration:hover,
+  .circleSmallDecoration:focus-visible {
+    border: solid orange;
+  }
+
+  header li a::after {
+    background-color: orange;
+  }
+
+  .g, .upperG, .o, .d, .upperM, .r, .n, .i, .upperA, .f, .t, .e, .upperE, .v {
+    &:after {
+      color: white;
+    }
+  }
+
+  /* ===============================
+     App Sections
+  ================================ */
+  .appDescription {
+    background-color: #111;
+    color: $text-dark;
+  }
+
+  .skillCardExpand {
+    background-color: $skill-card-dark;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  }
+
+  .profileHead {
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 150px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+    border-color: $text-dark;
+  }
+
+  .profilefill {
+    width: 193.33px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+    background-color: $section-bg-dark;
+  }
+
+  .introText:hover::after,
+  .introText:focus::after {
+    background-color: black;
+    box-shadow: 0 0 5px black;
+  }
+
+  .about::after,
+  .profile::after,
+  .project::after {
+    background-color: black;
+    box-shadow: 0 0 16px black;
+  }
+
+  /* ===============================
+     Buttons
+  ================================ */
+  .button-text {
+    color: $button-dark-text;
+    background-color: $button-dark-bg;
+
+    &:hover {
+      background-color: $button-dark-hover;
+    }
+  }
+  
+    .buttonAntiman {
+        color: #ffffff;
+        background: none;
+        border: none;
+        transition: all 0.3s;
+        transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+    .buttonAntiman::before,
+    .buttonAntiman::after {
+        content: '';
+        z-index: -1;
+        border-radius: inherit;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+        transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+
+
+    .buttonAntiman::after {
+        background: #433d01;
+    }
+    .buttonAntiman:hover::before,
+    .buttonAntiman:focus::before {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        background:#2c2800;
+    }
+    .buttonAntiman:hover::after,
+    .buttonAntiman:focus::after{
+        opacity: 0;
+        transform: scale3d(0.8, 0.8, 1);
+    }
+    .buttonAntiman::before {
+        border: 2px solid #EEEEEE;
+        opacity: 0;
+        transform: scale3d(1.2, 1.2, 1);
+    }
+
+  /* ===============================
+     Git Decoration
+  ================================ */
+  .gitDeco {
+    border: solid white;
+    color: white;
+
+    &:hover,
+    &:focus {
+      border: solid orange;
+      color: orange;
+    }
+  }
+
+  /* ===============================
+     Circles & Decorations
+  ================================ */
+  .circleDecoration,
+  .circleSmallDecoration,
+  .header-circle,
+  .footer-circle {
+    border: 3px solid #ddd;
+    color: #ddd;
+
+    &:hover,
+    &:focus {
+      border: solid orange;
+      color: orange;
+    }
+  }
+
+  .circleDecoration {
+    border: solid #ddd;
+    color: #ddd;
+  }
+
+  .greenPaint { background-color: #2c3e13; }
+  .header-box, .slide-menu { background-color: black; }
+
+  /* ===============================
+     Images & Visuals
+  ================================ */
+  .img {
+    filter: brightness(0) invert(1);
+  }
+
+  figcaption {
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.8));
+  }
+
+  .messageBox { color: #483c0c; }
+
+  /* ===============================
+     Contact Section
+  ================================ */
+  .contact {
+    color: $text-dark;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: black;
+      box-shadow: 0 0 16px black;
+      height: 20px;
+      width: 270px;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      filter: blur(5px);
+    }
+  }
+
+  .contactbox {
+    background-color: $contact-box-dark;
+    color: $text-dark;
+  }
+
+  /* ===============================
+     About/Profile/Project Sections
+  ================================ */
+  .about, .profile, .project, .introText {
+    color: $text-dark;
+  }
+}
+
+
+/* ===============================
+   Light Mode Base
+=============================== */
+body.light-mode {
+  background-color: #fff5d7;        // light background
+  color: $text-light;            // main text color
+
+  /* ===============================
+     Links & Text Hover/Focus
+  ================================ */
+  a, .header-text, .header-hamburger, main figcaption a,
+  .about, .profile, .project, .introText, .contact, .contactbox {
+    color: $text-light;
+  }
+
+  .wordContainerMorn, .wordContainerAfte, .wordContainerEven,
+  main .firstView a:hover, main .firstView a:focus-visible,
+  .circleDecoration:hover, .circleDecoration:focus-visible,
+  .circleSmallDecoration:hover, .circleSmallDecoration:focus-visible,
+  main figcaption a:hover, main figcaption a:focus-visible {
+    color: $primary-color;  // highlight color for light mode
+  }
+
+  main .firstView a:hover,
+  main .firstView a:focus-visible,
+  .circleDecoration:hover,
+  .circleDecoration:focus-visible,
+  .circleSmallDecoration:hover,
+  .circleSmallDecoration:focus-visible {
+    border: solid $primary-color;
+  }
+
+  header li a::after {
+    background-color: $primary-color;
+  }
+
+  .g, .upperG, .o, .d, .upperM, .r, .n, .i, .upperA, .f, .t, .e, .upperE, .v {
+    &:after {
+      color: $text-light;
+    }
+  }
+
+  /* ===============================
+     App Sections
+  ================================ */
+  .appDescription {
+    background-color: #f5f5f5;
+    color: $text-light;
+  }
+
+  .skillCardExpand {
+    background-color: #F6C62B;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .profileHead {
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 150px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    border-color: $text-light;
+  }
+
+  .profilefill {
+    width: 193.33px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    background-color: $section-bg-light;
+  }
+
+  .introText:hover::after,
+  .introText:focus::after {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 5px #ccc;
+  }
+
+  .about::after,
+  .profile::after,
+  .project::after {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 16px #ccc;
+  }
+
+  /* ===============================
+     Buttons
+  ================================ */
+  .button-text {
+    color: $button-light-text;
+    background-color: $button-light-bg;
+
+    &:hover {
+      background-color: $button-light-hover;
+    }
+  }
+
+    .buttonAntiman {
+        color: black;
+        background: none;
+        border: none;
+        transition: all 0.3s;
+        transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+    .buttonAntiman::before,
+    .buttonAntiman::after {
+        content: '';
+        z-index: -1;
+        border-radius: inherit;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+        transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+
+    .buttonAntiman::after {
+        background: #FCEC37;
+    }
+    .buttonAntiman:hover::before,
+    .buttonAntiman:focus::before {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        background:#F6C62B;
+    }
+
+    .buttonAntiman:hover::after,
+    .buttonAntiman:focus::after{
+        opacity: 0;
+        transform: scale3d(0.8, 0.8, 1);
+    }
+    .buttonAntiman::before {
+        border: 2px solid black;
+        opacity: 0;
+        transform: scale3d(1.2, 1.2, 1);
+    }
+
+  /* ===============================
+     Git Decoration
+  ================================ */
+  .gitDeco {
+    border: solid $text-light;
+    color: $text-light;
+
+    &:hover,
+    &:focus {
+      border: solid $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  /* ===============================
+     Circles & Decorations
+  ================================ */
+  .circleDecoration,
+  .circleSmallDecoration,
+  .header-circle,
+  .footer-circle {
+    border: 3px solid $text-light;
+    color: $text-light;
+
+    &:hover,
+    &:focus {
+      border: solid $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  .greenPaint { background-color: #d0e8c0; } // lighter green
+  .header-box, .slide-menu { background-color: #eee; }
+
+  /* ===============================
+     Images & Visuals
+  ================================ */
+  .img {
+    filter: brightness(0);
+  }
+
+  figcaption {
+    color: $text-light;
+    background: linear-gradient(rgba(255,255,255,0.8));
+  }
+
+  .messageBox { color: #5a4d1c; }
+
+  /* ===============================
+     Contact Section
+  ================================ */
+  .contact {
+    color: $text-light;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #f5f5f5;
+      box-shadow: 0 0 16px #ccc;
+      height: 20px;
+      width: 270px;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      filter: blur(5px);
+    }
+  }
+
+  .contactbox {
+    background-color: $contact-box-light;
+    color: $text-light;
+  }
+
+  /* ===============================
+     About/Profile/Project Sections
+  ================================ */
+  .about, .profile, .project, .introText {
+    color: $text-light;
+  }
 }

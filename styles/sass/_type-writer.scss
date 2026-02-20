@@ -1,0 +1,15 @@
+.typewriter {
+  font-size: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  display: inline-block;
+  text-align: center;
+}
+
+#cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: bold;
+  animation: blink 1s step-end infinite;
+}

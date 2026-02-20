@@ -1,129 +1,36 @@
-@import './setup';
-@import './mixins';
-@import './buttons';
-// Global
-body{
-    cursor: default;
-}
-/* Menu */
-.hide{
-    display:none;
-    z-index:200;
-    cursor: pointer;
-    transition: 0.15s color ease-out;
-}
-.hide:hover{
-    color:orange;
-}
+@use './setup';
+@use './mixins';
+@use './buttons';
+@use './menu';
+@use './color-mode-switch';
+@use './monkey';
+@use './type-writer';
 
-#click_id{
-    opacity:0;
-    position: absolute;
-    left:-1000%;
-    top:-1000%;
-}
 
-/* Header Icon */
-.headerIcon{
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
 
-// Toggle Mode Button
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    @include responsiveMedia(phone){
-        width: 50px;
-    }
-}
-.toggle-phoneView{
-    @include responsiveMedia(phone){
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0 20px;
-    }
-}
-
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #F7DF8E;
-    transition: 0.4s;
-}
-.slider:before {
-    position: absolute;
-    content: "";
-    width: 12px;
-    height: 12px;
-    left: 4px;
-    bottom: 4px;
-    filter: invert(70%) sepia(73%) saturate(1433%) hue-rotate(358deg) brightness(96%) contrast(91%);
-    transition: .4s;
-    background-image: url('../images/svg/Light.svg');
-    background-size: cover;
-}
-
-input:checked + .slider {
-    background-color: #0c283f;
-}
-input:focus + .slider {
-    box-shadow: 0 0 1px rgb(46, 46, 141);
-}
-  
-input:checked + .slider:before {
-    transform: translateX(20px);
-    filter: invert(40%) sepia(62%) saturate(948%) hue-rotate(171deg) brightness(104%) contrast(107%);
-    background-image: url('../images/svg/Dark.svg');
-    background-size: cover;
-    @include responsiveMedia(phone){
-        transform: translateX(30px);
-    }
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-  
-.slider.round:before {
-    border-radius: 50%;
-}
-
+/* Word Size */
 header h4{
     font-family: 'Kanit', sans-serif;
-    width:50%;
 }
+
 h1{
     font-size: 8rem;
-    @include responsiveMedia(phone){
-        font-size: 6rem,
+    @include mixins.responsiveMedia(phone){
+        font-size: 6rem;
     }
 }
+
 p{
     font-size: 1.8rem;
     line-height: 3rem;
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         font-size: 1.6rem;
     }
 }
 
 h2{
     font-size: 4.5rem;
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         font-size: 2.4rem;
     }
 }
@@ -135,6 +42,51 @@ h2{
 h3{
     font-size: 2.3rem;
 }
+
+/* Responsive width for forms / submit buttons */
+.submitWidth{
+    width:950px;
+    @include mixins.responsiveMedia(tablet){
+        width: 500px;
+    }
+    @include mixins.responsiveMedia(smallTablet){
+        width: 250px;
+    }   
+    @include mixins.responsiveMedia(phone){
+        width: 250px;
+    }
+}
+
+// Menu: Toggle Mode Button
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    @include mixins.responsiveMedia(phone){
+        width: 50px;
+    }
+}
+.toggle-phoneView{
+    @include mixins.responsiveMedia(phone){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0 20px;
+    }
+}
+
+// color-mode-switch: Toggle Mode Button
+input:checked + .slider:before {
+    transform: translateX(20px);
+    filter: invert(40%) sepia(62%) saturate(948%) hue-rotate(171deg) brightness(104%) contrast(107%);
+    background-image: url('../images/svg/Dark.svg');
+    background-size: cover;
+    @include mixins.responsiveMedia(phone){
+        transform: translateX(30px);
+    }
+}
+
 
 header{
     height: 50px;
@@ -151,6 +103,7 @@ header{
 header ul,
 footer nav ul{
     display: flex;
+    align-items: center;
 }
 footer nav ul{
     justify-content: center;
@@ -173,11 +126,10 @@ header li label{
     cursor: pointer;
     margin-right:30px;
     text-transform: uppercase;
-    color:white;
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         margin:0 12px 0;
     }
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         margin:0 5px 0;
     }
 }
@@ -185,45 +137,15 @@ header li label{
 header h4{
     margin-left:15px;
     text-transform: uppercase;
-    color:white;
 }
 
 main figcaption a{
-    color:white;
     transition:all 0.3s ease-in-out;
 }
 
-/* Mouse hover effects */
-header a:hover,
-main .firstView a:hover,
-.circleDecoration:hover,
-.circleSmallDecoration:hover,
-main figcaption a:hover {
-    color: orange;
-}
-
-/* Keyboard focus effects */
-header a:focus-visible,
-main .firstView a:focus-visible,
-.circleDecoration:focus-visible,
-.circleSmallDecoration:focus-visible,
-main figcaption a:focus-visible {
-    color: orange;
-}
-
-/* Border for specific elements on hover/focus-visible */
-main .firstView a:hover,
-main .firstView a:focus-visible,
-.circleDecoration:hover,
-.circleDecoration:focus-visible,
-.circleSmallDecoration:hover,
-.circleSmallDecoration:focus-visible {
-    border: solid orange;
-}
-
 /* Slide menu animation */
-header .slide-menu-dark-mode a,
-header .slide-menu-dark-mode label {
+header .slide-menu a,
+header .slide-menu label {
     animation: sideInLeft 0.3s forwards;
 }
 
@@ -238,38 +160,6 @@ header .slide-menu-dark-mode label {
     }
 }
 
-
-// Monkey .headerMonkey
-.monkeyContainer{
-    position: relative;
-    width: 150px;
-    height: 150px;
-}
-
-.headerMonkeyHover{
-    width: 100%;
-    height: 100%;
-}
-
-.monkeyContainer:hover .headerMonkeyHover{
-    cursor: pointer;
-    opacity: 0;
-}
-
-.monkeyContainerHover:hover::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 150px;
-    background-image: url('../images/monkeyHover.png');
-    background-size: cover;
-    opacity: 1;
-}
-// .monkeyContainer:hover::before{
-//     opacity: 1;
-// }
 // Line CSS
 header li a{
     position: relative;
@@ -279,7 +169,6 @@ header li a::after{
     left:0;
     bottom: 0;
     right: 100%;
-    background-color: orange;
     height:1px;
     position: absolute;
     content: '';
@@ -297,74 +186,9 @@ header li a:focus::after{
     width:50%;
     display: flex;
     justify-content: flex-end;
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         width: initial;
     }
-}
-
-.monkeyMove{
-    position: relative;
-    animation-name: dance;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-}
-@keyframes dance{
-    0%    {left:0; top:0;}
-    25%   {left:-150px; top:0;}
-    28%   {left:-130px; top:-40px;}
-    35%   {left:-100px; top:0}
-    50%   {left:200px; top:0;}
-    55%   {left:150px; top:-30px;}
-    63%   {left:130px; top:0;}
-    80%   {left:-100px; top:0;}
-    100%  {left:0; top:0;}
-}
-
-.monkeyFly{
-    position: relative;
-    animation-name: Fly;
-    animation-duration: 7s;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes Fly{
-    0%    {left:0; top:0;}
-    5%   {left:0; top:0;}
-    10%   {left:0; top:-20px;}
-    20%   {left:0; top:-1000px}
-    22%   {left:-200px; top:-500px}
-    31%   {left:-180px; top:-150px}
-    45%   {left:150px; top:-180px;}
-    60%   {left:-160px; top:-200px;}
-    70%   {left:100px; top:-120px;}
-    80%   {left:0px; top:-100px;}
-    90%   {left:0px; top:-40px;}
-    93%   {left:0px; top:-5px;}
-    100%  {left:0; top:0;}
-}
-
-.monkeyKing{
-    position: relative;
-    animation-name: King;
-    animation-duration: 10s;
-    animation-timing-function: ease-in-out;
-}
-@keyframes King{
-    0%    {left:0; top:0;}
-    42%   {left:0; top:0}
-    48%   {left:70px; top:0}
-    53%   {left:-1500px; top:-10px;}
-    54%   {left:-1500px; top:-1000px;}
-    55%   {left:4000px; top:-1000px;}
-    56%   {left:4000px; top:-40px;}
-    57%   {left:1200px; top:-40px;}
-    70%   {left:200px; top:-50px;}
-    79%   {left:0px; top:-30px;}
-    82%   {left:0px; top:-35px;}
-    86%   {left:0px; top:-30px;}
-    90%   {left:0px; top:-35px;}
-    94%   {left:0px; top:-30px;}
-    100%   {left:0; top:0;} 
 }
 
 .typewriter {
@@ -389,8 +213,6 @@ header li a:focus::after{
   25%, 75% { opacity: 0; }
 }
 
-
-
 /* main */
 .firstView{
     min-height: 100vh;
@@ -407,7 +229,6 @@ header li a:focus::after{
     width: 100%;
     position: relative;
     padding-bottom: 2rem;
-    color: #F6C62B;
     display: none;
 }
 
@@ -415,7 +236,6 @@ header li a:focus::after{
     width: 100%;
     position: relative;
     padding-bottom: 2rem;
-    color: #F6C62B;
     display: block;
 }
 
@@ -429,10 +249,10 @@ header li a:focus::after{
     position: relative;
     z-index: 1;
     transform: translate3d(-2000px, 0px ,0);
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
     }
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         font-size:3rem;
     }
   }
@@ -441,10 +261,10 @@ header li a:focus::after{
     &:after{
       content:"G";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -454,10 +274,10 @@ header li a:focus::after{
     &:after{
       content:"g";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -467,10 +287,10 @@ header li a:focus::after{
     &:after{
       content:"o";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -480,10 +300,10 @@ header li a:focus::after{
     &:after{
       content:"d";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -493,10 +313,10 @@ header li a:focus::after{
     &:after{
       content:"M";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -506,10 +326,10 @@ header li a:focus::after{
     &:after{
       content:"n";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -519,10 +339,10 @@ header li a:focus::after{
     &:after{
       content:"i";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -532,10 +352,10 @@ header li a:focus::after{
     &:after{
       content:"r";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -545,10 +365,10 @@ header li a:focus::after{
     &:after{
       content:"A";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -558,10 +378,10 @@ header li a:focus::after{
     &:after{
       content:"f";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -571,10 +391,10 @@ header li a:focus::after{
     &:after{
       content:"t";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -584,10 +404,10 @@ header li a:focus::after{
     &:after{
       content:"E";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -597,10 +417,10 @@ header li a:focus::after{
     &:after{
       content:"e";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -610,10 +430,10 @@ header li a:focus::after{
     &:after{
       content:"v";
       font-size: 7rem;
-      @include responsiveMedia(smallTablet){
+      @include mixins.responsiveMedia(smallTablet){
         font-size:5rem;
         }
-        @include responsiveMedia(phone){
+        @include mixins.responsiveMedia(phone){
             font-size:3rem;
         }
     }
@@ -624,7 +444,6 @@ header li a:focus::after{
         position: absolute;
         left: 0;
         top: 0px;
-        color: #eee;
         opacity: 1;
         z-index: 100;
     }
@@ -678,7 +497,7 @@ header li a:focus::after{
     display: flex;
     flex-direction: column;
     text-align: left;
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         padding: 15px 0;
     }
 }
@@ -689,14 +508,14 @@ header li a:focus::after{
 
 .widthHalf{
     width:50%;
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: initial;
         padding-bottom: 130px;
         max-width: 1200px;
         width: 90%;
         margin: 0 auto;
     }
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: initial;
     }
 
@@ -722,8 +541,8 @@ header li a:focus::after{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto; 
-    column-gap: 10px;
-    row-gap: 10px;
+    gap:25px;
+    
 }
 
 .skillCard{
@@ -743,6 +562,7 @@ header li a:focus::after{
     width: 100%;
     height: 100%;
     transition: transform 0.15s ease-in-out;
+    overflow:hidden;
     border-radius: 50%;
 }
 
@@ -776,19 +596,19 @@ header li a:focus::after{
 }
 .introFlexing,
 .expFlexing{
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         display: initial;
     }
 }
 .proFlexing{
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 .messFlexing{
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         display: initial;
     }
 }
@@ -812,7 +632,7 @@ main p{
 /* main */
 .aboutSectionHide{
     width: 50%;
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: initial;
         text-align: center;
         margin-bottom: 3rem;
@@ -832,12 +652,12 @@ main p{
     vertical-align: middle;
     display: inline-block;
     height:350px;
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: 100%;
         height: 450px;
         border-radius: 10px 10px 0 0;
     }
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         height: initial;
     }
 }
@@ -849,8 +669,7 @@ main p{
     justify-content: center;
     align-items: center;
     padding: 15px 30px;
-    background-color: #111;
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         margin-bottom: 50px;
         border-radius: 0 0 10px 10px;
     }
@@ -888,8 +707,6 @@ main p{
 .gitDeco{
     font-size:3rem;
     border-radius: 50%;
-    border: solid white;
-    color:white;
     width: 6rem;
     height: 6rem;
     text-align: center;
@@ -899,18 +716,11 @@ main p{
     position: relative;
 }
 
-.gitDeco:hover,
-.gitDeco:focus{
-    border: solid orange;
-    color: orange;
-}
-
 figure{
     position: relative;
 }
 
 figcaption {
-    color: white;
     font-size:30px;
     text-align: center;
     position:absolute;
@@ -919,10 +729,9 @@ figcaption {
     bottom:0;
     right:0;
     padding: 20% 5% 0;
-    background: linear-gradient(rgba(0,0,0,0.8));
     opacity:0;
     transition:all 0.3s ease-in-out;
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         padding: 10% 5% 0;
         border-radius: 10px 10px 0 0;
     }
@@ -940,10 +749,10 @@ figure:focus figcaption{
     width: 950px;
     text-align: left;
     margin-top: 10px;
-    @include responsiveMedia(tablet){
+    @include mixins.responsiveMedia(tablet){
         width: 500px;
     }
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: 250px;
     }
 }
@@ -953,10 +762,10 @@ figure:focus figcaption{
     border:none;
     height: 30px;
     padding-left: 10px;
-    @include responsiveMedia(tablet){
+    @include mixins.responsiveMedia(tablet){
         width: 500px;
     }
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: 250px;
     }   
 }
@@ -970,13 +779,12 @@ figure:focus figcaption{
     height:170px;
     box-sizing: border-box;
     resize: none;
-    color: #483c0c;
     border:none;
     padding: 5px 0 0 10px;
-    @include responsiveMedia(tablet){
+    @include mixins.responsiveMedia(tablet){
         width: 500px;
     }
-    @include responsiveMedia(smallTablet){
+    @include mixins.responsiveMedia(smallTablet){
         width: 250px;
     }   
 }
@@ -1017,8 +825,6 @@ figure:focus figcaption{
 .circleDecoration{
     font-size:3rem;
     border-radius: 50%;
-    border: solid #ddd;
-    color:#ddd;
     width: 6rem;
     height: 6rem;
     text-align: center;
@@ -1030,7 +836,7 @@ figure:focus figcaption{
 
 footer a{
     margin:0 20px;
-    @include responsiveMedia(phone){
+    @include mixins.responsiveMedia(phone){
         margin:0 10px;
     }
 }
@@ -1061,8 +867,6 @@ footer a{
     cursor: pointer;
 }
 
-
-
 .formBox{
     display: flex;
     justify-content: center;
@@ -1073,58 +877,31 @@ footer a{
 
 /* Reference: https://codepen.io/rafaaro/pen/oNvJQyb */
 
-
-
-
 // Light Dark Theme
 //Setup
-.about-dark-mode,
-.profile-dark-mode,
-.project-dark-mode,
-.contact-dark-mode,
-.introText-dark-mode{
+.about,
+.profile,
+.project,
+.contact,
+.introText{
     position: relative;
     z-index: 2;
 }
 // Dark
 // Global
-.greenPaint-dark-mode{
-    background-color: #2c3e13;
+.greenPaint{
     padding-bottom: 30px;
 }
 // End Global
-.header-box-dark-mode,
-.slide-menu-dark-mode{
-    background-color: black;
-}
 
-.header-text-dark-mode,
-.header-hamburger-dark-mode{
-    color:white;
-}
-.header-circle-dark-mode{
-    border: 3px solid #ddd;
-    color:#ddd;
-}
-.header-circle-dark-mode:hover{
-    border: solid orange;
-    color:orange;
-}
-.body-dark-mode{
-    background-color: #333;
-    color:#ddd;
-}
-
-.img-dark-mode{
+.img{
     filter: brightness(0) invert(1);
 }
 
 //Section Section
-.about-dark-mode::after{
+.about::after{
     content: "";
     position: absolute;
-    background-color: black;
-    box-shadow: 0 0 16px black;
     height: 18px;
     width: 180px;
     top: 50%;
@@ -1133,11 +910,9 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
-.profile-dark-mode::after{
+.profile::after{
     content: "";
     position: absolute;
-    background-color: black;
-    box-shadow: 0 0 16px black;
     height: 18px;
     width: 120px;
     top: 50%;
@@ -1145,11 +920,9 @@ footer a{
     z-index: -1;
     filter: blur(5px);
 }
-.project-dark-mode::after{
+.project::after{
     content: "";
     position: absolute;
-    background-color: black;
-    box-shadow: 0 0 16px black;
     height: 30px;
     width: 300px;
     bottom: 0px;
@@ -1158,67 +931,23 @@ footer a{
     filter: blur(5px);
 }
 
-.introText-dark-mode:hover::after,
-.introText-dark-mode:focus::after {
+.introText:hover::after,
+.introText:focus::after {
     content: "";
     position: absolute;
-    background-color: black;
-    box-shadow: 0 0 5px black;
     inset: 0; /* Covers the entire area */
     z-index: -1;
     filter: blur(5px);
     padding: 5px 0; /* Extra padding for multi-line */
-    @include responsiveMedia(smallTablet) {
+    @include mixins.responsiveMedia(smallTablet) {
         left: 50%;
         transform: translateX(-50%);
     }
 }
 
-.skillCardExpand-dark-mode{
-    background-color: #433d01;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
 
-}
-.profileHead-dark-mode{
-    border-radius: 10px;
-    display: inline-block;
-    margin-bottom: 20px;
-    width: 150px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
-}
-.profilefill-dark-mode{
-    width: 193.33px;
-    height: 400px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
-}
 // Third Section
-.contact-dark-mode::after{
-    content: "";
-    position: absolute;
-    background-color: black;
-    box-shadow: 0 0 16px black;
-    height: 20px;
-    width: 270px;
-    bottom: 0px;
-    left: 0px;
-    z-index: -1;
-    filter: blur(5px);
-}
-.contactbox-dark-mode{
-    background-color: black;
-    color: #EEE;
-}
 
-// Footer
-.footer-circle-dark-mode{
-    border: 3px solid #ddd;
-    color:#ddd;
-}
-.footer-circle-dark-mode:hover{
-    border: solid orange;
-    color:orange;
-}
 // Light
 // Global
 .greenPaint-light-mode{
@@ -1299,7 +1028,7 @@ footer a{
 
 // End Light Dark Theme
 
-@include responsiveMedia(phone){
+@include mixins.responsiveMedia(phone){
     /* Menu */
     header{
       display: block;
@@ -1318,13 +1047,13 @@ footer a{
         display: initial;
         z-index: 200;
     }
-    .header-box-dark-mode>label {
+    .header-box>label {
         position:absolute;
         top:10px;
         right:15px;
         font-weight: 400;
     }
-    .slide-menu-dark-mode {
+    .slide-menu {
         position: absolute;
         right: 0;
         top:0;
@@ -1340,17 +1069,17 @@ footer a{
         display: flex;
         flex-direction: column;
     }
-    #click_id + .slide-menu-dark-mode{
+    #click_id + .slide-menu{
         right:-200%;
     }
     
-    #click_id:checked + .slide-menu-dark-mode{
+    #click_id:checked + .slide-menu{
         right:0;
     }
-    .header-box-dark-mode>ul>li{
+    .header-box>ul>li{
       margin: initial;
     }
-    .header-box-dark-mode>ul>li>a{
+    .header-box>ul>li>a{
         display: block;
         width: calc(100% - 10px);
         padding: 20px 0 20px;
@@ -1377,13 +1106,13 @@ footer a{
          }
       }
       //Second Section
-      .about-dark-mode::after{
+      .about::after{
         width: 90px;
     }
-    .project-dark-mode::after{
+    .project::after{
         width: 225px;
     }
-    .contact-dark-mode::after{
+    .contact::after{
         width: 180px;
     }
   }

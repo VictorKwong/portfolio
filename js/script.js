@@ -13,10 +13,10 @@ portfolioApp.easterEgg = function (){
   
   // Add event listener to toggle text when clicked
   $('.textPosition').on('click', function () {
-    if ($text.text() === '🙈 You found me again! 🙉') {
-      $text.text('Victor Wong © 2025');
+    if ($text.text() === 'Game Code# : Unlock1218') {
+      $text.text('Victor Wong © 2026');
     } else {
-      $text.text('🙈 You found me again! 🙉');
+      $text.text('Game Code# : Unlock1218');
     }
   });
 }
@@ -207,108 +207,112 @@ portfolioApp.scrolling = function (){
   }
 }
 
-portfolioApp.lightDarkMode = function (){
-  if(document.querySelector('#light_dark_mode').checked === false){
-    //Global
-    $('.greenPaint-dark-mode').toggleClass("greenPaint-light-mode");
+// portfolioApp.lightDarkMode = function (){
+//   if(document.querySelector('#light_dark_mode').checked === false){
+//     //Global
+//     $('.greenPaint-dark-mode').toggleClass("greenPaint-light-mode");
 
-    $('.header-box-dark-mode').toggleClass("header-box-light-mode");
-    $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
-    $('.header-text-dark-mode').toggleClass("header-text-light-mode");
-    $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
-    $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
-    $('.circleDecoration').toggleClass("circleDecoration-light-mode");
-    $('.button-text-dark-mode').toggleClass(" button-text-light-mode");
-    // First Section
+//     $('.header-box-dark-mode').toggleClass("header-box-light-mode");
+//     $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
+//     $('.header-text-dark-mode').toggleClass("header-text-light-mode");
+//     $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
+//     $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
+//     $('.circleDecoration').toggleClass("circleDecoration-light-mode");
+//     $('.button-text-dark-mode').toggleClass(" button-text-light-mode");
+//     // First Section
     
-    $('.body-dark-mode').toggleClass('body-light-mode');
-    $('.wordContainerAfte').toggleClass("wordContainerAfte-light-mode");
-    $('.wordContainerEven').toggleClass("wordContainerEven-light-mode");
-    $('.wordContainerMorn').toggleClass("wordContainerMorn-light-mode");
+//     $('.body-dark-mode').toggleClass('body-light-mode');
+//     $('.wordContainerAfte').toggleClass("wordContainerAfte-light-mode");
+//     $('.wordContainerEven').toggleClass("wordContainerEven-light-mode");
+//     $('.wordContainerMorn').toggleClass("wordContainerMorn-light-mode");
   
-    $('.g').toggleClass("g-light-mode");
-    $('.upperG').toggleClass("upperG-light-mode");
-    $('.o').toggleClass("o-light-mode");
-    $('.d').toggleClass("d-light-mode");
-    $('.upperM').toggleClass("upperM-light-mode");
-    $('.r').toggleClass("r-light-mode");
-    $('.n').toggleClass("n-light-mode");
-    $('.i').toggleClass("i-light-mode");
-    $('.upperA').toggleClass("upperA-light-mode");
-    $('.f').toggleClass("f-light-mode");
-    $('.t').toggleClass("t-light-mode");
-    $('.e').toggleClass("e-light-mode");
-    $('.upperE').toggleClass("upperE-light-mode");
-    $('.v').toggleClass("v-light-mode");
+//     $('.g').toggleClass("g-light-mode");
+//     $('.upperG').toggleClass("upperG-light-mode");
+//     $('.o').toggleClass("o-light-mode");
+//     $('.d').toggleClass("d-light-mode");
+//     $('.upperM').toggleClass("upperM-light-mode");
+//     $('.r').toggleClass("r-light-mode");
+//     $('.n').toggleClass("n-light-mode");
+//     $('.i').toggleClass("i-light-mode");
+//     $('.upperA').toggleClass("upperA-light-mode");
+//     $('.f').toggleClass("f-light-mode");
+//     $('.t').toggleClass("t-light-mode");
+//     $('.e').toggleClass("e-light-mode");
+//     $('.upperE').toggleClass("upperE-light-mode");
+//     $('.v').toggleClass("v-light-mode");
   
-    // Second Section
-    $('.img-dark-mode').toggleClass('img-light-mode');
-    $('.about-dark-mode').toggleClass('about-light-mode');
-    $('.profile-dark-mode').toggleClass('profile-light-mode');
-    $('.project-dark-mode').toggleClass('project-light-mode');
-    $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
-    $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
-    $('.introText-dark-mode').toggleClass('introText-light-mode');
-    $('.profileHead-dark-mode').toggleClass('profileHead-light-mode');
-    $('.profilefill-dark-mode').toggleClass('profilefill-light-mode');
+//     // Second Section
+//     $('.img-dark-mode').toggleClass('img-light-mode');
+//     $('.about-dark-mode').toggleClass('about-light-mode');
+//     $('.profile-dark-mode').toggleClass('profile-light-mode');
+//     $('.project-dark-mode').toggleClass('project-light-mode');
+//     $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
+//     $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
+//     $('.introText-dark-mode').toggleClass('introText-light-mode');
+//     $('.profileHead-dark-mode').toggleClass('profileHead-light-mode');
+//     $('.profilefill-dark-mode').toggleClass('profilefill-light-mode');
 
-    // Third Section
-    $('.contact-dark-mode').toggleClass('contact-light-mode');
-    $('.contactbox-dark-mode').toggleClass('contactbox-light-mode');
-    $('.appDescription').toggleClass("appDescription-light-mode");
-  }
-}
+//     // Third Section
+//     $('.contact-dark-mode').toggleClass('contact-light-mode');
+//     $('.contactbox-dark-mode').toggleClass('contactbox-light-mode');
+//     $('.appDescription').toggleClass("appDescription-light-mode");
+//   }
+// }
 
-$('#light_dark_mode').on('click',function(){
-  //Global
-  $('.greenPaint-dark-mode').toggleClass("greenPaint-light-mode");
+// $('#light_dark_mode').on('click',function(){
+//   //Global
+//   $('.greenPaint-dark-mode').toggleClass("greenPaint-light-mode");
 
-  $('.header-box-dark-mode').toggleClass("header-box-light-mode");
-  $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
-  $('.header-text-dark-mode').toggleClass("header-text-light-mode");
-  $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
-  $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
-  $('.circleDecoration').toggleClass("circleDecoration-light-mode");
-  $('.button-text-dark-mode').toggleClass(" button-text-light-mode");
-  // First Section
+//   $('.header-box-dark-mode').toggleClass("header-box-light-mode");
+//   $('.slide-menu-dark-mode').toggleClass("slide-menu-light-mode");
+//   $('.header-text-dark-mode').toggleClass("header-text-light-mode");
+//   $('.header-hamburger-dark-mode').toggleClass("header-hamburger-light-mode");
+//   $('.header-circle-dark-mode').toggleClass("header-circle-light-mode");
+//   $('.circleDecoration').toggleClass("circleDecoration-light-mode");
+//   $('.button-text-dark-mode').toggleClass(" button-text-light-mode");
+//   // First Section
   
-  $('.body-dark-mode').toggleClass('body-light-mode');
-  $('.wordContainerAfte').toggleClass("wordContainerAfte-light-mode");
-  $('.wordContainerEven').toggleClass("wordContainerEven-light-mode");
-  $('.wordContainerMorn').toggleClass("wordContainerMorn-light-mode");
+//   $('.body-dark-mode').toggleClass('body-light-mode');
+//   $('.wordContainerAfte').toggleClass("wordContainerAfte-light-mode");
+//   $('.wordContainerEven').toggleClass("wordContainerEven-light-mode");
+//   $('.wordContainerMorn').toggleClass("wordContainerMorn-light-mode");
 
-  $('.g').toggleClass("g-light-mode");
-  $('.upperG').toggleClass("upperG-light-mode");
-  $('.o').toggleClass("o-light-mode");
-  $('.d').toggleClass("d-light-mode");
-  $('.upperM').toggleClass("upperM-light-mode");
-  $('.r').toggleClass("r-light-mode");
-  $('.n').toggleClass("n-light-mode");
-  $('.i').toggleClass("i-light-mode");
-  $('.upperA').toggleClass("upperA-light-mode");
-  $('.f').toggleClass("f-light-mode");
-  $('.t').toggleClass("t-light-mode");
-  $('.e').toggleClass("e-light-mode");
-  $('.upperE').toggleClass("upperE-light-mode");
-  $('.v').toggleClass("v-light-mode");
+//   $('.g').toggleClass("g-light-mode");
+//   $('.upperG').toggleClass("upperG-light-mode");
+//   $('.o').toggleClass("o-light-mode");
+//   $('.d').toggleClass("d-light-mode");
+//   $('.upperM').toggleClass("upperM-light-mode");
+//   $('.r').toggleClass("r-light-mode");
+//   $('.n').toggleClass("n-light-mode");
+//   $('.i').toggleClass("i-light-mode");
+//   $('.upperA').toggleClass("upperA-light-mode");
+//   $('.f').toggleClass("f-light-mode");
+//   $('.t').toggleClass("t-light-mode");
+//   $('.e').toggleClass("e-light-mode");
+//   $('.upperE').toggleClass("upperE-light-mode");
+//   $('.v').toggleClass("v-light-mode");
   
-  // Second Section
-  $('.img-dark-mode').toggleClass('img-light-mode');
-  $('.about-dark-mode').toggleClass('about-light-mode');
-  $('.profile-dark-mode').toggleClass('profile-light-mode');
-  $('.project-dark-mode').toggleClass('project-light-mode');
-  $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
-  $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
-  $('.introText-dark-mode').toggleClass('introText-light-mode');
-  $('.profileHead-dark-mode').toggleClass('profileHead-light-mode');
-  $('.profilefill-dark-mode').toggleClass('profilefill-light-mode');
+//   // Second Section
+//   $('.img-dark-mode').toggleClass('img-light-mode');
+//   $('.about-dark-mode').toggleClass('about-light-mode');
+//   $('.profile-dark-mode').toggleClass('profile-light-mode');
+//   $('.project-dark-mode').toggleClass('project-light-mode');
+//   $('.buttonAntiman-dark-mode').toggleClass('buttonAntiman-light-mode');
+//   $('.skillCardExpand-dark-mode').toggleClass('skillCardExpand-light-mode');
+//   $('.introText-dark-mode').toggleClass('introText-light-mode');
+//   $('.profileHead-dark-mode').toggleClass('profileHead-light-mode');
+//   $('.profilefill-dark-mode').toggleClass('profilefill-light-mode');
   
     
-  // Third Section
-  $('.contact-dark-mode').toggleClass('contact-light-mode');
-  $('.contactbox-dark-mode').toggleClass('contactbox-light-mode');
-  $('.appDescription').toggleClass("appDescription-light-mode");
-})
+//   // Third Section
+//   $('.contact-dark-mode').toggleClass('contact-light-mode');
+//   $('.contactbox-dark-mode').toggleClass('contactbox-light-mode');
+//   $('.appDescription').toggleClass("appDescription-light-mode");
+// })
+
+$('#light_dark_mode').on('click', function() {
+    $('body').toggleClass('light-mode');
+});
 
 //side back to default after clicking anything
 $('.slide-menu-dark-mode').on('click',function(){
@@ -365,7 +369,7 @@ portfolioApp.init = () => {
   portfolioApp.easterEgg();
   portfolioApp.scrolling();
       /*scroll to top*/
-  portfolioApp.lightDarkMode();
+  // portfolioApp.lightDarkMode();
 
   portfolioApp.typewriterRotate();
 

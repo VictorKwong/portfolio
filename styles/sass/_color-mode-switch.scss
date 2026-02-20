@@ -1,0 +1,30 @@
+// Sun and moon
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #F7DF8E;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    left: 4px;
+    bottom: 4px;
+    filter: invert(70%) sepia(73%) saturate(1433%) hue-rotate(358deg) brightness(96%) contrast(91%);
+    transition: .4s;
+    border-radius: 50%;
+    background-image: url('../images/svg/Light.svg');
+    background-size: cover;
+}
+
+input:checked + .slider {
+    background-color: #0c283f; //#0c283f
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(46, 46, 141);
+}
+  
