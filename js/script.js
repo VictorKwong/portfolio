@@ -22,18 +22,22 @@ portfolioApp.easterEgg = function (){
 }
 
 //Digital clock
-portfolioApp.updateDigitalClock = function() {
-  let today = new Date();
-  let hour = today.getHours();
-  let min = today.getMinutes();
-  let sec = today.getSeconds();
-  let ampm = hour >= 12 ? "PM" : "AM";
-  
-  hour = hour % 12 || 12; // convert to 12-hour format, replacing 0 with 12
-  const timeString = `${portfolioApp.addZero(hour)}:${portfolioApp.addZero(min)}:${portfolioApp.addZero(sec)} ${ampm}`;
-  
-  $('.clockJS').html(timeString);
-  portfolioApp.timeZone();
+portfolioApp.updateDigitalClock = function () {
+
+  const now = new Date();
+  const hours24 = now.getHours();
+
+  // Format time automatically
+  const timeString = now.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  });
+
+  $('.clockJS').text(timeString);
+
+  portfolioApp.timeZone(hours24); // pass hours instead of recalculating
 };
 
 portfolioApp.initializeDigitalClock = function() {
@@ -179,22 +183,22 @@ portfolioApp.comma = function (num) {
 }
 
 // Time zone to generate morning, afternoon or evening
-portfolioApp.timeZone = function (){
-  let today = new Date();
-  if(today.getHours() >= 5 && today.getHours() <= 11){
+portfolioApp.timeZone = function (hours) {
+
+  // Hide all first
+  $('.wordContainerMorn, .wordContainerAfte, .wordContainerEven').css("display", "none");
+
+  if (hours >= 5 && hours <= 11) {
     $('.wordContainerMorn').css("display", "block");
-    $('.wordContainerAfte').css("display", "none");
-    $('.wordContainerEven').css("display", "none");
-  }else if(today.getHours() >= 12 && today.getHours() <= 16){
-    $('.wordContainerMorn').css("display", "none");
+  } 
+  else if (hours >= 12 && hours <= 16) {
     $('.wordContainerAfte').css("display", "block");
-    $('.wordContainerEven').css("display", "none");
-  }else{
-    $('.wordContainerMorn').css("display", "none");
-    $('.wordContainerAfte').css("display", "none");
+  } 
+  else {
     $('.wordContainerEven').css("display", "block");
   }
-}
+
+};
 
 //Back to Top
 window.onscroll = function (){portfolioApp.scrolling()};
